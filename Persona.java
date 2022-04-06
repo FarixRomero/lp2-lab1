@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 abstract class Persona extends Usuario{
 	
     // Estado o características
@@ -5,7 +7,6 @@ abstract class Persona extends Usuario{
     private String nombre;
     private String apellido;
 	private int edad;
-    //AGREGAR FECHANACIMIENTO
 	private Date fechaNacimiento;
 	
     // Constructores
@@ -35,6 +36,9 @@ abstract class Persona extends Usuario{
 	public int getEdad(){
 		return this.edad;
 	}
+	public Date getFechaNacimiento(){
+		return this.fechaNacimiento;
+	}
 
     // Setters
     public void setNombre(String nombre){
@@ -49,8 +53,10 @@ abstract class Persona extends Usuario{
     public void setEdad(int edad){
         this.edad=edad;
     }
+	public void setFechaNacimiento(Date fechaNacimiento){
+		this.fechaNacimiento=fechaNacimiento;
+	}
 	
     // Comportamiento o Métodos
-	// public abstract void consultarDatosUsuario();
 	public abstract String consultarDatosUsuario();
 }
