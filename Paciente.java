@@ -33,7 +33,7 @@ class Paciente extends Persona{
 	
 	@Override
     // Comportamiento o Métodos
-	public void consultarDatosUsuario(){
-		
+	public String consultarDatosUsuario(){
+		return "Paciente: "+ this.codPaciente + getNombre()+ getCorreo();
 	}
 }

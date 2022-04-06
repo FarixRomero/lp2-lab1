@@ -1,4 +1,4 @@
-class Usuario{
+abstract class  Usuario{
 	
     // Estado o características
     private String correo;

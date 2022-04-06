@@ -5,6 +5,8 @@ abstract class Persona extends Usuario{
     private String nombre;
     private String apellido;
 	private int edad;
+    //AGREGAR FECHANACIMIENTO
+	private Date fechaNacimiento;
 	
     // Constructores
     public Persona(){}
@@ -49,5 +51,6 @@ abstract class Persona extends Usuario{
     }
 	
     // Comportamiento o Métodos
-	public abstract void consultarDatosUsuario();
+	// public abstract void consultarDatosUsuario();
+	public abstract String consultarDatosUsuario();
 }
