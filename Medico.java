@@ -81,5 +81,4 @@ class Medico extends Usuario{
 	@Override
 	public void GestionarCitas(){}
 	
-    public void ChatearPaciente(){}
 }
