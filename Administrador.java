@@ -1,7 +1,10 @@
 public class Administrador extends Usuario {
     private int codigo;
     Medico RelacionMedicos[];//relación de medicos que administra
-    
+    Administrador(){
+    }
+    Administrador(int codigo,String Correo,String Username,String Password, String Nombre, int DNI){
+    }	
     void SetCodigo(int codigo){
         this.codigo=codigo;
     }
