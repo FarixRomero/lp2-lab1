@@ -8,9 +8,6 @@ public class Administrador extends Persona {
     int GetCodigo(){
         return codigo;
     }
-    void CrearUsuario(){
-     /* Aqui*/
-    }
     void GenerarListaPacientes(){
     
     }
@@ -23,10 +20,24 @@ public class Administrador extends Persona {
     void GestionarConsultorios(){
         /*codigo*/
     }
-    void GestionarCitas( Cita arreglo[]){
-        /*codigo*/
-    }
+
     void GestionarMedicamentos(){
         /*codigo*/
     }
+    @Override
+    public void CrearCuenta(String correo,String username,String password){	
+	}
+    @Override
+	public void Login(){
+	}
+    @Override
+	public void RecuperarPassword(){
+	}
+    @Override
+	public void ModificarDatos(){
+	}
+    @Override
+	public void GestionarCitas(){
+	}
+   
 }
