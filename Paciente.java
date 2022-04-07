@@ -56,7 +56,6 @@ class Paciente extends Usuario{
 	public void ModificarDatos(){}
 	@Override
 	public void GestionarCitas(){}
-	@Override
 	public void VisualizarCitas(){}
 	
 

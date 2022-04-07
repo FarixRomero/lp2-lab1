@@ -64,7 +64,7 @@ class Administrador extends Usuario {
     @Override
 	public void GestionarCitas(){
 	}
-    @Override
+    @Override	
 	public void VisualizarCitas(){
 	}
     
