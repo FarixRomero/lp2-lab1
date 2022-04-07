@@ -4,13 +4,15 @@ class Especialidad{
     private String codigoEspecialidad;
     private String nombreEspecialidad;
     private String Descripcion;
-    // Constructores
+    
+	// Constructores
     public Especialidad(){}
     public Especialidad(String codigoEspecialidad,String nombreEspecialidad){
 		this.codigoEspecialidad=codigoEspecialidad;
 		this.nombreEspecialidad=nombreEspecialidad;
     }
-    // Destructores
+    
+	// Destructores
     public void finalize(){
         System.out.println("El objeto se esta destruyendo");
     }
@@ -22,9 +24,7 @@ class Especialidad{
     public String getNombreEspecialidad(){
         return this.nombreEspecialidad;
     }
-    void GetDescripcion(){
-    
-    }
+    public void GetDescripcion(){}
 
     // Setters
     public void setCodigoEspecialidad(String codigoEspecialidad){
@@ -33,6 +33,5 @@ class Especialidad{
 	public void setNombreEspecialidad(String nombreEspecialidad){
         this.nombreEspecialidad=nombreEspecialidad;
     }
-    void SetDescripcion(String texto){ 
-    }
+    public void SetDescripcion(String texto){}
 }
