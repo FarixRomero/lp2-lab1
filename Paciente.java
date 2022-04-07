@@ -34,6 +34,8 @@ class Paciente extends Usuario{
 	
 	public void CalificarMedico(){}
 	public void Comentar(){}
+	public void VisualizarDiagnostico(){}
+	public void VisualizarAtencion(){}
 	
 	// Comportamiento o Métodos
 	@Override
