@@ -5,11 +5,11 @@ class CitaMedica {
 	private String codigo;
 	private String estado;
 	private Date fecha;
-        private boolean ha_pagado;
+	private boolean ha_pagado;
 	
-        private Horario horario;
+	private Horario horario;
 	private Paciente paciente;
-        private Consultorio consultorio;
+	private Consultorio consultorio;
 	
 	//Constructor
 	public CitaMedica(){}
