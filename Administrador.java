@@ -40,7 +40,15 @@ class Administrador extends Usuario {
     void GestionarMedicos(){}
     void GestionarConsultorios(){}
     void GestionarMedicamentos(){}
-	
+
+    void CambiarEstadoCita(){}
+    void CrearConsultorio(){}
+    void EditarConsultorio(){}
+    void EliminarConsultorio(){}
+    void AñadirMedicamento(){}
+    void EditarMedicamento(){}
+    void EliminarMedicamento(){}
+    void GestionarEspecialidad(){}
 
     @Override
 	public void Login(){
