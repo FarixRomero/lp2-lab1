@@ -15,6 +15,9 @@ class PrincipalEjemplo{
         
         CitaMedica cita1 = new CitaMedica("INF101","PROGRAMADA",med1,pac1);
         System.out.println(cita1.obtenerDatosCita());
+		
+		HistorialClinico his1 = new HistorialClinico(1234);
+		System.out.println("Numero de historial: " + his1.getNroHistoria());
 
     }
 }
