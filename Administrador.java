@@ -28,7 +28,7 @@ public class Administrador extends Usuario {
     public void CrearCuenta(String correo,String username,String password, Medico ListaMedicos[]){	
 	}
     @Override
-	public void Login(){
+	public void Login(String correo,String password){
 	}
     @Override
 	public void RecuperarPassword(){
