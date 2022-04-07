@@ -1,4 +1,4 @@
-class Medico extends Persona{
+class Medico extends Usuario{
 	
     // Estado o características
     private float calificacion;
@@ -7,9 +7,9 @@ class Medico extends Persona{
 	
     // Constructores
     public Medico(){}
-    public Medico(String correo,String username,String password,String estado,String nombre,String apellido, int DNI,int edad,float calificacion,int cantPacientes,int codMedico){
+    public Medico(String correo,String username,String password,String estado,String nombre,String apellido, int DNI,int edad,float calificacion,int cantPacientes,int codMedico,String codigoEspecialidad,String nombreEspecialidad){
         super(correo,username,password,estado,nombre,apellido,DNI,edad);
-        this.calificacion=calificacion;
+		this.calificacion=calificacion;
         this.cantPacientes=cantPacientes;
         this.codMedico = codMedico;
     }
@@ -29,12 +29,11 @@ class Medico extends Persona{
         return this.codMedico;
     }
     
-
     // Setters
-    public void setSeguro(float calificacion){
+    public void setCalificacion(float calificacion){
         this.calificacion=calificacion;
     }
-    public void setCodPaciente(int cantPacientes){
+    public void setCantPacientes(int cantPacientes){
         this.cantPacientes=cantPacientes;
     }
     public void setCodMedico(int codMedico){

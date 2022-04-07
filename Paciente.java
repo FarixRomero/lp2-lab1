@@ -1,4 +1,4 @@
-class Paciente extends Persona{
+class Paciente extends Usuario{
 	
 	// Estado o características
 	private boolean seguro;
@@ -32,8 +32,8 @@ class Paciente extends Persona{
 		this.codPaciente=codPaciente;
 	}
 	
+	// Comportamiento o Métodos
 	@Override
-    // Comportamiento o Métodos
 	public String consultarDatosUsuario(){
 		return "Nro. Paciente: "+ this.codPaciente + "Nombre: "+ getNombre()+ getApellido() +" - "+getCorreo();
 	}

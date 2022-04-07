@@ -1,6 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
-abstract class Persona extends Usuario{
+abstract class Persona{
 	
     // Estado o características
 	private int DNI;
@@ -11,8 +11,7 @@ abstract class Persona extends Usuario{
 	
     // Constructores
     public Persona(){}
-    public Persona(String correo,String username,String password,String estado,String nombre,String apellido, int DNI,int edad){
-        super(correo,username,password,estado);
+    public Persona(String nombre,String apellido, int DNI,int edad){
 		this.nombre=nombre;
         this.apellido=apellido;
 		this.DNI=DNI;
@@ -57,6 +56,4 @@ abstract class Persona extends Usuario{
 		this.fechaNacimiento=fechaNacimiento;
 	}
 	
-    // Comportamiento o Métodos
-	public abstract String consultarDatosUsuario();
 }
