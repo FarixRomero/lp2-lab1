@@ -35,22 +35,22 @@ class Administrador extends Usuario {
 		this.especialidad=especialidad2;
 	}
 	// Funciones propias de Administrador
-    void GenerarListaPacientes(){}
-    void GestionarUsuarios(){}
-    void GestionarMedicos(){}
-    void GestionarConsultorios(){}
-    void GestionarMedicamentos(){}
+    public void GenerarListaPacientes(){}
+    public void GestionarUsuarios(){}
+    public void GestionarMedicos(){}
+    public void GestionarConsultorios(){}
+    public void GestionarMedicamentos(){}
 
-    void CambiarEstadoCita(){}
-    void CrearConsultorio(){}
-    void EditarConsultorio(){}
-    void EliminarConsultorio(){}
-    void AnhadirMedicamento(){}
-    void EditarMedicamento(){}
-    void EliminarMedicamento(){}
-    void GestionarEspecialidad(){}
-    void VisualizarCitas(){}
-    void GestionarHorariosMedicos(){}
+    public void CambiarEstadoCita(){}
+    public void CrearConsultorio(){}
+    public void EditarConsultorio(){}
+    public void EliminarConsultorio(){}
+    public void AnhadirMedicamento(){}
+    public void EditarMedicamento(){}
+    public void EliminarMedicamento(){}
+    public void GestionarEspecialidad(){}
+    public void VisualizarCitas(){}
+    public void GestionarHorariosMedicos(){}
 
     @Override
 	public void Login(){
