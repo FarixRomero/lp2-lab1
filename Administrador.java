@@ -1,4 +1,4 @@
-public class Administrador extends Persona {
+public class Administrador extends Usuario {
     private int codigo;
     Medico RelacionMedicos[];//relación de medicos que administra
     
