@@ -25,7 +25,7 @@ public class Administrador extends Persona {
         /*codigo*/
     }
     @Override
-    public void CrearCuenta(String correo,String username,String password){	
+    public void CrearCuenta(String correo,String username,String password, Medico ListaMedicos[]){	
 	}
     @Override
 	public void Login(){
