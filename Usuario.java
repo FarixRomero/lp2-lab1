@@ -3,16 +3,16 @@ abstract class  Usuario{
     // Estado o características
     private String correo;
     private String username;
-	private String password;
-	private String estado;
+    private String password;
+    private String estado;
 	
     // Constructores
     public Usuario(){}
     public Usuario(String correo,String username,String password,String estado){
         this.correo=correo;
-		this.username=username;
-		this.password=password;
-		this.estado=estado;
+	this.username=username;
+	this.password=password;
+	this.estado=estado;
     }
     // Destructores
     public void finalize(){
@@ -34,7 +34,7 @@ abstract class  Usuario{
 	}
 	
     // Setters
-    public void setCorreo(String correo){
+       public void setCorreo(String correo){
 		this.correo=correo;
 	}
 	public void setUsername(String username){
@@ -48,5 +48,18 @@ abstract class  Usuario{
 	}
 	
     // Comportamiento o Métodos
-
+	public void CrearCuenta(String correo,String username,String password){	
+	}
+	public void Login(){
+	}
+	public void RecuperarPassword(){
+	}
+	public void ModificarDatos(){
+	}
+	public void GestionarCitas(){
+	}
+	public void CalificarMedico(){
+	}
+	public void Comentar(){
+	}
 }
