@@ -5,7 +5,6 @@ class CitaMedica {
 	private String codigo;
 	private String estado;
 	private Date fecha;
-	
 	private Medico medico;
 	private Paciente paciente;
 	
@@ -14,8 +13,8 @@ class CitaMedica {
 	public CitaMedica (String codigo, String estado, Medico medico, Paciente paciente) {
 		this.codigo = codigo;
 		this.estado = estado;
-                this.medico = medico;
-                this.paciente = paciente;
+		this.medico = medico;
+		this.paciente = paciente;
 	}
 	
 	//Setters

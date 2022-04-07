@@ -6,9 +6,10 @@ class Diagnostico{
 	
 	//Constructores
 	public Diagnostico(){};
-	public Diagnostico(String resultado, String observacion){
+	public Diagnostico(String resultado,String observacion, RecetaMedica recipe){
 		this.resultado = resultado;
 		this.observacion = observacion;
+		this.recetas=recipe;
 	}
 	
 	//Setters y getters
@@ -25,5 +26,12 @@ class Diagnostico{
 	public void setObservacion(String observacion){
 		this.observacion = observacion;
 	}
+	
+	public void setReceta(RecetaMedica recetas){
+		this.recetas=recetas;
+	}
+	public RecetaMedica getReceta(RecetaMedica recetas){
+		return this.recetas;
+	} 
 
 }

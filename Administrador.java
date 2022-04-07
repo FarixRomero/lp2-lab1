@@ -4,11 +4,14 @@ class Administrador extends Usuario {
 	private Especialidad especialidad;
 	private ArrayList <Medico> medicos;
 	
-    public Administrador(){}
+    public Administrador(){
+		medicos = new ArrayList<>();
+	}
     public Administrador(String correo,String username,String password,String estado,String nombre,String apellido, int DNI,int edad,int codAministrador,Especialidad especialidad2){
 		super(correo,username,password,estado,nombre,apellido,DNI,edad);
 		this.codAministrador=codAministrador;
 		this.especialidad=especialidad2;
+		medicos = new ArrayList<>();
     }	
     
     public int getCodigoAdministrador(){
@@ -18,7 +21,19 @@ class Administrador extends Usuario {
 	public void setCodigoAdministrador(int codAministrador){
         this.codAministrador=codAministrador;
     }
+	public ArrayList <Medico> getMedico(){
+		return medicos;
+	}
+	public void setMedico(ArrayList <Medico> medicos){
+		this.medicos = medicos;
+	}
 	
+	public Especialidad getEspecialidad(){
+		return this.especialidad;
+	}
+	public void setEspecialidad(Especialidad especialidad2){
+		this.especialidad=especialidad2;
+	}
 	// Funciones propias de Administrador
     void GenerarListaPacientes(){}
     void GestionarUsuarios(){}
