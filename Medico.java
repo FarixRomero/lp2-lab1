@@ -60,6 +60,11 @@ class Medico extends Usuario{
 	}
 	
     // Comportamiento o Métodos
+   void mostrarPerfilDoctores(){}
+   void RegistrarRecetaMedica(){}
+   void GenerarDiagnostico(){}
+	
+	
     @Override
     public String consultarDatosUsuario(){
         return "Nro. Medico: "+ this.codMedico + " Nombre: "+ getNombre()+ getApellido() +" - "+getCorreo();
