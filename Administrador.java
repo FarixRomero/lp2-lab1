@@ -49,7 +49,7 @@ class Administrador extends Usuario {
     void EditarMedicamento(){}
     void EliminarMedicamento(){}
     void GestionarEspecialidad(){}
-	
+    void VisualizarCitas(){}
     void GestionarHorariosMedicos(){}
 
     @Override
@@ -64,9 +64,8 @@ class Administrador extends Usuario {
     @Override
 	public void GestionarCitas(){
 	}
-    @Override
-	public void VisualizarCitas(){
-	}
+    
+	
     
    
 }
