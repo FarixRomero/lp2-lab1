@@ -5,16 +5,21 @@ class CitaMedica {
 	private String codigo;
 	private String estado;
 	private Date fecha;
-	private Medico medico;
+        private boolean ha_pagado;
+	
+        private Horario horario;
 	private Paciente paciente;
+        private Consultorio consultorio;
 	
 	//Constructor
 	public CitaMedica(){}
-	public CitaMedica (String codigo, String estado, Medico medico, Paciente paciente) {
+	public CitaMedica (String codigo, String estado, Horario horario, Paciente paciente, Consultorio consultorio, boolean ha_pagado) {
 		this.codigo = codigo;
 		this.estado = estado;
-		this.medico = medico;
-		this.paciente = paciente;
+                this.horario = horario;
+                this.paciente = paciente;
+                this.consultorio = consultorio;
+                this.ha_pagado = ha_pagado;
 	}
 	
 	//Setters
@@ -27,12 +32,18 @@ class CitaMedica {
 	public void setFecha (Date fecha) {
 		this.fecha = fecha;
 	}
-	public void setMedico (Medico medico) {
-		this.medico = medico;
+	public void setHorario (Horario horario) {
+		this.horario = horario;
 	}
 	public void setPaciente (Paciente paciente) {
 		this.paciente = paciente;
 	}
+        public void setConsultorio (Consultorio consultorio){
+            this.consultorio = consultorio;
+        }
+        public void setPago (boolean ha_pagado) {
+            this.ha_pagado = ha_pagado;
+        }
 	
 	//Getters
 	public String getCodigo() {
@@ -44,16 +55,23 @@ class CitaMedica {
 	public Date getFecha() {
 		return fecha;
 	}
-	public Medico getMedico () {
-		return medico;
+	public Horario getHorario () {
+		return horario;
 	}
 	public Paciente getPaciente () {
 		return paciente;
 	}
+        public Consultorio getConsultorio () {
+            return consultorio;
+        }
+        public boolean getPago () {
+            return ha_pagado;
+        }
 	
 	//Metodos
 	public String obtenerDatosCita() {
-            return "La cita de codigo: " + getCodigo() + " es del paciente: " + paciente.getNombre() + " con el medico: " + medico.getNombre();
+            return "";
+//            return "La cita de codigo: " + getCodigo() + " es del paciente: " + paciente.getNombre() + " con el medico: " + medico.getNombre();
 	}		
 	
 }
