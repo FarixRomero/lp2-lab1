@@ -11,9 +11,11 @@ class CitaMedica {
 	
 	//Constructor
 	public CitaMedica(){}
-	public CitaMedica (String codigo, String estado) {
+	public CitaMedica (String codigo, String estado, Medico medico, Paciente paciente) {
 		this.codigo = codigo;
 		this.estado = estado;
+                this.medico = medico;
+                this.paciente = paciente;
 	}
 	
 	//Setters
@@ -51,8 +53,8 @@ class CitaMedica {
 	}
 	
 	//Metodos
-	public void obtenerDatosCita() {
-		
+	public String obtenerDatosCita() {
+            return "La cita de codigo: " + getCodigo() + " es del paciente: " + paciente.getNombre() + " con el medico: " + medico.getNombre();
 	}		
 	
 }
