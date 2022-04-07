@@ -1,4 +1,4 @@
-//https://docs.oracle.com/javase/7/docs/api/java/sql/Time.html checar TIME
+//docs.oracle.com/javase/7/docs/api/java/sql/Time.html checar TIME
 import java.sql.Time;
 class Horario {
 	
@@ -22,6 +22,6 @@ class Horario {
     }
     public Time getHoraFinal(){
         return this.hora_fin;
-    }
+    }/
 
 }
