@@ -45,7 +45,7 @@ class Administrador extends Usuario {
     void CrearConsultorio(){}
     void EditarConsultorio(){}
     void EliminarConsultorio(){}
-    void AñadirMedicamento(){}
+    void AnhadirMedicamento(){}
     void EditarMedicamento(){}
     void EliminarMedicamento(){}
     void GestionarEspecialidad(){}

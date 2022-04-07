@@ -3,6 +3,7 @@ class Horario {
 	
 	// Estado o características
 	private int id_horario;
+	private String dia; 
 	private Time hora_inicio;
 	private Time hora_fin;
 	private Medico medico;

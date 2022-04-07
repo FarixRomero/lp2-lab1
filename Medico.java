@@ -7,6 +7,7 @@ class Medico extends Usuario{
     private int codMedico;
 	private Especialidad especialidad;
 	private ArrayList <Comentario> comentarios;
+	private ArrayList <Chat> chats;
     // Constructores
     public Medico(){
 		comentarios = new ArrayList<>();
@@ -73,4 +74,5 @@ class Medico extends Usuario{
 	@Override
 	public void GestionarCitas(){}
 	
+    public void ChatearPaciente(){}
 }

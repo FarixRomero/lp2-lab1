@@ -1,8 +1,10 @@
+import java.util.ArrayList;
 class Paciente extends Usuario{
 	
 	// Estado o características
 	private boolean seguro;
 	private int codPaciente;
+	private ArrayList <Chat> chats;
 	
     // Constructores
     public Paciente(){}
@@ -36,6 +38,7 @@ class Paciente extends Usuario{
 	public void Comentar(){}
 	public void VisualizarDiagnostico(){}
 	public void VisualizarAtencion(){}
+	public void ChatearMedico(){}
 	
 	// Comportamiento o Métodos
 	@Override
@@ -51,6 +54,7 @@ class Paciente extends Usuario{
 	@Override
 	public void GestionarCitas(){}
 	
+
 
 
 }
