@@ -61,9 +61,11 @@ class Medico extends Usuario{
 	}
 	
     // Comportamiento o Métodos
-   void mostrarPerfilDoctores(){}
-   void RegistrarRecetaMedica(){}
-   void GenerarDiagnostico(){}
+   public void mostrarPerfilDoctores(){}
+   public void RegistrarRecetaMedica(){}
+   public void GenerarDiagnostico(){}
+   public void VisualizarCitas(){}
+   public void ChatearPaciente(){}
 	
 	
     @Override
@@ -79,5 +81,4 @@ class Medico extends Usuario{
 	@Override
 	public void GestionarCitas(){}
 	
-    public void ChatearPaciente(){}
 }

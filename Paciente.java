@@ -43,6 +43,7 @@ class Paciente extends Usuario{
 	public void VisualizarAtencion(){}
 	public void revisarRequerimientos(){}
 	public void ChatearMedico(){}
+	public void VisualizarCitas(){}
 	
 	@Override
 	public String consultarDatosUsuario(){
@@ -56,9 +57,7 @@ class Paciente extends Usuario{
 	public void ModificarDatos(){}
 	@Override
 	public void GestionarCitas(){}
-	public void VisualizarCitas(){}
 	
-
 
 
 }
