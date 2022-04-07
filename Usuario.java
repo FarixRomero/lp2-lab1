@@ -1,4 +1,4 @@
-class Usuario extends Persona{
+abstract class Usuario extends Persona{
 	
     // Estado o características
     private String correo;
@@ -54,23 +54,9 @@ class Usuario extends Persona{
 		return " ";
 	}
 	
-	public void Login(){
-		
-	}
-	public void RecuperarPassword(){
-		
-	}
-	public void ModificarDatos(){
-		
-	}
-	public void GestionarCitas(){
-		
-	}
-	public void CalificarMedico(){
-		
-	}
-	public void Comentar(){
-		
-	}
+	public abstract void Login();
+	public abstract void RecuperarPassword();
+	public abstract void ModificarDatos();
+	public abstract void GestionarCitas();
 
 }

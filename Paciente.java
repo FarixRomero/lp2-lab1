@@ -32,9 +32,23 @@ class Paciente extends Usuario{
 		this.codPaciente=codPaciente;
 	}
 	
+	public void CalificarMedico(){}
+	public void Comentar(){}
+	
 	// Comportamiento o Métodos
 	@Override
 	public String consultarDatosUsuario(){
 		return "Nro. Paciente: "+ this.codPaciente + "Nombre: "+ getNombre()+ getApellido() +" - "+getCorreo();
 	}
+	@Override
+	public void Login(){}
+	@Override
+	public void RecuperarPassword(){}
+	@Override
+	public void ModificarDatos(){}
+	@Override
+	public void GestionarCitas(){}
+	
+
+
 }
