@@ -59,8 +59,8 @@ CREATE TABLE Medico(
 CREATE TABLE Semestre(
 	id_semestre INT AUTO_INCREMENT,
     nombre  VARCHAR(50),
-    fechaInicio DATE,
-    fechaFin DATE,
+    fecha_inicio DATE,
+    fecha_fin DATE,
     PRIMARY KEY(id_semestre)
 )ENGINE=InnoDB;
 
