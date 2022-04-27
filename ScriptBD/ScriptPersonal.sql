@@ -39,7 +39,6 @@ CREATE TABLE Administrador(
 	id_administrador INT NOT NULL AUTO_INCREMENT,
     fid_usuario INT UNIQUE,
     fid_especialidad INT UNIQUE,
-    calificacion DECIMAL(10,2),
     cant_pacientes INT,
     PRIMARY KEY(id_administrador),
     FOREIGN KEY(fid_especialidad) REFERENCES Especialidad(id_especialidad),
