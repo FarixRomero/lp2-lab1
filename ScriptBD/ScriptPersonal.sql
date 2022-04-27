@@ -20,6 +20,8 @@ CREATE TABLE  Persona(
   DNI VARCHAR(8) NULL,
   nombre VARCHAR(50) NULL,
   apellido VARCHAR(50) NULL,
+  edad INT,
+  fecha_nacimiento DATE,
   PRIMARY KEY (id_persona)
 )ENGINE = InnoDB;
 
