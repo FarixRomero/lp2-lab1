@@ -10,28 +10,28 @@ package pe.edu.pucp.clinica.gestionreceta.model;
  * @author ISAI
  */
 public class Medicamento {
-        private String codigo;
+        private int codigo;
 	private String nombre;
 	private String comentario;
 	
-	public String getCodigo(){
+	public int getCodigo(){
 		return codigo;
 	}
-	public void setCodigo(){
+	public void setCodigo(int Codigo){
 		this.codigo = codigo;
 	}
 	
 	public String getNombre(){
 		return nombre;
 	}
-	public void setNombre(){
+	public void setNombre(String nombre){
 		this.nombre = nombre;
 	}
 	
 	public String getComentario(){
 		return comentario;
 	}
-	public void setComentario(){
+	public void setComentario(String comentario){
 		this.comentario = comentario;
 	}
 }
