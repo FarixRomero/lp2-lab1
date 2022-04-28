@@ -6,15 +6,16 @@
 package pe.edu.pucp.clinica.GestionMedica.dao;
 
 import java.util.ArrayList;
+import pe.edu.pucp.clinica.gestionreceta.model.LineaRecetaMedica;
 import pe.edu.pucp.clinica.gestionreceta.model.Medicamento;
 
 /**
  *
  * @author ISAI
  */
-public interface MedicamentoDAO {
-    int insertar(Medicamento medicamento);
-    int modificar(Medicamento medicamento);
-    int eliminar(Medicamento medicamento);
-    ArrayList <Medicamento> listar();
+public interface LineaRecetaMedicaDAO {
+    int insertar(LineaRecetaMedica lineaRecetaMedica);
+    int modificar(LineaRecetaMedica lineaRecetaMedica);
+    int eliminar(LineaRecetaMedica lineaRecetaMedica);
+    ArrayList <LineaRecetaMedica> listar();
 }

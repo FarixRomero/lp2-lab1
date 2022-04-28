@@ -9,36 +9,32 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import pe.edu.pucp.clinica.GestionMedica.dao.CitaMedicaDAO;
+import pe.edu.pucp.clinica.GestionMedica.dao.HistorialClinicoDAO;
 import pe.edu.pucp.clinica.config.DBManager;
-import pe.edu.pucp.clinica.gestioncita.model.CitaMedica;
+import pe.edu.pucp.clinica.gestioncita.model.HistorialClinico;
+import pe.edu.pucp.clinica.gestionreceta.model.Medicamento;
 
 /**
  *
  * @author ISAI
  */
-public class CitaMedicaMySQL implements CitaMedicaDAO {
-    
+public class HistorialClinicoMySQL implements HistorialClinicoDAO {
+
     //Se crea la instancia
     private Connection con;
     private ResultSet rs;
     private CallableStatement cs;
     
-    //Se programan los metodos
     @Override
-    public int insertar(CitaMedica citaMedica) {
-        
+    public int insertar(HistorialClinico historialClinico) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_CITA_MEDICA(?,?,?,?,?)}");
-            cs.registerOutParameter("_id_cita", java.sql.Types.INTEGER);
-            cs.setInt("_fid_paciente", (citaMedica.getPaciente()).getIdPaciente());
-            cs.setInt("_fid_horario", citaMedica.getHorario().getId_horario());
-            cs.setInt("_fid_consultorio",citaMedica.getConsultorio().getId_consultorio());
-            cs.setDate("_fecha", new java.sql.Date(citaMedica.getFecha().getTime()));
+            cs = con.prepareCall("{call INSERTAR_HISTORIAL_CLINICO(?,?)}");
+            cs.registerOutParameter("_id_historia", java.sql.Types.INTEGER);
+            cs.setInt("_fid_paciente",historialClinico.getPaciente().getIdPaciente());
             cs.executeUpdate();
-            citaMedica.setCodigo(cs.getInt("_id_cita"));
+            historialClinico.setNroHistoria(cs.getInt("_id_historia"));
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -46,20 +42,16 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado;
-
     }
 
     @Override
-    public int modificar(CitaMedica citaMedica) {
+    public int modificar(HistorialClinico historialClinico) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_CITA_MEDICA(?,?,?,?,?)}");
-            cs.setInt("_id_cita", citaMedica.getCodigo());
-            cs.setInt("_fid_paciente", (citaMedica.getPaciente()).getIdPaciente());
-            cs.setInt("_fid_horario", citaMedica.getHorario().getId_horario());
-            cs.setInt("_fid_consultorio",citaMedica.getConsultorio().getId_consultorio());
-            cs.setDate("_fecha", new java.sql.Date(citaMedica.getFecha().getTime()));
+            cs = con.prepareCall("{call MODIFICAR_HISTORIAL_CLINICO(?,?)}");
+            cs.setInt("_id_historia", historialClinico.getNroHistoria());
+            cs.setInt("_fid_paciente",historialClinico.getPaciente().getIdPaciente());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -71,12 +63,12 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
     }
 
     @Override
-    public int eliminar(CitaMedica citaMedica) {
+    public int eliminar(HistorialClinico historialClinico) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call ELIMINAR_CITA_MEDICA(?)}");
-            cs.setInt("_id_cita", citaMedica.getCodigo());
+            cs = con.prepareCall("{call ELIMINAR_HISTORIAL_CLINICO(?)}");
+            cs.setInt("_id_historia", historialClinico.getNroHistoria());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -86,30 +78,26 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
         }
         return resultado;
     }
-    
+
     @Override
-    public ArrayList<CitaMedica> listar() {
-        ArrayList<CitaMedica> citaMedica= new ArrayList<>();
+    public ArrayList<HistorialClinico> listar() {
+        ArrayList<HistorialClinico> historialClinico = new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call LISTAR_MEDICAMENTOS_TODOS()}");
             rs = cs.executeQuery();
             while(rs.next()){
-                CitaMedica cm = new CitaMedica();
-                cm.setCodigo(rs.getInt("id_cita"));
-                cm.getPaciente().setIdPaciente(rs.getInt("fid_paciente"));
-                cm.getHorario().setId_horario(rs.getInt("fid_horario"));
-                cm.getConsultorio().setId_consultorio(rs.getInt("fid_consultorio"));
-                cm.setFecha(rs.getDate("fecha"));
-                citaMedica.add(cm);
+                HistorialClinico hc = new HistorialClinico();
+                hc.setNroHistoria(rs.getInt("id_historia"));
+                hc.getPaciente().setIdPaciente(rs.getInt("fid_paciente"));
+                historialClinico.add(hc);
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
-        return citaMedica;
+        return historialClinico;
     }
-}   
-   
-   
+    
+}
