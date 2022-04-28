@@ -27,7 +27,7 @@ public class MedicamentoMySQL implements MedicamentoDAO{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_CITA_MEDICA(?,?,?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_MEDICAMENTO(?,?,?)}");
             cs.registerOutParameter("_id_medicamento", java.sql.Types.INTEGER);
             cs.setString("_codigo", (medicamento.getComentario()));
             cs.setString("_nombre", (medicamento.getNombre()));

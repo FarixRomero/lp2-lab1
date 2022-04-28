@@ -2,7 +2,10 @@ package pe.edu.pucp.clinica.main;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import pe.edu.pucp.clinica.GestionMedica.dao.MedicamentoDAO;
+import pe.edu.pucp.clinica.GestionMedica.mysql.MedicamentoMySQL;
 import pe.edu.pucp.clinica.gestioncita.model.Paciente;
+import pe.edu.pucp.clinica.gestionreceta.model.Medicamento;
 import pe.edu.pucp.clinica.personal.model.Administrador;
 import pe.edu.pucp.clinica.personal.model.Especialidad;
 import pe.edu.pucp.clinica.personal.model.Medico;
@@ -31,5 +34,21 @@ public class Principal {
                 " - " + med1.getEspecialidad().getNombre());
         System.out.println("Paciente: " + pac1.getNombre() + " "+pac1.getApellido());
         System.out.println("Administrador: " + adm1.getNombre() + " "+adm1.getApellido());
+        
+        //probamos el ingreso de medicamentos
+        System.out.println("Hola");
+        Medicamento medicamento1 = new Medicamento("Paracetamol","Sirve para todo basicamente");
+        System.out.println("Hola");
+        System.out.println("Hola");
+        System.out.println("Medicamento: " + medicamento1.getNombre()+" - "+ medicamento1.getComentario());
+        MedicamentoDAO medicamento1DAO = new MedicamentoMySQL();
+        int resultado = medicamento1DAO.insertar(medicamento1);
+        if(resultado ==1){
+            System.out.println("SE ha ingresado un medicamento de manera correcta");
+        }
+        else{
+            System.out.println("Error al registrar el medicamento");
+        }
+        System.out.println("Hola");
     }
 }
