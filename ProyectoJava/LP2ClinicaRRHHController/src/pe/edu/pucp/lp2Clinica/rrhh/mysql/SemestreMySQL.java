@@ -2,6 +2,11 @@
 
 package pe.edu.pucp.lp2Clinica.rrhh.mysql;
 
+import java.beans.Statement;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.clinica.organizacion.model.Semestre;
 import pe.edu.pucp.lp2Clinica.rrhh.dao.SemestreDAO;
@@ -12,19 +17,20 @@ import pe.edu.pucp.lp2Clinica.rrhh.dao.SemestreDAO;
     20180214
  */
 public class SemestreMySQL implements SemestreDAO{
-
+    private Connection con;
+    private Statement st;
+    private ResultSet rs;
+    private PreparedStatement ps;
+    private CallableStatement cs;
     @Override
     public ArrayList<Semestre> listarTodos() {
         ArrayList<Semestre> semestres = new ArrayList<>();
         try{
             
         }catch(Exception ex){
-            
+            System.out.println(ex.getMessage());
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return semestres;
     }
@@ -35,12 +41,9 @@ public class SemestreMySQL implements SemestreDAO{
     try{
             
         }catch(Exception ex){
-            
+            System.out.println(ex.getMessage());
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado; 
     }
@@ -51,12 +54,9 @@ public class SemestreMySQL implements SemestreDAO{
     try{
             
         }catch(Exception ex){
-            
+           System.out.println(ex.getMessage()); 
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+           try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado; 
     }
@@ -67,12 +67,9 @@ public class SemestreMySQL implements SemestreDAO{
     try{
             
         }catch(Exception ex){
-            
+            System.out.println(ex.getMessage());
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+           try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado; 
     }

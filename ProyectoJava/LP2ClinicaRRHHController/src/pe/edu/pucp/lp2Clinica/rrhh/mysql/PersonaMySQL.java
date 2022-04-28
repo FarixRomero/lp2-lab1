@@ -8,23 +8,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import pe.edu.pucp.clinica.organizacion.model.Consultorio;
-import pe.edu.pucp.lp2Clinica.rrhh.dao.ConsultorioDAO;
+import pe.edu.pucp.clinica.organizacion.model.Semestre;
+import pe.edu.pucp.lp2Clinica.rrhh.dao.PersonaDAO;
 
 /**
  *
  * @author Angie Centeno Cáceres
     20180214
  */
-public class ConsultorioMySQL implements ConsultorioDAO{
-     private Connection con;
+public class PersonaMySQL implements PersonaDAO{
+   private Connection con;
     private Statement st;
     private ResultSet rs;
     private PreparedStatement ps;
     private CallableStatement cs;
     @Override
-    public ArrayList<Consultorio> listarTodas() {
-         ArrayList<Consultorio> consultorios = new ArrayList<>();
+    public ArrayList<Semestre> listarTodos() {
+        ArrayList<Semestre> semestres = new ArrayList<>();
         try{
             
         }catch(Exception ex){
@@ -32,12 +32,12 @@ public class ConsultorioMySQL implements ConsultorioDAO{
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
-        return consultorios;
+        return semestres;
     }
 
     @Override
-    public int insertar(Consultorio Consult) {
-    int resultado=0;
+    public int insertar(Semestre Sem) {
+        int resultado=0;
     try{
             
         }catch(Exception ex){
@@ -45,25 +45,25 @@ public class ConsultorioMySQL implements ConsultorioDAO{
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
-        return resultado;     
+        return resultado; 
     }
 
     @Override
-    public int modificar(Consultorio Consult) {
-       int resultado=0;
+    public int modificar(Semestre Sem) {
+        int resultado=0;
     try{
             
         }catch(Exception ex){
            System.out.println(ex.getMessage()); 
         }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+           try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado; 
     }
 
     @Override
-    public int eliminar(Consultorio Consult) {
-       int resultado=0;
+    public int eliminar(Semestre Sem) {
+        int resultado=0;
     try{
             
         }catch(Exception ex){
@@ -72,6 +72,5 @@ public class ConsultorioMySQL implements ConsultorioDAO{
            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado; 
-    }
-
+    } 
 }

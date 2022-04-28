@@ -28,12 +28,9 @@ public class AdministradorMySQL  implements AdministradorDAO{
         try{
             
         }catch(Exception ex){
-            
+            System.out.println(ex.getMessage());
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return administradores;
     }
@@ -44,12 +41,9 @@ public class AdministradorMySQL  implements AdministradorDAO{
         try{
             
         }catch(Exception ex){
-            
+          System.out.println(ex.getMessage());  
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado;
     }
@@ -60,12 +54,9 @@ public class AdministradorMySQL  implements AdministradorDAO{
         try{
             
         }catch(Exception ex){
-            
+           System.out.println(ex.getMessage()); 
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado;
     }
@@ -76,12 +67,9 @@ public class AdministradorMySQL  implements AdministradorDAO{
     try{
             
         }catch(Exception ex){
-            
+           System.out.println(ex.getMessage()); 
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado;     
     }

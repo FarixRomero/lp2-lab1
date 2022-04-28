@@ -2,6 +2,11 @@
 
 package pe.edu.pucp.lp2Clinica.rrhh.mysql;
 
+import java.beans.Statement;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.clinica.organizacion.model.Horario;
 import pe.edu.pucp.lp2Clinica.rrhh.dao.HorarioDAO;
@@ -12,18 +17,20 @@ import pe.edu.pucp.lp2Clinica.rrhh.dao.HorarioDAO;
     20180214
  */
 public class HorarioMySQL implements HorarioDAO{
-   @Override
+    private Connection con;
+    private Statement st;
+    private ResultSet rs;
+    private PreparedStatement ps;
+    private CallableStatement cs;
+    @Override
     public ArrayList<Horario> listarTodas() {
         ArrayList<Horario> horarios = new ArrayList<>();
         try{
             
         }catch(Exception ex){
-            
+          System.out.println(ex.getMessage());  
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+           try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return horarios;
     }
@@ -34,12 +41,9 @@ public class HorarioMySQL implements HorarioDAO{
     try{
             
         }catch(Exception ex){
-            
+            System.out.println(ex.getMessage());
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+           try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado;     
     }
@@ -50,12 +54,9 @@ public class HorarioMySQL implements HorarioDAO{
     try{
             
         }catch(Exception ex){
-            
+            System.out.println(ex.getMessage());
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado; 
     }
@@ -66,12 +67,9 @@ public class HorarioMySQL implements HorarioDAO{
     try{
             
         }catch(Exception ex){
-            
+            System.out.println(ex.getMessage());
         }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado; 
     }
