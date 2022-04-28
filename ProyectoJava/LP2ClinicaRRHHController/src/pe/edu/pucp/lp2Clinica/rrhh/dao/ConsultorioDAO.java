@@ -16,5 +16,5 @@ public interface ConsultorioDAO {
     ArrayList<Consultorio> listarTodas();
     int insertar(Consultorio Consult);
     int modificar(Consultorio Consult);
-    int eliminar(Consultorio Consult);
+    int eliminar(int id_consultorio);
 }

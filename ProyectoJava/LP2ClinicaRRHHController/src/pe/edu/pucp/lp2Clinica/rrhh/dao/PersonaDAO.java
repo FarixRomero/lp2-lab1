@@ -16,5 +16,5 @@ public interface PersonaDAO {
     ArrayList<Persona> listarTodas();
     int insertar(Persona Per);
     int modificar(Persona Per);
-    int eliminar(Persona Per);
+    int eliminar(int id_persona);
 }

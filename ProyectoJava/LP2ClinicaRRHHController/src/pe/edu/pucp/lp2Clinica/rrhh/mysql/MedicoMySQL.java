@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import pe.edu.pucp.clinica.config.DBManager;
 import pe.edu.pucp.clinica.personal.model.Medico;
 import pe.edu.pucp.lp2Clinica.rrhh.dao.MedicoDAO;
 
@@ -26,7 +27,7 @@ public class MedicoMySQL implements MedicoDAO{
     public ArrayList<Medico> listarTodos() {
         ArrayList<Medico> medicos = new ArrayList<>();
         try{
-            
+         con = DBManager.getInstance().getConnection();   
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -39,7 +40,7 @@ public class MedicoMySQL implements MedicoDAO{
     public int insertar(Medico Med) {
     int resultado=0;
     try{
-            
+        con = DBManager.getInstance().getConnection();   
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -52,7 +53,7 @@ public class MedicoMySQL implements MedicoDAO{
     public int modificar(Medico Med) {
     int resultado=0;
     try{
-            
+          con = DBManager.getInstance().getConnection();  
         }catch(Exception ex){
            System.out.println(ex.getMessage()); 
         }finally{
@@ -65,7 +66,7 @@ public class MedicoMySQL implements MedicoDAO{
     public int eliminar(Medico Med) {
        int resultado=0;
     try{
-            
+         con = DBManager.getInstance().getConnection();   
         }catch(Exception ex){
            System.out.println(ex.getMessage()); 
         }finally{

@@ -14,6 +14,6 @@ public interface AdministradorDAO {
     ArrayList<Administrador> listarTodas();
     int insertar(Administrador Admin);
     int modificar(Administrador Admin);
-    int eliminar(Administrador Admin);
+    int eliminar(int id_administrador);
     
 }

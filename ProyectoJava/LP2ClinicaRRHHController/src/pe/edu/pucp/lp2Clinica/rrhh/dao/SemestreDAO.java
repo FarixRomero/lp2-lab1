@@ -16,5 +16,5 @@ public interface SemestreDAO {
      ArrayList<Semestre> listarTodos();
     int insertar(Semestre Sem);
     int modificar(Semestre Sem);
-    int eliminar(Semestre Sem);
+    int eliminar(int id_semestre);
 }

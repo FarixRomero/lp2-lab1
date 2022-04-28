@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import pe.edu.pucp.clinica.config.DBManager;
 import pe.edu.pucp.clinica.personal.model.Administrador;
 import pe.edu.pucp.lp2Clinica.rrhh.dao.AdministradorDAO;
 
@@ -26,7 +27,7 @@ public class AdministradorMySQL  implements AdministradorDAO{
     public ArrayList<Administrador> listarTodas() {
         ArrayList<Administrador> administradores = new ArrayList<>();
         try{
-            
+         con = DBManager.getInstance().getConnection();   
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -39,7 +40,7 @@ public class AdministradorMySQL  implements AdministradorDAO{
     public int insertar(Administrador Admin) {
         int resultado=0;
         try{
-            
+            con = DBManager.getInstance().getConnection();
         }catch(Exception ex){
           System.out.println(ex.getMessage());  
         }finally{
@@ -49,10 +50,10 @@ public class AdministradorMySQL  implements AdministradorDAO{
     }
 
     @Override
-    public int modificar(Administrador Admin) {
+    public int modificar(int Admin) {
         int resultado=0;
         try{
-            
+            con = DBManager.getInstance().getConnection();
         }catch(Exception ex){
            System.out.println(ex.getMessage()); 
         }finally{
@@ -62,10 +63,10 @@ public class AdministradorMySQL  implements AdministradorDAO{
     }
 
     @Override
-    public int eliminar(Administrador Admin) {
+    public int eliminar(int id_administrador) {
     int resultado=0;
     try{
-            
+            con = DBManager.getInstance().getConnection();
         }catch(Exception ex){
            System.out.println(ex.getMessage()); 
         }finally{

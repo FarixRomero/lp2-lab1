@@ -15,5 +15,5 @@ public interface  MedicoDAO {
     ArrayList<Medico> listarTodos();
     int insertar(Medico Med);
     int modificar(Medico Med);
-    int eliminar(Medico Med);
+    int eliminar(int id_medico);
 }

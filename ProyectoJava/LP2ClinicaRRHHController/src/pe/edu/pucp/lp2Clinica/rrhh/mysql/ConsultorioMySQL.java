@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import pe.edu.pucp.clinica.config.DBManager;
 import pe.edu.pucp.clinica.organizacion.model.Consultorio;
 import pe.edu.pucp.lp2Clinica.rrhh.dao.ConsultorioDAO;
 
@@ -26,7 +27,7 @@ public class ConsultorioMySQL implements ConsultorioDAO{
     public ArrayList<Consultorio> listarTodas() {
          ArrayList<Consultorio> consultorios = new ArrayList<>();
         try{
-            
+            con = DBManager.getInstance().getConnection();
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -39,7 +40,7 @@ public class ConsultorioMySQL implements ConsultorioDAO{
     public int insertar(Consultorio Consult) {
     int resultado=0;
     try{
-            
+          con = DBManager.getInstance().getConnection();  
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -52,7 +53,7 @@ public class ConsultorioMySQL implements ConsultorioDAO{
     public int modificar(Consultorio Consult) {
        int resultado=0;
     try{
-            
+            con = DBManager.getInstance().getConnection();
         }catch(Exception ex){
            System.out.println(ex.getMessage()); 
         }finally{
@@ -65,7 +66,7 @@ public class ConsultorioMySQL implements ConsultorioDAO{
     public int eliminar(Consultorio Consult) {
        int resultado=0;
     try{
-            
+          con = DBManager.getInstance().getConnection();  
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{

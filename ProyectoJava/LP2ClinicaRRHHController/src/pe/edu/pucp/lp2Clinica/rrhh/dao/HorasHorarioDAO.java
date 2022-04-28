@@ -5,16 +5,16 @@
  */
 package pe.edu.pucp.lp2Clinica.rrhh.dao;
 
-import java.util.ArrayList;
+
 import pe.edu.pucp.clinica.organizacion.model.Horario;
 
 /**
  *
  * @author Equipo
  */
-public interface HorarioDAO {
-    ArrayList<Horario> listarTodas();
+public interface HorasHorarioDAO {
+    
     int insertar(Horario Horario);
     int modificar(Horario Horario);
-    int eliminar(int id_horario);
+    int eliminar(int id_HorasHorario);
 }

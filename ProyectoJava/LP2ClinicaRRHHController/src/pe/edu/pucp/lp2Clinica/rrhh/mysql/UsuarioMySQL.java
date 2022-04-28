@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import pe.edu.pucp.clinica.config.DBManager;
 import pe.edu.pucp.clinica.personal.model.Usuario;
 import pe.edu.pucp.lp2Clinica.rrhh.dao.UsuarioDAO;
 
@@ -26,7 +27,7 @@ private Connection con;
     public ArrayList<Usuario> listarTodas() {
          ArrayList<Usuario> usuarios = new ArrayList<>();
         try{
-            
+        con = DBManager.getInstance().getConnection();    
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -39,7 +40,7 @@ private Connection con;
     public int insertar(Usuario User) {
         int resultado=0;
     try{
-            
+        con = DBManager.getInstance().getConnection();
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -52,7 +53,7 @@ private Connection con;
     public int modificar(Usuario User) {
     int resultado=0;
     try{
-            
+        con = DBManager.getInstance().getConnection();    
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -65,7 +66,7 @@ private Connection con;
     public int eliminar(Usuario User) {
     int resultado=0;
     try{
-            
+        con = DBManager.getInstance().getConnection();    
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{

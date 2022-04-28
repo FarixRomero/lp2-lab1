@@ -14,5 +14,5 @@ public interface  UsuarioDAO {
     ArrayList<Usuario> listarTodas();
     int insertar( Usuario User);
     int modificar( Usuario User );
-    int eliminar( Usuario User);
+    int eliminar( int id_usuario);
 }

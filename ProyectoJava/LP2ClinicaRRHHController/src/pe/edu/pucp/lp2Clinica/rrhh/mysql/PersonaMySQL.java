@@ -8,7 +8,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import pe.edu.pucp.clinica.config.DBManager;
 import pe.edu.pucp.clinica.organizacion.model.Semestre;
+import pe.edu.pucp.clinica.personal.model.Persona;
 import pe.edu.pucp.lp2Clinica.rrhh.dao.PersonaDAO;
 
 /**
@@ -23,20 +25,22 @@ public class PersonaMySQL implements PersonaDAO{
     private PreparedStatement ps;
     private CallableStatement cs;
     @Override
-    public ArrayList<Semestre> listarTodos() {
-        ArrayList<Semestre> semestres = new ArrayList<>();
+    public ArrayList<Persona> listarTodas() {
+        ArrayList<Persona> personas = new ArrayList<>();
         try{
+            con = DBManager.getInstance().getConnection();
+            cs=con.prepareCall("{call INSERTAR_}");
             
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
-        return semestres;
+        return personas;
     }
 
     @Override
-    public int insertar(Semestre Sem) {
+    public int insertar(Persona per) {
         int resultado=0;
     try{
             
@@ -49,7 +53,7 @@ public class PersonaMySQL implements PersonaDAO{
     }
 
     @Override
-    public int modificar(Semestre Sem) {
+    public int modificar(Persona per) {
         int resultado=0;
     try{
             
@@ -62,7 +66,7 @@ public class PersonaMySQL implements PersonaDAO{
     }
 
     @Override
-    public int eliminar(Semestre Sem) {
+    public int eliminar(Persona per) {
         int resultado=0;
     try{
             
@@ -73,4 +77,5 @@ public class PersonaMySQL implements PersonaDAO{
         }
         return resultado; 
     } 
+
 }
