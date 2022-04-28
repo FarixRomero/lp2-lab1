@@ -33,8 +33,8 @@ public class SemestreMySQL implements SemestreDAO{
         while(rs.next()){
                Semestre elem = new Semestre();
                
-               elem.setId_semestre(rs.getInt("_id_semestre"));
-               elem.setNombre(rs.getString("_nombre")); 
+               elem.setId_semestre(rs.getInt("id_semestre"));
+               elem.setNombre(rs.getString("nombre")); 
             // falta los dates
                semestres.add(elem);
        }
@@ -52,14 +52,6 @@ public class SemestreMySQL implements SemestreDAO{
     try{
         con = DBManager.getInstance().getConnection();
         cs = con.prepareCall("{call INSERTAR_SEMESTRE(?,?,?,?)}");
-         /*
-               id_semestre int AI PK 
-                nombre varchar(50) 
-                fecha_inicio date 
-                fecha_fin date
-                 */
-         //*******
-
         cs.registerOutParameter("_id_semestre", java.sql.Types.INTEGER);
         cs.setString("_nombre",Sem.getNombre()); 
         cs.setDate("_fecha_inicio",new java.sql.Date(Sem.getFecha_inicio().getTime()));
