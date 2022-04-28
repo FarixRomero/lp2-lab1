@@ -1,6 +1,5 @@
 package pe.edu.pucp.clinica.personal.model;
 public class Especialidad {
-    public static int i=1;
     private int id_especialidad;
     private String nombre;
     private int estado;
@@ -12,8 +11,6 @@ public class Especialidad {
         this.nombre = nombre;
         this.estado = estado;
         this.cant_medicos=cant_medicos;
-        this.id_especialidad=i;
-        i++;
     }
     
     // GETTERS Y SETTERS

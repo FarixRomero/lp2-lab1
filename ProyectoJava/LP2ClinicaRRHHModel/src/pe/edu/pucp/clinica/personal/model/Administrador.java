@@ -2,7 +2,6 @@ package pe.edu.pucp.clinica.personal.model;
 import java.util.ArrayList;
 import java.util.Date;
 public class Administrador extends Usuario{
-    public static int i=1;
     private int id_administrador;
     double calificacion;
     private Especialidad especialidad;
@@ -13,13 +12,13 @@ public class Administrador extends Usuario{
     public Administrador(){
         medicos=new ArrayList<>();
     }
-    public Administrador(int id_administrador, double calificacion, Especialidad especialidad, int cant_pacientes, String DNI, String nombre, String apellido, int edad, Date fecha_nacimiento, String email, String username, String password, int estado) {
+    public Administrador(double calificacion, Especialidad especialidad, int cant_pacientes, 
+                        String DNI, String nombre, String apellido, int edad, Date fecha_nacimiento, String email,
+                        String username, String password, int estado) {
         super(DNI, nombre, apellido, edad, fecha_nacimiento, email, username, password, estado);
-        this.id_administrador = i;
         this.calificacion = calificacion;
         this.especialidad = especialidad;
         this.cant_pacientes = cant_pacientes;
-        i++;
     }    
     
     // GETTERS Y SETTERS

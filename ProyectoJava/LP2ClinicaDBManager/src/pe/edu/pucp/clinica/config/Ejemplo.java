@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package pe.edu.pucp.lp2Clinica.config;
+package pe.edu.pucp.clinica.config;
 
 /**
  *

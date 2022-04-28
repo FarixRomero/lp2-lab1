@@ -5,6 +5,8 @@
  */
 package pe.edu.pucp.clinica.gestioncita.model;
 
+import pe.edu.pucp.clinica.gestionreceta.model.RecetaMedica;
+
 /**
  *
  * @author ISAI

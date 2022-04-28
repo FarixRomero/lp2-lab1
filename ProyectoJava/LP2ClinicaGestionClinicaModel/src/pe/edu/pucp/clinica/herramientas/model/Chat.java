@@ -1,14 +1,16 @@
 package pe.edu.pucp.clinica.herramientas.model;
 import java.sql.Time;
 import java.util.Date;
+import pe.edu.pucp.clinica.gestioncita.model.Paciente;
+import pe.edu.pucp.clinica.personal.model.Medico;
+
 public class Chat {
-    public static int i=1;
     private int id_chat;
     private String comentario;
     private Date fecha;
     private String emisor;
     private Time hora;
-    private Medicos medicos;
+    private Medico medicos;
     private Paciente paciente;
     
     // CONSTRUCTORES
@@ -19,8 +21,6 @@ public class Chat {
         this.fecha = fecha;
         this.emisor = emisor;
         this.hora = hora;
-        this.id_chat=i;
-        i++;
     }
     
     // GETTERS Y SETTERS

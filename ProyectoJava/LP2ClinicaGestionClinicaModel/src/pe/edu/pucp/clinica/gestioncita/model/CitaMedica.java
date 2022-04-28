@@ -7,6 +7,8 @@ package pe.edu.pucp.clinica.gestioncita.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import pe.edu.pucp.clinica.organizacion.model.Consultorio;
+import pe.edu.pucp.clinica.organizacion.model.Horario;
 
 /**
  *
@@ -24,7 +26,7 @@ public class CitaMedica {
 	
     //Constructor
     public CitaMedica(){}
-    public CitaMedica (String codigo, String estado, Horario horario, Paciente paciente, Consultorio consultorio, boolean ha_pagado) {
+    public CitaMedica (int codigo, EstadoCita estado, Horario horario, Paciente paciente, Consultorio consultorio, boolean ha_pagado) {
 	this.codigo = codigo;
 	this.estado = estado;
         this.horario = horario;
@@ -34,10 +36,10 @@ public class CitaMedica {
     }
 	
     //Setters
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
 	this.codigo = codigo;
     }
-    public void setEstado(String estado) {
+    public void setEstado(EstadoCita estado) {
     	this.estado = estado;
     }
     public void setFecha (Date fecha) {
@@ -57,10 +59,10 @@ public class CitaMedica {
     }
 	
     //Getters
-    public String getCodigo() {
+    public int getCodigo() {
 	return codigo;
     }
-    public String getEstado() {
+    public EstadoCita getEstado() {
 	return estado;
     }
     public Date getFecha() {

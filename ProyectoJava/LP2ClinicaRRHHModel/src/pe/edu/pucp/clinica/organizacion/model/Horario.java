@@ -1,18 +1,16 @@
 package pe.edu.pucp.clinica.organizacion.model;
 import java.sql.Time;
+import pe.edu.pucp.clinica.personal.model.Medico;
+
 public class Horario {
-    public static int i=1;
     private int id_horario;
     private String dia;
-    private Time hora_inicio;
-    private Time hora_fin;
+    private HorasHorario id_horasHorario;
+    private Semestre id_semestre;
+    private Medico id_medico;
 
-    public Horario(String dia, Time hora_inicio, Time hora_fin) {
-        this.id_horario = i;
+    public Horario(String dia) {
         this.dia = dia;
-        this.hora_inicio = hora_inicio;
-        this.hora_fin = hora_fin;
-        i++;
     }
 
     public int getId_horario() {
@@ -31,20 +29,30 @@ public class Horario {
         this.dia = dia;
     }
 
-    public Time getHora_inicio() {
-        return hora_inicio;
+    public HorasHorario getId_horasHorario() {
+        return id_horasHorario;
     }
 
-    public void setHora_inicio(Time hora_inicio) {
-        this.hora_inicio = hora_inicio;
+    public void setId_horasHorario(HorasHorario id_horasHorario) {
+        this.id_horasHorario = id_horasHorario;
     }
 
-    public Time getHora_fin() {
-        return hora_fin;
+    public Semestre getId_semestre() {
+        return id_semestre;
     }
 
-    public void setHora_fin(Time hora_fin) {
-        this.hora_fin = hora_fin;
+    public void setId_semestre(Semestre id_semestre) {
+        this.id_semestre = id_semestre;
     }
+
+    public Medico getId_medico() {
+        return id_medico;
+    }
+
+    public void setId_medico(Medico id_medico) {
+        this.id_medico = id_medico;
+    }
+
+    
     
 }

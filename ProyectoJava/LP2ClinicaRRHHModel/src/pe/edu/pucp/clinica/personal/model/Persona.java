@@ -3,7 +3,6 @@ package pe.edu.pucp.clinica.personal.model;
 import java.util.Date;
 
 abstract public class Persona {
-    public static int i=1;
     private int id_persona;
     private String DNI;
     private String nombre;
@@ -14,13 +13,11 @@ abstract public class Persona {
     // CONSTRUCTORES
     public Persona() {}
     public Persona(String DNI, String nombre, String apellido, int edad, Date fecha_nacimiento) {
-        this.id_persona=i;
         this.DNI = DNI;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.fecha_nacimiento = fecha_nacimiento;
-        i++;
     }
     
     // GETTERS Y SETTERS

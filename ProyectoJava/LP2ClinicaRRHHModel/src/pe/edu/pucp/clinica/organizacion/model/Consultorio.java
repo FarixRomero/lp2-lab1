@@ -2,15 +2,12 @@ package pe.edu.pucp.clinica.organizacion.model;
 import java.util.ArrayList;
 
 public class Consultorio {
-    public static int i=1;
     private int id_consultorio;
     private boolean disponible;
 
     public Consultorio() {}
     
     public Consultorio(boolean disponible) {
-        this.id_consultorio = i;
-        i++;
         this.disponible = disponible;
     }
 

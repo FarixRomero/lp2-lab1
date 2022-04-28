@@ -1,8 +1,9 @@
 package pe.edu.pucp.clinica.herramientas.model;
 import java.sql.Time;
 import java.util.Date;
+import pe.edu.pucp.clinica.personal.model.Medico;
+
 public class Comentario {
-    public static int i=1;
     private int id_comentario;
     private String descripcion;
     private Date fecha_comentario;
@@ -14,8 +15,6 @@ public class Comentario {
     public Comentario(String descripcion, Date fecha_comentario) {
         this.descripcion = descripcion;
         this.fecha_comentario = fecha_comentario;
-        this.id_comentario=i;
-        i++;
     }
     
     // GETTERS Y SETTERS

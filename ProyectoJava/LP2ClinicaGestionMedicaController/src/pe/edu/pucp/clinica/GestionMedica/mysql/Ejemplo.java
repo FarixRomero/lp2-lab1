@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package pe.edu.pucp.lp2Clinica.GestionMedica.mysql;
+package pe.edu.pucp.clinica.GestionMedica.mysql;
 
 /**
  *

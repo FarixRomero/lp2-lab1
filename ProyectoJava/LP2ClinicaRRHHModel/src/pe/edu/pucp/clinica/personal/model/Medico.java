@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Medico extends Usuario {
-    public static int i=1;
     private int id_medico;
     private double calificacion;
     private int cant_pacientes;
@@ -11,13 +10,13 @@ public class Medico extends Usuario {
 
     public Medico() {}
 
-    public Medico(double calificacion, int cant_pacientes, Especialidad especialidad, String DNI, String nombre, String apellido, int edad, Date fecha_nacimiento, String email, String username, String password, int estado) {
+    public Medico(double calificacion, int cant_pacientes, Especialidad especialidad,
+            String DNI, String nombre, String apellido, int edad, Date fecha_nacimiento, 
+            String email, String username, String password, int estado) {
         super(DNI, nombre, apellido, edad, fecha_nacimiento, email, username, password, estado);
         this.calificacion = calificacion;
         this.cant_pacientes = cant_pacientes;
         this.especialidad = especialidad;
-        this.id_medico=i;
-        i++;
     }
     
     // GETTERS Y SETTERS

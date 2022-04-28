@@ -1,7 +1,6 @@
 package pe.edu.pucp.clinica.personal.model;
 import java.util.Date;
 public abstract class Usuario extends Persona {
-    public static int i=1;
     private int id_usuario;
     private String email;
     private String username;
@@ -16,8 +15,6 @@ public abstract class Usuario extends Persona {
         this.username = username;
         this.password = password;
         this.estado = estado;
-        this.id_usuario=i;
-        i++;
     }
     
     // GETTERS Y SETTERS

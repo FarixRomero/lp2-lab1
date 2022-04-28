@@ -6,7 +6,9 @@
 package pe.edu.pucp.clinica.gestioncita.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.clinica.herramientas.model.Chat;
+import pe.edu.pucp.clinica.personal.model.Usuario;
 
 /**
  *
@@ -19,11 +21,16 @@ public class Paciente extends Usuario{
 	private ArrayList <Chat> chats;
 	
     // Constructores
-    public Paciente(){}
-    public Paciente(String correo,String username,String password,String estado,String nombre,String apellido, int DNI,int edad,boolean seguro,int codPaciente){
-        super(correo,username,password,estado,nombre,apellido,DNI,edad);
-	this.seguro=seguro;
-	this.codPaciente=codPaciente;
+    public Paciente(){
+        chats = new ArrayList<>();
+    }
+    
+    public Paciente(String DNI, String nombre, String apellido, 
+            int edad, Date fecha_nacimiento,String email, String username, 
+            String password, int estado, boolean seguro){
+        super(DNI, nombre, apellido, edad, fecha_nacimiento, email, username, password, estado);
+        this.seguro = seguro;
+        chats = new ArrayList<>();
     }
     // Destructores
     public void finalize(){
@@ -59,7 +66,7 @@ public class Paciente extends Usuario{
 	
 	@Override
 	public String consultarDatosUsuario(){
-		return "Nro. Paciente: "+ this.codPaciente + "Nombre: "+ getNombre()+ getApellido() +" - "+getCorreo();
+		return "Nro. Paciente: "+ this.codPaciente + "Nombre: "+ getNombre()+ getApellido() +" - "+getEmail();
 	}
 	@Override
 	public void Login(){}
