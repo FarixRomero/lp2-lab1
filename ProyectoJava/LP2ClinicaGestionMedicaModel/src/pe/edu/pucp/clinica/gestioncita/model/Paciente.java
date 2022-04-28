@@ -63,6 +63,8 @@ public class Paciente extends Usuario{
 	public void revisarRequerimientos(){}
 	public void ChatearMedico(){}
 	public void VisualizarCitas(){}
+        public void mostrarPerfilDoctores(){};
+        public void VisualizarColaDeCitas(){};
 	
 	@Override
 	public String consultarDatosUsuario(){
