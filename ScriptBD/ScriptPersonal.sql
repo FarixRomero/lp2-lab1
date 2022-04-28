@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS HorasHorario;
 DROP TABLE IF EXISTS Medico;
 DROP TABLE IF EXISTS Administrador;
 DROP TABLE IF EXISTS Especialidad;
@@ -65,14 +66,21 @@ CREATE TABLE Semestre(
     PRIMARY KEY(id_semestre)
 )ENGINE=InnoDB;
 
+CREATE TABLE HorasHorario(
+    id_horasHorario INT AUTO_INCREMENT,
+    hora_ini TIME,
+    hora_fin TIME,
+    PRIMARY KEY(id_horasHorario)
+)ENGINE=InnoDB;
+
 CREATE TABLE Horario(
 	id_horario INT AUTO_INCREMENT,
     dia  VARCHAR(50),
-    hora_inicio DATE,
-    hora_fin DATE,
+    fid_horasHorario INT,
     fid_semestre INT,
     fid_medico INT,
     PRIMARY KEY(id_horario),
+    FOREIGN KEY(fid_horasHorario) REFERENCES HorasHorario(id_horasHorario),
     FOREIGN KEY(fid_medico) REFERENCES Medico(id_medico),
     FOREIGN KEY(fid_semestre) REFERENCES Semestre(id_semestre)
 )ENGINE=InnoDB;
