@@ -9,7 +9,7 @@ import pe.edu.pucp.clinica.personal.model.Administrador;
     20180214
  */
 public interface AdministradorDAO {
-    
+    // la dependedencia fue el problema de todo :(
     int insertar(Administrador Admin);
     int modificar(Administrador Admin);
     int eliminar(Administrador Admin);
