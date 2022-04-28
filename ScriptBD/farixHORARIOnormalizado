@@ -1,0 +1,18 @@
+CREATE TABLE HorasHorario(
+	id_horasHorario INT AUTO_INCREMENT,    
+    PRIMARY KEY(id_horasHorario),
+	hora_ini TIME,
+    hora_fin TIME
+)ENGINE=InnoDB;
+
+CREATE TABLE Horario(
+	id_horasHorario INT AUTO_INCREMENT,    
+    dia varchar(50) DEFAULT NULL,
+	fid_horasHorario int DEFAULT NULL,
+	fid_semestre int DEFAULT NULL,
+	fid_medico int DEFAULT NULL,
+    PRIMARY KEY(id_horasHorario),
+    FOREIGN KEY (fid_medico) REFERENCES Medico (id_medico),
+	FOREIGN KEY (fid_semestre) REFERENCES Semestre (id_semestre),
+	FOREIGN KEY (fid_horasHorario) REFERENCES HorasHorario (id_horasHorario),
+)ENGINE=InnoDB;
