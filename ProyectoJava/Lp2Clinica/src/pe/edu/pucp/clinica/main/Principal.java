@@ -37,7 +37,7 @@ public class Principal {
         
         //probamos el ingreso de medicamentos
         System.out.println("Hola");
-        Medicamento medicamento1 = new Medicamento("Paracetamol","Sirve para todo basicamente");
+        Medicamento medicamento1 = new Medicamento("QUIERO MORIR","DUERMEEE");
         System.out.println("Hola");
         System.out.println("Hola");
         System.out.println("Medicamento: " + medicamento1.getNombre()+" - "+ medicamento1.getComentario());

@@ -12,6 +12,7 @@ abstract public class Persona {
 
     // CONSTRUCTORES
     public Persona() {}
+    
     public Persona(String DNI, String nombre, String apellido, int edad, Date fecha_nacimiento) {
         this.DNI = DNI;
         this.nombre = nombre;

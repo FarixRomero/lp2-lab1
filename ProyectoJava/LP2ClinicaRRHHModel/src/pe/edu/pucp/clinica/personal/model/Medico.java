@@ -7,6 +7,7 @@ public class Medico extends Usuario {
     private double calificacion;
     private int cant_pacientes;
     private Especialidad especialidad;
+    private Administrador administrador;
 
     public Medico() {}
 
@@ -50,6 +51,14 @@ public class Medico extends Usuario {
 
     public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
+    }
+    
+    public Administrador getAdministrador() {
+        return administrador;
+    }
+
+    public void setAdministrador(Administrador administrador) {
+        this.administrador = administrador;
     }
 
     // Comportamiento o Métodos

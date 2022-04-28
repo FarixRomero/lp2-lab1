@@ -7,7 +7,15 @@ public class Comentario {
     private int id_comentario;
     private String descripcion;
     private Date fecha_comentario;
-    private Medico medicos;
+    private Medico medico;
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
     
     // CONSTRUCTORES
     public Comentario(){}

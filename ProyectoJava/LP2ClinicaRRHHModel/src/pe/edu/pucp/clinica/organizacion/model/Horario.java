@@ -8,7 +8,7 @@ public class Horario {
     private HorasHorario id_horasHorario;
     private Semestre id_semestre;
     private Medico id_medico;
-
+    public Horario() {};
     public Horario(String dia) {
         this.dia = dia;
     }
