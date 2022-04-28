@@ -12,7 +12,7 @@ import pe.edu.pucp.clinica.organizacion.model.Consultorio;
  *
  * @author Equipo
  */
-public interface ConsultarioDAO {
+public interface ConsultorioDAO {
     ArrayList<Consultorio> listarTodas();
     int insertar(Consultorio Consult);
     int modificar(Consultorio Consult);

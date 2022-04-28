@@ -2,29 +2,20 @@
 
 package pe.edu.pucp.lp2Clinica.rrhh.mysql;
 
-import java.beans.Statement;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
-import pe.edu.pucp.clinica.personal.model.Administrador;
-import pe.edu.pucp.lp2Clinica.rrhh.dao.AdministradorDAO;
+import pe.edu.pucp.clinica.organizacion.model.Semestre;
+import pe.edu.pucp.lp2Clinica.rrhh.dao.SemestreDAO;
 
 /**
  *
  * @author Angie Centeno Cáceres
     20180214
  */
-public class AdministradorMySQL  implements AdministradorDAO{
-    private Connection con;
-    private Statement st;
-    private ResultSet rs;
-    private PreparedStatement ps;
-    private CallableStatement cs;
+public class SemestreMySQL implements SemestreDAO{
+
     @Override
-    public ArrayList<Administrador> listarTodas() {
-        ArrayList<Administrador> administradores = new ArrayList<>();
+    public ArrayList<Semestre> listarTodos() {
+        ArrayList<Semestre> semestres = new ArrayList<>();
         try{
             
         }catch(Exception ex){
@@ -35,44 +26,12 @@ public class AdministradorMySQL  implements AdministradorDAO{
             
             }
         }
-        return administradores;
+        return semestres;
     }
 
     @Override
-    public int insertar(Administrador Admin) {
+    public int insertar(Semestre Sem) {
         int resultado=0;
-        try{
-            
-        }catch(Exception ex){
-            
-        }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
-        }
-        return resultado;
-    }
-
-    @Override
-    public int modificar(Administrador Admin) {
-        int resultado=0;
-        try{
-            
-        }catch(Exception ex){
-            
-        }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
-        }
-        return resultado;
-    }
-
-    @Override
-    public int eliminar(Administrador Admin) {
-    int resultado=0;
     try{
             
         }catch(Exception ex){
@@ -83,6 +42,39 @@ public class AdministradorMySQL  implements AdministradorDAO{
             
             }
         }
-        return resultado;     
+        return resultado; 
     }
+
+    @Override
+    public int modificar(Semestre Sem) {
+        int resultado=0;
+    try{
+            
+        }catch(Exception ex){
+            
+        }finally{
+            try{
+            }catch(Exception ex){
+            
+            }
+        }
+        return resultado; 
+    }
+
+    @Override
+    public int eliminar(Semestre Sem) {
+        int resultado=0;
+    try{
+            
+        }catch(Exception ex){
+            
+        }finally{
+            try{
+            }catch(Exception ex){
+            
+            }
+        }
+        return resultado; 
+    }
+
 }

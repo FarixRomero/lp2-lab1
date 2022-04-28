@@ -3,19 +3,18 @@
 package pe.edu.pucp.lp2Clinica.rrhh.mysql;
 
 import java.util.ArrayList;
-import pe.edu.pucp.clinica.personal.model.Medico;
-import pe.edu.pucp.lp2Clinica.rrhh.dao.MedicoDAO;
+import pe.edu.pucp.clinica.organizacion.model.Horario;
+import pe.edu.pucp.lp2Clinica.rrhh.dao.HorarioDAO;
 
 /**
  *
  * @author Angie Centeno Cáceres
     20180214
  */
-public class MedicoMySQL implements MedicoDAO{
-
-    @Override
-    public ArrayList<Medico> listarTodos() {
-        ArrayList<Medico> medicos = new ArrayList<>();
+public class HorarioMySQL implements HorarioDAO{
+   @Override
+    public ArrayList<Horario> listarTodas() {
+        ArrayList<Horario> horarios = new ArrayList<>();
         try{
             
         }catch(Exception ex){
@@ -26,11 +25,11 @@ public class MedicoMySQL implements MedicoDAO{
             
             }
         }
-        return medicos;
+        return horarios;
     }
 
     @Override
-    public int insertar(Medico Med) {
+    public int insertar(Horario Horario) {
     int resultado=0;
     try{
             
@@ -46,23 +45,7 @@ public class MedicoMySQL implements MedicoDAO{
     }
 
     @Override
-    public int modificar(Medico Med) {
-    int resultado=0;
-    try{
-            
-        }catch(Exception ex){
-            
-        }finally{
-            try{
-            }catch(Exception ex){
-            
-            }
-        }
-        return resultado; 
-    }
-
-    @Override
-    public int eliminar(Medico Med) {
+    public int modificar(Horario Horario) {
        int resultado=0;
     try{
             
@@ -77,4 +60,19 @@ public class MedicoMySQL implements MedicoDAO{
         return resultado; 
     }
 
+    @Override
+    public int eliminar(Horario Horario) {
+       int resultado=0;
+    try{
+            
+        }catch(Exception ex){
+            
+        }finally{
+            try{
+            }catch(Exception ex){
+            
+            }
+        }
+        return resultado; 
+    }
 }

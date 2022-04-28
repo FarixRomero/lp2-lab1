@@ -3,19 +3,19 @@
 package pe.edu.pucp.lp2Clinica.rrhh.mysql;
 
 import java.util.ArrayList;
-import pe.edu.pucp.clinica.personal.model.Medico;
-import pe.edu.pucp.lp2Clinica.rrhh.dao.MedicoDAO;
+import pe.edu.pucp.clinica.organizacion.model.Consultorio;
+import pe.edu.pucp.lp2Clinica.rrhh.dao.ConsultorioDAO;
 
 /**
  *
  * @author Angie Centeno Cáceres
     20180214
  */
-public class MedicoMySQL implements MedicoDAO{
+public class ConsultorioMySQL implements ConsultorioDAO{
 
     @Override
-    public ArrayList<Medico> listarTodos() {
-        ArrayList<Medico> medicos = new ArrayList<>();
+    public ArrayList<Consultorio> listarTodas() {
+         ArrayList<Consultorio> consultorios = new ArrayList<>();
         try{
             
         }catch(Exception ex){
@@ -26,11 +26,11 @@ public class MedicoMySQL implements MedicoDAO{
             
             }
         }
-        return medicos;
+        return consultorios;
     }
 
     @Override
-    public int insertar(Medico Med) {
+    public int insertar(Consultorio Consult) {
     int resultado=0;
     try{
             
@@ -46,8 +46,8 @@ public class MedicoMySQL implements MedicoDAO{
     }
 
     @Override
-    public int modificar(Medico Med) {
-    int resultado=0;
+    public int modificar(Consultorio Consult) {
+       int resultado=0;
     try{
             
         }catch(Exception ex){
@@ -62,7 +62,7 @@ public class MedicoMySQL implements MedicoDAO{
     }
 
     @Override
-    public int eliminar(Medico Med) {
+    public int eliminar(Consultorio Consult) {
        int resultado=0;
     try{
             
