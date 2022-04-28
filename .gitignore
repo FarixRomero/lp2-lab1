@@ -1,11 +1,5 @@
 
 # Package Files #
-*.jar
-*.war
-*.ear
-
-*.iml
-*.idea
 /ProyectoJava/JavaApplication13/nbproject/private/
 /ProyectoJava/LP2ClinicaRRHHController/nbproject/private/
 /ProyectoJava/LP2ClinicaGestionMedicaController/nbproject/private/
