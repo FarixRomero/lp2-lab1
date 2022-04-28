@@ -16,13 +16,11 @@ import pe.edu.pucp.clinica.personal.model.Usuario;
  */
 public class Paciente extends Usuario{
     // Estado o características
+        private int idPaciente;
 	private boolean seguro;
-	private int codPaciente;
-	private ArrayList <Chat> chats;
 	
     // Constructores
     public Paciente(){
-        chats = new ArrayList<>();
     }
     
     public Paciente(String DNI, String nombre, String apellido, 
@@ -30,7 +28,6 @@ public class Paciente extends Usuario{
             String password, int estado, boolean seguro){
         super(DNI, nombre, apellido, edad, fecha_nacimiento, email, username, password, estado);
         this.seguro = seguro;
-        chats = new ArrayList<>();
     }
     // Destructores
     public void finalize(){
@@ -38,20 +35,25 @@ public class Paciente extends Usuario{
     }
 	
     // Getters
+
+    public int getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(int idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+    
+    
     public boolean getSeguro(){
         return this.seguro;
     }
-	public int getCodPaciente(){
-		return this.codPaciente;
-	}
 
     // Setters
     public void setSeguro(boolean seguro){
         this.seguro=seguro;
     }
-	public void setCodPaciente(int codPaciente){
-		this.codPaciente=codPaciente;
-	}
+
 	
 	
 	
@@ -68,7 +70,7 @@ public class Paciente extends Usuario{
 	
 	@Override
 	public String consultarDatosUsuario(){
-		return "Nro. Paciente: "+ this.codPaciente + "Nombre: "+ getNombre()+ getApellido() +" - "+getEmail();
+		return "Nro. Paciente: "+ this.idPaciente + "Nombre: "+ getNombre()+ getApellido() +" - "+getEmail();
 	}
 	@Override
 	public void Login(){}

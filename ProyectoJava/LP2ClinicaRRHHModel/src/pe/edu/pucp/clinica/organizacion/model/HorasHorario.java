@@ -15,7 +15,8 @@ public class HorasHorario {
     private int idHorasHorario;
     private Time hora_ini;
     private Time hora_fini;
-    public HorasHorario(){};
+    
+    public HorasHorario(){}
     public HorasHorario(int idHorasHorario, Time hora_ini, Time hora_fini) {
         this.idHorasHorario = idHorasHorario;
         this.hora_ini = hora_ini;

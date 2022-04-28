@@ -13,7 +13,27 @@ public class LineaRecetaMedica {
     private int idLinea;
     private int cantidad;
     private double subtotal;
+    private RecetaMedica recetaMedica;
+    private Medicamento medicamento;
 
+    public Medicamento getMedicamento() {
+        return medicamento;
+    }
+
+    public void setMedicamento(Medicamento medicamento) {
+        this.medicamento = medicamento;
+    }
+
+    
+    public RecetaMedica getRecetaMedica() {
+        return recetaMedica;
+    }
+
+    public void setRecetaMedica(RecetaMedica recetaMedica) {
+        this.recetaMedica = recetaMedica;
+    }
+
+    
     public int getIdLinea() {
         return idLinea;
     }

@@ -38,8 +38,8 @@ CREATE TABLE Usuario(
 )ENGINE = InnoDB;
 CREATE TABLE Administrador(
 	id_administrador INT NOT NULL AUTO_INCREMENT,
-    fid_usuario INT UNIQUE,
-    fid_especialidad INT UNIQUE,
+    fid_usuario INT,
+    fid_especialidad INT,
     cant_pacientes INT,
     PRIMARY KEY(id_administrador),
     FOREIGN KEY(fid_especialidad) REFERENCES Especialidad(id_especialidad),
@@ -48,8 +48,8 @@ CREATE TABLE Administrador(
 
 CREATE TABLE Medico(
 	id_medico INT NOT NULL AUTO_INCREMENT,
-    fid_usuario INT UNIQUE,
-    fid_especialidad INT UNIQUE,
+    fid_usuario INT,
+    fid_especialidad INT,
     fid_administrador INT,
     calificacion DECIMAL(10,2),
     cant_pacientes INT,

@@ -9,33 +9,33 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import pe.edu.pucp.clinica.GestionMedica.dao.MedicamentoDAO;
+import pe.edu.pucp.clinica.GestionMedica.dao.LineaRecetaMedicaDAO;
 import pe.edu.pucp.clinica.config.DBManager;
+import pe.edu.pucp.clinica.gestionreceta.model.LineaRecetaMedica;
 import pe.edu.pucp.clinica.gestionreceta.model.Medicamento;
 
 /**
  *
  * @author ISAI
  */
-public class MedicamentoMySQL implements MedicamentoDAO{
-    
+public class LineaRecetaMedicaMySQL implements LineaRecetaMedicaDAO{
     //Se crea la instancia
     private Connection con;
     private ResultSet rs;
     private CallableStatement cs;
     
     @Override
-    public int insertar(Medicamento medicamento) {
+    public int insertar(LineaRecetaMedica lineaRecetaMedica) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_MEDICAMENTO(?,?,?)}");
-            cs.registerOutParameter("_id_medicamento", java.sql.Types.INTEGER);
-            cs.setString("_codigo", (medicamento.getComentario()));
-            cs.setString("_nombre", (medicamento.getNombre()));
+            cs = con.prepareCall("{call INSERTAR_LINEA_RECETA_MEDICA(?,?,?,?)}");
+            cs.registerOutParameter("_id_lineaRecetaMedica", java.sql.Types.INTEGER);
+            cs.setInt("_fid_recetaMedica",lineaRecetaMedica.getRecetaMedica().getIdReceta());
+            cs.setInt("_fid_medicamento",lineaRecetaMedica.getMedicamento().getCodigo());
+            cs.setInt("_cantidad",lineaRecetaMedica.getCantidad());
             cs.executeUpdate();
-            System.out.println("ID antes: " + cs.getInt("_id_medicamento"));
-            medicamento.setCodigo(cs.getInt("_id_medicamento"));
+            lineaRecetaMedica.setIdLinea(cs.getInt("_id_lineaRecetaMedica"));
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -46,14 +46,15 @@ public class MedicamentoMySQL implements MedicamentoDAO{
     }
 
     @Override
-    public int modificar(Medicamento medicamento) {
+    public int modificar(LineaRecetaMedica lineaRecetaMedica) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_MEDICAMENTO(?,?,?)}");
-            cs.setInt("_id_medicamento",medicamento.getCodigo());
-            cs.setString("_nombre",medicamento.getNombre());
-            cs.setString("_codigo", medicamento.getComentario());
+            cs = con.prepareCall("{call MODIFICAR_LINEA_RECETA_MEDICA(?,?,?,?)}");
+            cs.setInt("_id_lineaRecetaMedica", lineaRecetaMedica.getIdLinea());
+            cs.setInt("_fid_recetaMedica",lineaRecetaMedica.getRecetaMedica().getIdReceta());
+            cs.setInt("_fid_medicamento",lineaRecetaMedica.getMedicamento().getCodigo());
+            cs.setInt("_cantidad",lineaRecetaMedica.getCantidad());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -65,12 +66,12 @@ public class MedicamentoMySQL implements MedicamentoDAO{
     }
 
     @Override
-    public int eliminar(Medicamento medicamento) {
+    public int eliminar(LineaRecetaMedica lineaRecetaMedica) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call ELIMINAR_MEDICAMENTO(?)}");
-            cs.setInt("_id_medicamento", medicamento.getCodigo());
+            cs = con.prepareCall("{call ELIMINAR_LINEA_RECETA_MEDICA(?)}");
+            cs.setInt("_id_lineaRecetaMedica", lineaRecetaMedica.getIdLinea());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -82,24 +83,25 @@ public class MedicamentoMySQL implements MedicamentoDAO{
     }
 
     @Override
-    public ArrayList<Medicamento> listar() {
-        ArrayList<Medicamento> medicamentos= new ArrayList<>();
+    public ArrayList<LineaRecetaMedica> listar() {
+        ArrayList<LineaRecetaMedica> lineaRecetaMedica= new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_MEDICAMENTOS_TODOS()}");
+            cs = con.prepareCall("{call LISTAR_LINEAS_RECETA_MEDICA()}");
             rs = cs.executeQuery();
             while(rs.next()){
-                Medicamento med = new Medicamento();
-                med.setCodigo(rs.getInt("id_medicamento"));
-                med.setNombre(rs.getString("nombre"));
-                med.setComentario(rs.getString("codigo"));
-                medicamentos.add(med);
+                LineaRecetaMedica lrm = new LineaRecetaMedica();
+                lrm.setIdLinea(rs.getInt("id_lineaRecetaMedica"));
+                lrm.getRecetaMedica().setIdReceta(rs.getInt("fid_recetaMedica"));
+                lrm.getMedicamento().setCodigo(rs.getInt("fid_medicamento"));
+                lrm.setCantidad(rs.getInt("cantidad"));
+                lineaRecetaMedica.add(lrm);
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
-        return medicamentos;
+        return lineaRecetaMedica;
     }
 }

@@ -13,7 +13,8 @@ public class Medicamento {
         private int codigo; //id_medicamento;
 	private String nombre; //nombre;
 	private String comentario; //codigo;
-
+        
+    public Medicamento(){};
     public Medicamento(String nombre, String comentario) {
         this.nombre = nombre;
         this.comentario = comentario;
@@ -22,7 +23,7 @@ public class Medicamento {
 	public int getCodigo(){
 		return codigo;
 	}
-	public void setCodigo(int Codigo){
+	public void setCodigo(int codigo){
 		this.codigo = codigo;
 	}
 	

@@ -13,19 +13,44 @@ import pe.edu.pucp.clinica.gestionreceta.model.RecetaMedica;
  */
 public class Diagnostico {
     //Atributos
+        private int codigo;
 	private String resultado;
 	private String observacion;
-	private RecetaMedica recetas;
+        private CitaMedica citaMedica;
+        private HistorialClinico historialClinico;
 	
 	//Constructores
 	public Diagnostico(){};
-	public Diagnostico(String resultado,String observacion, RecetaMedica recipe){
+	public Diagnostico(String resultado,String observacion){
 		this.resultado = resultado;
 		this.observacion = observacion;
-		this.recetas=recipe;
 	}
-	
+
+    public CitaMedica getCitaMedica() {
+        return citaMedica;
+    }
+
+    public void setCitaMedica(CitaMedica citaMedica) {
+        this.citaMedica = citaMedica;
+    }
+
+    public HistorialClinico getHistorialClinico() {
+        return historialClinico;
+    }
+
+    public void setHistorialClinico(HistorialClinico historialClinico) {
+        this.historialClinico = historialClinico;
+    }
+	     
 	//Setters y getters
+        public int getCodigo() {
+            return codigo;
+        }
+
+        public void setCodigo(int codigo) {
+            this.codigo = codigo;
+        }
+        
 	public String getResultado(){
 		return resultado;
 	}
@@ -38,12 +63,5 @@ public class Diagnostico {
 	}
 	public void setObservacion(String observacion){
 		this.observacion = observacion;
-	}
-	
-	public void setReceta(RecetaMedica recetas){
-		this.recetas=recetas;
-	}
-	public RecetaMedica getReceta(RecetaMedica recetas){
-		return this.recetas;
 	}
 }
