@@ -48,8 +48,8 @@ CREATE TABLE Administrador(
 
 CREATE TABLE Medico(
 	id_medico INT NOT NULL AUTO_INCREMENT,
-    fid_usuario INT UNIQUE,
-    fid_especialidad INT UNIQUE,
+    fid_usuario INT,
+    fid_especialidad INT,
     fid_administrador INT,
     calificacion DECIMAL(10,2),
     cant_pacientes INT,
