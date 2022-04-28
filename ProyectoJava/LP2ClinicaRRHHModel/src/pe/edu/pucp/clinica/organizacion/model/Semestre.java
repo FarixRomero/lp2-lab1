@@ -5,7 +5,8 @@ public class Semestre {
     private String nombre;
     private Date fecha_inicio;
     private Date fecha_fin;
-
+    
+    public Semestre(){}
     public Semestre(int id_semestre, String nombre, Date fecha_inicio, Date fecha_fin) {
         this.id_semestre = id_semestre;
         this.nombre = nombre;
