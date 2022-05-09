@@ -9,12 +9,14 @@ public abstract class Usuario extends Persona {
 
     // CONSTRUCTORES
     public Usuario() {}
-    public Usuario(String DNI, String nombre, String apellido, int edad, Date fecha_nacimiento,String email, String username, String password, int estado) {
-        super(DNI,nombre,apellido,edad,fecha_nacimiento);
+    public Usuario(String DNI, String nombre, String apellido, 
+            Date fecha_nacimiento,String email, String username,
+            String password, int estado) {
+        super(DNI,nombre,apellido,fecha_nacimiento);
         this.email = email;
         this.username = username;
         this.password = password;
-        this.estado = estado;
+        this.estado = estado;           
     }
     
     // GETTERS Y SETTERS

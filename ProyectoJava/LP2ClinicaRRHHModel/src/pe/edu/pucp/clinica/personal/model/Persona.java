@@ -7,17 +7,15 @@ abstract public class Persona {
     private String DNI;
     private String nombre;
     private String apellido;
-    private int edad;
     private Date fecha_nacimiento;
 
     // CONSTRUCTORES
     public Persona() {}
     
-    public Persona(String DNI, String nombre, String apellido, int edad, Date fecha_nacimiento) {
+    public Persona(String DNI, String nombre, String apellido,  Date fecha_nacimiento) {
         this.DNI = DNI;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.edad = edad;
         this.fecha_nacimiento = fecha_nacimiento;
     }
     
@@ -53,14 +51,6 @@ abstract public class Persona {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
     }
 
     public Date getFecha_nacimiento() {

@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Date;
 public class Administrador extends Usuario{
     private int id_administrador;
-    double calificacion;
     private Especialidad especialidad;
     private ArrayList<Medico> medicos;
     private int cant_pacientes;
@@ -12,11 +11,10 @@ public class Administrador extends Usuario{
     public Administrador(){
         medicos=new ArrayList<>();
     }
-    public Administrador(double calificacion, Especialidad especialidad, int cant_pacientes, 
-                        String DNI, String nombre, String apellido, int edad, Date fecha_nacimiento, String email,
+    public Administrador( Especialidad especialidad, int cant_pacientes, 
+                        String DNI, String nombre, String apellido,  Date fecha_nacimiento, String email,
                         String username, String password, int estado) {
-        super(DNI, nombre, apellido, edad, fecha_nacimiento, email, username, password, estado);
-        this.calificacion = calificacion;
+        super(DNI, nombre, apellido,  fecha_nacimiento, email, username, password, estado);
         this.especialidad = especialidad;
         this.cant_pacientes = cant_pacientes;
     }    
@@ -28,14 +26,6 @@ public class Administrador extends Usuario{
 
     public void setId_administrador(int id_administrador) {
         this.id_administrador = id_administrador;
-    }
-
-    public double getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(double calificacion) {
-        this.calificacion = calificacion;
     }
 
     public Especialidad getEspecialidad() {
