@@ -55,6 +55,34 @@ public class MedicoMySQL implements MedicoDAO{
     int resultado=0;
     try{
         con = DBManager.getInstance().getConnection();
+        cs = con.prepareCall("{call INSERTAR_PERSONA(?,?,?,?)}");
+        /*
+        id_persona int AI PK 
+        DNI varchar(8) 
+        nombre varchar(50) 
+        apellido varchar(50)
+        */
+         //*******
+            cs.registerOutParameter("_id_persona", java.sql.Types.INTEGER);
+            cs.setString("_DNI", Med.getDNI());
+            cs.setString("_nombre", Med.getNombre());
+            cs.setString("_apellido", Med.getApellido());
+        //*******
+        cs.executeUpdate();
+        Med.setId_persona(cs.getInt("_id_persona"));
+
+        cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?,?,?)}");
+        //*******
+        cs.registerOutParameter("_id_usuario", java.sql.Types.INTEGER);
+        cs.setInt("_fid_persona",Med.getId_persona());
+        cs.setString("_email",Med.getEmail());
+        cs.setString("_username",Med.getUsername());
+        cs.setString("_password",Med.getPassword());
+        cs.setInt("_estado",Med.getEstado());
+        //*******
+        cs.executeUpdate();
+        Med.setId_usuario(cs.getInt("_id_usuario"));
+        
         cs = con.prepareCall("{call INSERTAR_MEDICO(?,?,?,?,?,?)}");
         /**id_medico int AI PK 
         fid_usuario int 

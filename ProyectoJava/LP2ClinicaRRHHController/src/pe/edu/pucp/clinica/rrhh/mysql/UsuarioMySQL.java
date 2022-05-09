@@ -18,7 +18,7 @@ import pe.edu.pucp.clinica.rrhh.dao.UsuarioDAO;
     20180214
  */
 public class UsuarioMySQL implements UsuarioDAO{
-private Connection con;
+    private Connection con;
     private Statement st;
     private ResultSet rs;
     private PreparedStatement ps;
