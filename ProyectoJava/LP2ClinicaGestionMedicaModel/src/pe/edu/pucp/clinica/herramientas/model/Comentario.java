@@ -9,17 +9,8 @@ public class Comentario {
     private Date fecha_comentario;
     private Medico medico;
 
-    public Medico getMedico() {
-        return medico;
-    }
-
-    public void setMedico(Medico medico) {
-        this.medico = medico;
-    }
-    
     // CONSTRUCTORES
     public Comentario(){}
-
     public Comentario(String descripcion, Date fecha_comentario) {
         this.descripcion = descripcion;
         this.fecha_comentario = fecha_comentario;
@@ -49,6 +40,13 @@ public class Comentario {
     public void setFecha_comentario(Date fecha_comentario) {
         this.fecha_comentario = fecha_comentario;
     }
-    
 
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+    
 }

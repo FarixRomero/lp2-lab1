@@ -58,7 +58,7 @@ public class PacienteMySQL implements PacienteDAO{
             cs.setBoolean("_seguro",paciente.getSeguro());
             cs.setInt("_fid_usuario",paciente.getId_usuario());
             cs.executeUpdate();
-            paciente.setIdPaciente(cs.getInt("_id_paciente"));
+            paciente.setId_paciente(cs.getInt("_id_paciente"));
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -74,7 +74,7 @@ public class PacienteMySQL implements PacienteDAO{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_PACIENTE(?,?,?)}");
-            cs.setInt("_id_paciente", paciente.getIdPaciente());
+            cs.setInt("_id_paciente", paciente.getId_paciente());
             cs.setBoolean("_seguro",paciente.getSeguro());
             cs.setInt("_fid_usuario",paciente.getId_usuario());
             cs.executeUpdate();
@@ -93,7 +93,7 @@ public class PacienteMySQL implements PacienteDAO{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call ELIMINAR_PACIENTE(?)}");
-            cs.setInt("_id_paciente", paciente.getIdPaciente());
+            cs.setInt("_id_paciente", paciente.getId_paciente());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -113,7 +113,7 @@ public class PacienteMySQL implements PacienteDAO{
             rs = cs.executeQuery();
             while(rs.next()){
                 Paciente p = new Paciente();
-                p.setIdPaciente(rs.getInt("id_paciente"));
+                p.setId_paciente(rs.getInt("id_paciente"));
                 p.setSeguro(rs.getBoolean("seguro"));
                 p.setId_usuario(rs.getInt("fid_usuario"));
                 pacientes.add(p);
