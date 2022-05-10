@@ -23,12 +23,12 @@ public class Paciente extends Usuario{
     public Paciente(){
     }
     
-    public Paciente(String DNI, String nombre, String apellido, 
-            int edad, Date fecha_nacimiento,String email, String username, 
-            String password, int estado, boolean seguro){
-        super(DNI, nombre, apellido, edad, fecha_nacimiento, email, username, password, estado);
-        this.seguro = seguro;
-    }
+//    public Paciente(String DNI, String nombre, String apellido, 
+//            int edad, Date fecha_nacimiento,String email, String username, 
+//            String password, int estado, boolean seguro){
+//        super(DNI, nombre, apellido, edad, fecha_nacimiento, email, username, password, estado);
+//        this.seguro = seguro;
+//    }
     // Destructores
     public void finalize(){
         System.out.println("El objeto se esta destruyendo");
