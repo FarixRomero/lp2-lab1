@@ -38,7 +38,7 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
             cs.setInt("_fid_consultorio",citaMedica.getConsultorio().getId_consultorio());
             cs.setDate("_fecha", new java.sql.Date(citaMedica.getFecha().getTime()));
             cs.executeUpdate();
-            citaMedica.setCodigo(cs.getInt("_id_cita"));
+            citaMedica.setId_cita(cs.getInt("_id_cita"));
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -55,7 +55,7 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_CITA_MEDICA(?,?,?,?,?)}");
-            cs.setInt("_id_cita", citaMedica.getCodigo());
+            cs.setInt("_id_cita", citaMedica.getId_cita());
             cs.setInt("_fid_paciente", (citaMedica.getPaciente()).getIdPaciente());
             cs.setInt("_fid_horario", citaMedica.getHorario().getId_horario());
             cs.setInt("_fid_consultorio",citaMedica.getConsultorio().getId_consultorio());
@@ -76,7 +76,7 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call ELIMINAR_CITA_MEDICA(?)}");
-            cs.setInt("_id_cita", citaMedica.getCodigo());
+            cs.setInt("_id_cita", citaMedica.getId_cita());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -96,7 +96,7 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
             rs = cs.executeQuery();
             while(rs.next()){
                 CitaMedica cm = new CitaMedica();
-                cm.setCodigo(rs.getInt("id_cita"));
+                cm.setId_cita(rs.getInt("id_cita"));
                 cm.getPaciente().setIdPaciente(rs.getInt("fid_paciente"));
                 cm.getHorario().setId_horario(rs.getInt("fid_horario"));
                 cm.getConsultorio().setId_consultorio(rs.getInt("fid_consultorio"));

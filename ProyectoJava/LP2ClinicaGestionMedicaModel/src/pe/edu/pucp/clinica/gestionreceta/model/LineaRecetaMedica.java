@@ -12,10 +12,20 @@ package pe.edu.pucp.clinica.gestionreceta.model;
 public class LineaRecetaMedica {
     private int idLinea;
     private int cantidad;
-    private double subtotal;
     private RecetaMedica recetaMedica;
     private Medicamento medicamento;
-
+    public LineaRecetaMedica(){
+    };
+    public LineaRecetaMedica(int cantidad, RecetaMedica recetaMedica, Medicamento medicamento) {
+        this.cantidad = cantidad;
+        this.recetaMedica = recetaMedica;
+        this.medicamento = medicamento;
+    }
+    public LineaRecetaMedica(int cantidad, Medicamento medicamento) {
+        this.cantidad = cantidad;
+        this.medicamento = medicamento;
+    }
+    
     public Medicamento getMedicamento() {
         return medicamento;
     }
@@ -50,11 +60,4 @@ public class LineaRecetaMedica {
         this.cantidad = cantidad;
     }
 
-    public double getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(double subtotal) {
-        this.subtotal = subtotal;
-    }
 }

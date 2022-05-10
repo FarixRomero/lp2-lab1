@@ -9,10 +9,20 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.sql.Time;
 import java.util.Date;
+import javax.tools.Diagnostic;
+import pe.edu.pucp.clinica.GestionMedica.dao.DiagnosticoDAO;
+import pe.edu.pucp.clinica.GestionMedica.dao.LineaRecetaMedicaDAO;
 import pe.edu.pucp.clinica.GestionMedica.dao.MedicamentoDAO;
+import pe.edu.pucp.clinica.GestionMedica.dao.RecetaMedicaDAO;
+import pe.edu.pucp.clinica.GestionMedica.mysql.DiagnosticoMySQL;
+import pe.edu.pucp.clinica.GestionMedica.mysql.LineaRecetaMedicaMySQL;
 import pe.edu.pucp.clinica.GestionMedica.mysql.MedicamentoMySQL;
+import pe.edu.pucp.clinica.GestionMedica.mysql.RecetaMedicaMySQL;
+import pe.edu.pucp.clinica.gestioncita.model.Diagnostico;
 import pe.edu.pucp.clinica.gestioncita.model.Paciente;
+import pe.edu.pucp.clinica.gestionreceta.model.LineaRecetaMedica;
 import pe.edu.pucp.clinica.gestionreceta.model.Medicamento;
+import pe.edu.pucp.clinica.gestionreceta.model.RecetaMedica;
 import pe.edu.pucp.clinica.organizacion.model.Consultorio;
 import pe.edu.pucp.clinica.organizacion.model.HorasHorario;
 import pe.edu.pucp.clinica.organizacion.model.Semestre;
@@ -39,88 +49,122 @@ public class Main {
         SimpleDateFormat stf = new SimpleDateFormat("HH:mm:ss");
         int resultado;
         // Prueba Semestre
-        Semestre sem = new Semestre("NOM_SEM", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
-        SemestreDAO semDAO = new SemestreMySQL();
-
-        resultado = semDAO.insertar(sem);
-        if (resultado == 1) {
-            System.out.println("Ingreso correcto del semestre");
-            
-            sem.setNombre("NOM_SEMESTRE");
-            resultado = semDAO.modificar(sem);
-            if (resultado == 1) {
-                System.out.println("Modificacion correcta del semestre");
-
-                ArrayList<Semestre> arrSemestres = semDAO.listarTodos();
-                for (Semestre semi : arrSemestres) {
-                    System.out.println("ID: " + semi.getId_semestre() + " - " + semi.getNombre());
-                }
-                
-                resultado = semDAO.eliminar(sem.getId_semestre());
-                if (resultado == 1) {
-                    System.out.println("Eliminacion correcta del semestre");
-                    
-                } else {
-                    System.out.println("Error al eliminar el semestre");
-                }
-            } else {
-                System.out.println("Error al modificar el semestre");
-            }
-        } else {
-            System.out.println("Error al ingresar el semestre");
-        }
-
-        
-        // Prueba Consultorio
-        Consultorio cons1 = new Consultorio("NOM_CONSUL1");
-        ConsultorioDAO consDAO = new ConsultorioMySQL();
-
-        resultado = consDAO.insertar(cons1);
-        if (resultado == 1) {
-            System.out.println("Ingreso correcto del consultorio");
-
-            cons1.setNombre("NOM_CONSULTORIO1");
-            resultado = consDAO.modificar(cons1);
-            if (resultado == 1) {
-                System.out.println("Modificacion correcta del consultorio");
-
-                ArrayList<Consultorio> arrConsultorios = consDAO.listarTodas();
-                for (Consultorio cons : arrConsultorios) {
-                    System.out.println("ID: " + cons.getId_consultorio() + " - Nombre: " + cons.getNombre());
-                }
-
-                resultado = consDAO.eliminar(cons1.getId_consultorio());
-                if (resultado == 1) {
-                    System.out.println("Eliminacion correcta del consultorio");
-                } else {
-                    System.out.println("Error al eliminar el consultorio");
-                }
-            } else {
-                System.out.println("Error al modificar el consultorio");
-            }
-        } else {
-            System.out.println("Error al ingresar el consultorio");
-        }
+//        Semestre sem = new Semestre("NOM_SEM", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
+//        SemestreDAO semDAO = new SemestreMySQL();
+//
+//        resultado = semDAO.insertar(sem);
+//        if (resultado == 1) {
+//            System.out.println("Ingreso correcto del semestre");
+//            
+//            sem.setNombre("NOM_SEMESTRE");
+//            resultado = semDAO.modificar(sem);
+//            if (resultado == 1) {
+//                System.out.println("Modificacion correcta del semestre");
+//
+//                ArrayList<Semestre> arrSemestres = semDAO.listarTodos();
+//                for (Semestre semi : arrSemestres) {
+//                    System.out.println("ID: " + semi.getId_semestre() + " - " + semi.getNombre());
+//                }
+//                
+//                resultado = semDAO.eliminar(sem.getId_semestre());
+//                if (resultado == 1) {
+//                    System.out.println("Eliminacion correcta del semestre");
+//                    
+//                } else {
+//                    System.out.println("Error al eliminar el semestre");
+//                }
+//            } else {
+//                System.out.println("Error al modificar el semestre");
+//            }
+//        } else {
+//            System.out.println("Error al ingresar el semestre");
+//        }
+//
+//        
+//        // Prueba Consultorio
+//        Consultorio cons1 = new Consultorio("NOM_CONSUL1");
+//        ConsultorioDAO consDAO = new ConsultorioMySQL();
+//
+//        resultado = consDAO.insertar(cons1);
+//        if (resultado == 1) {
+//            System.out.println("Ingreso correcto del consultorio");
+//
+//            cons1.setNombre("NOM_CONSULTORIO1");
+//            resultado = consDAO.modificar(cons1);
+//            if (resultado == 1) {
+//                System.out.println("Modificacion correcta del consultorio");
+//
+//                ArrayList<Consultorio> arrConsultorios = consDAO.listarTodas();
+//                for (Consultorio cons : arrConsultorios) {
+//                    System.out.println("ID: " + cons.getId_consultorio() + " - Nombre: " + cons.getNombre());
+//                }
+//
+//                resultado = consDAO.eliminar(cons1.getId_consultorio());
+//                if (resultado == 1) {
+//                    System.out.println("Eliminacion correcta del consultorio");
+//                } else {
+//                    System.out.println("Error al eliminar el consultorio");
+//                }
+//            } else {
+//                System.out.println("Error al modificar el consultorio");
+//            }
+//        } else {
+//            System.out.println("Error al ingresar el consultorio");
+//        }
         //CODIGO FARIX DANIEL PRUEBA
-        Especialidad esp1 = new Especialidad("Gastroenterologo",1,2);
-        esp1.setId_especialidad(1);
+//        Especialidad esp1 = new Especialidad("Gastroenterologo",1,2);
+//        esp1.setId_especialidad(1);
+//        
+//        Administrador adm = new Administrador(esp1,10,"72634611","Daniel","Rom",
+//                sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
+//        adm.setId_administrador(3);
+//        
+//        Medico medico = new Medico(0,0,esp1,"72634611","Daniel","Rom",
+//                sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
+//        
+//        medico.setAdministrador(adm);
+//        MedicoDAO medDAO = new MedicoMySQL();
+//        medico.setId_usuario(1);
+//        medico.setId_persona(1);
+//        
+//        resultado = medDAO.insertar(medico);
+//        if (resultado==1){
+//            System.out.println("SE ha ingresado un medicamento de manera correcta");
+//        }
+        //PAQUETE GESTION RECETA FARIX
+//        Diagnostico diag = new Diagnostico();
+//        diag.getCitaMedica();
+//        DiagnosticoDAO diagDao= new DiagnosticoMySQL();
+//        diagDao.insertar(diag);
+//        
         
-        Administrador adm = new Administrador(esp1,10,"72634611","Daniel","Rom",
-                sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
-        adm.setId_administrador(3);
-        
-        Medico medico = new Medico(0,0,esp1,"72634611","Daniel","Rom",
-                sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
-        
-        medico.setAdministrador(adm);
-        MedicoDAO medDAO = new MedicoMySQL();
-        medico.setId_usuario(1);
-        medico.setId_persona(1);
-        
-        resultado = medDAO.insertar(medico);
-        if (resultado==1){
+        Medicamento medicamento1 = new Medicamento("IBUFOX20","IBUPROFENO 20 mg");
+        System.out.println("Medicamento: " + medicamento1.getNombre()+" - "+ medicamento1.getCodigo());
+        MedicamentoDAO medicamento1DAO = new MedicamentoMySQL();
+        resultado = medicamento1DAO.insertar(medicamento1);
+        if(resultado ==1){
             System.out.println("SE ha ingresado un medicamento de manera correcta");
         }
+        RecetaMedicaDAO recetaMedicaDao = new RecetaMedicaMySQL();
+        
+        
+        RecetaMedica receta = new RecetaMedica("Receta DX2",diag);
+        receta.getDiagnostico().setId_diagnostico(2);
+        resultado = recetaMedicaDao.insertar(receta);
+        if(resultado ==1){
+            System.out.println("SE ha ingresado una receta de manera correcta");
+        }
+        LineaRecetaMedica lineaRec1 = new LineaRecetaMedica(20,receta,medicamento1);
+        LineaRecetaMedicaDAO lineadao = new LineaRecetaMedicaMySQL();
+        resultado = lineadao.insertar(lineaRec1);
+        if(resultado ==1){
+            System.out.println("SE ha ingresado una linea de receta de manera correcta");
+        }
+        ArrayList<LineaRecetaMedica> arrLineas = lineadao.listar();
+        for(LineaRecetaMedica lin:arrLineas){
+            System.out.println("ID: " + lin.getIdLinea()+ " - " + lin.getCantidad()+ " - " + lin.getMedicamento().getId_medicamento());
+        } 
+        
         
         //CODIGO ISAI
         
