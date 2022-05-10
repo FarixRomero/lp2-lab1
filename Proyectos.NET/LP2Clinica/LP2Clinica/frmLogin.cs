@@ -21,5 +21,10 @@ namespace LP2Clinica
         {
 
         }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

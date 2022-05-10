@@ -28,230 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.pTitulo = new System.Windows.Forms.Panel();
-            this.pbRitmo = new System.Windows.Forms.PictureBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblCambiarPassword = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegistro = new System.Windows.Forms.Button();
-            this.pRegistro = new System.Windows.Forms.Panel();
-            this.pbImagen = new System.Windows.Forms.PictureBox();
-            this.lblCuenta = new System.Windows.Forms.Label();
-            this.pTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRitmo)).BeginInit();
-            this.pRegistro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
+            this.pIniciarSesion = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblCambiarPassword = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.pIniciarSesion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblTitulo
+            // btnRegistro
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(3, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(243, 40);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "CLINICA QHALI";
+            this.btnRegistro.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRegistro.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRegistro.FlatAppearance.BorderSize = 0;
+            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistro.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.ForeColor = System.Drawing.Color.White;
+            this.btnRegistro.Location = new System.Drawing.Point(249, 485);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(158, 45);
+            this.btnRegistro.TabIndex = 16;
+            this.btnRegistro.Text = "Registrarse";
+            this.btnRegistro.UseVisualStyleBackColor = false;
             // 
-            // pTitulo
+            // pIniciarSesion
             // 
-            this.pTitulo.BackColor = System.Drawing.Color.PowderBlue;
-            this.pTitulo.Controls.Add(this.pbRitmo);
-            this.pTitulo.Controls.Add(this.lblTitulo);
-            this.pTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pTitulo.Name = "pTitulo";
-            this.pTitulo.Size = new System.Drawing.Size(367, 64);
-            this.pTitulo.TabIndex = 2;
+            this.pIniciarSesion.AutoScrollMargin = new System.Drawing.Size(3, 3);
+            this.pIniciarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.pIniciarSesion.Controls.Add(this.btnLogin);
+            this.pIniciarSesion.Controls.Add(this.lblPassword);
+            this.pIniciarSesion.Controls.Add(this.lblUsername);
+            this.pIniciarSesion.Controls.Add(this.lblEmail);
+            this.pIniciarSesion.Controls.Add(this.lblCambiarPassword);
+            this.pIniciarSesion.Controls.Add(this.txtPassword);
+            this.pIniciarSesion.Controls.Add(this.txtUsername);
+            this.pIniciarSesion.Controls.Add(this.txtEmail);
+            this.pIniciarSesion.Location = new System.Drawing.Point(170, 262);
+            this.pIniciarSesion.Margin = new System.Windows.Forms.Padding(2);
+            this.pIniciarSesion.Name = "pIniciarSesion";
+            this.pIniciarSesion.Size = new System.Drawing.Size(281, 218);
+            this.pIniciarSesion.TabIndex = 17;
             // 
-            // pbRitmo
+            // btnLogin
             // 
-            this.pbRitmo.Image = global::LP2Clinica.Properties.Resources.RITMO;
-            this.pbRitmo.Location = new System.Drawing.Point(259, -3);
-            this.pbRitmo.Name = "pbRitmo";
-            this.pbRitmo.Size = new System.Drawing.Size(83, 73);
-            this.pbRitmo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbRitmo.TabIndex = 7;
-            this.pbRitmo.TabStop = false;
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(54, 146);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(158, 46);
+            this.btnLogin.TabIndex = 23;
+            this.btnLogin.Text = "Iniciar Sesión";
+            this.btnLogin.UseVisualStyleBackColor = false;
             // 
-            // txtEmail
+            // lblPassword
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.LightGray;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(110, 277);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(189, 20);
-            this.txtEmail.TabIndex = 3;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.White;
+            this.lblPassword.Location = new System.Drawing.Point(10, 98);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(72, 17);
+            this.lblPassword.TabIndex = 22;
+            this.lblPassword.Text = "Password:";
             // 
-            // txtUsername
+            // lblUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.LightGray;
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsername.Location = new System.Drawing.Point(110, 312);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(189, 20);
-            this.txtUsername.TabIndex = 4;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(4, 58);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(75, 17);
+            this.lblUsername.TabIndex = 21;
+            this.lblUsername.Text = "Username:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(31, 24);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(47, 17);
+            this.lblEmail.TabIndex = 20;
+            this.lblEmail.Text = "Email:";
+            // 
+            // lblCambiarPassword
+            // 
+            this.lblCambiarPassword.AutoSize = true;
+            this.lblCambiarPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblCambiarPassword.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCambiarPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
+            this.lblCambiarPassword.Location = new System.Drawing.Point(143, 120);
+            this.lblCambiarPassword.Name = "lblCambiarPassword";
+            this.lblCambiarPassword.Size = new System.Drawing.Size(134, 17);
+            this.lblCambiarPassword.TabIndex = 19;
+            this.lblCambiarPassword.Text = "Cambiar contraseña";
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.LightGray;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Location = new System.Drawing.Point(110, 348);
+            this.txtPassword.Location = new System.Drawing.Point(88, 94);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(189, 20);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.TabIndex = 18;
             // 
-            // lblCambiarPassword
+            // txtUsername
             // 
-            this.lblCambiarPassword.AutoSize = true;
-            this.lblCambiarPassword.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCambiarPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblCambiarPassword.Location = new System.Drawing.Point(179, 371);
-            this.lblCambiarPassword.Name = "lblCambiarPassword";
-            this.lblCambiarPassword.Size = new System.Drawing.Size(120, 17);
-            this.lblCambiarPassword.TabIndex = 6;
-            this.lblCambiarPassword.Text = "Cambiar contraseña";
+            this.txtUsername.BackColor = System.Drawing.Color.LightGray;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.Location = new System.Drawing.Point(88, 58);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(189, 20);
+            this.txtUsername.TabIndex = 17;
             // 
-            // lblEmail
+            // txtEmail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblEmail.Location = new System.Drawing.Point(53, 277);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(47, 17);
-            this.lblEmail.TabIndex = 8;
-            this.lblEmail.Text = "Email:";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblUsername.Location = new System.Drawing.Point(27, 312);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(75, 17);
-            this.lblUsername.TabIndex = 9;
-            this.lblUsername.Text = "Username:";
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblPassword.Location = new System.Drawing.Point(32, 351);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(72, 17);
-            this.lblPassword.TabIndex = 10;
-            this.lblPassword.Text = "Password:";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnLogin.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin.Location = new System.Drawing.Point(222, 405);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(133, 33);
-            this.btnLogin.TabIndex = 11;
-            this.btnLogin.Text = "Iniciar Sesión";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // btnRegistro
-            // 
-            this.btnRegistro.BackColor = System.Drawing.Color.White;
-            this.btnRegistro.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistro.Location = new System.Drawing.Point(3, 7);
-            this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(200, 33);
-            this.btnRegistro.TabIndex = 12;
-            this.btnRegistro.Text = "Registrarse";
-            this.btnRegistro.UseVisualStyleBackColor = false;
-            // 
-            // pRegistro
-            // 
-            this.pRegistro.BackColor = System.Drawing.Color.Silver;
-            this.pRegistro.Controls.Add(this.btnRegistro);
-            this.pRegistro.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pRegistro.Location = new System.Drawing.Point(0, 455);
-            this.pRegistro.Name = "pRegistro";
-            this.pRegistro.Size = new System.Drawing.Size(367, 47);
-            this.pRegistro.TabIndex = 13;
-            // 
-            // pbImagen
-            // 
-            this.pbImagen.Image = global::LP2Clinica.Properties.Resources.USERT;
-            this.pbImagen.Location = new System.Drawing.Point(127, 76);
-            this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(145, 195);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagen.TabIndex = 7;
-            this.pbImagen.TabStop = false;
-            // 
-            // lblCuenta
-            // 
-            this.lblCuenta.AutoSize = true;
-            this.lblCuenta.Font = new System.Drawing.Font("Tw Cen MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblCuenta.Location = new System.Drawing.Point(137, 239);
-            this.lblCuenta.Name = "lblCuenta";
-            this.lblCuenta.Size = new System.Drawing.Size(130, 28);
-            this.lblCuenta.TabIndex = 14;
-            this.lblCuenta.Text = "MI CUENTA";
+            this.txtEmail.BackColor = System.Drawing.Color.LightGray;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Location = new System.Drawing.Point(88, 24);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(189, 20);
+            this.txtEmail.TabIndex = 16;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(367, 502);
-            this.Controls.Add(this.lblCuenta);
-            this.Controls.Add(this.pRegistro);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.pbImagen);
-            this.Controls.Add(this.lblCambiarPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.pTitulo);
+            this.BackgroundImage = global::LP2Clinica.Properties.Resources.PANTALLA_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(616, 580);
+            this.Controls.Add(this.pIniciarSesion);
+            this.Controls.Add(this.btnRegistro);
+            this.DoubleBuffered = true;
             this.Name = "frmLogin";
             this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.frmMenu_Load);
-            this.pTitulo.ResumeLayout(false);
-            this.pTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRitmo)).EndInit();
-            this.pRegistro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
+            this.pIniciarSesion.ResumeLayout(false);
+            this.pIniciarSesion.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Panel pTitulo;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label lblCambiarPassword;
-        private System.Windows.Forms.PictureBox pbRitmo;
-        private System.Windows.Forms.PictureBox pbImagen;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegistro;
-        private System.Windows.Forms.Panel pRegistro;
-        private System.Windows.Forms.Label lblCuenta;
+        private System.Windows.Forms.Panel pIniciarSesion;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblCambiarPassword;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

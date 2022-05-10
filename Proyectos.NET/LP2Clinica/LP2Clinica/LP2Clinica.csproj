@@ -47,25 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRegistro.Designer.cs">
-      <DependentUpon>frmRegistro.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistro.resx">
-      <DependentUpon>frmRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,6 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RITMO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANTALLA 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANTALLA 1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

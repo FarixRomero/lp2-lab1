@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace LP2Clinica
 {
-    public partial class frmRegistro : Form
+    public partial class Inicio : Form
     {
-        public frmRegistro()
+        public Inicio()
         {
             InitializeComponent();
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
