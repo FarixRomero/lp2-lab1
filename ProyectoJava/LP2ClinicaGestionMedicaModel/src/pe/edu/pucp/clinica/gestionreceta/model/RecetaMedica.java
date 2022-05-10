@@ -7,19 +7,27 @@ package pe.edu.pucp.clinica.gestionreceta.model;
 
 import java.util.ArrayList;
 import pe.edu.pucp.clinica.gestioncita.model.Diagnostico;
+
 /**
  *
  * @author ISAI
  */
 public class RecetaMedica {
-        private int idReceta;
-        private String codReceta;
-        private ArrayList<LineaRecetaMedica> lineasRecetaMedica;
-        private Diagnostico diagnostico;
-	
-	public RecetaMedica(){
-		lineasRecetaMedica = new ArrayList<>();
-	}
+
+    private int idReceta;
+    private String codReceta;
+    private ArrayList<LineaRecetaMedica> lineasRecetaMedica;
+    private Diagnostico diagnostico;
+
+    public RecetaMedica() {
+        lineasRecetaMedica = new ArrayList<>();
+    }
+
+    public RecetaMedica(String codReceta, Diagnostico diagnostico) {
+        lineasRecetaMedica = new ArrayList<>();
+        this.codReceta = codReceta;
+        this.diagnostico = diagnostico;
+    }
 
     public int getIdReceta() {
         return idReceta;
@@ -28,7 +36,7 @@ public class RecetaMedica {
     public void setIdReceta(int idReceta) {
         this.idReceta = idReceta;
     }
-    
+
     public ArrayList<LineaRecetaMedica> getLineasRecetaMedica() {
         return lineasRecetaMedica;
     }
@@ -44,12 +52,12 @@ public class RecetaMedica {
     public void setDiagnostico(Diagnostico diagnostico) {
         this.diagnostico = diagnostico;
     }
-        
-        public String getCodReceta() {
-            return codReceta;
-        }
 
-        public void setCodReceta(String codReceta) {
-            this.codReceta = codReceta;
-        } 
+    public String getCodReceta() {
+        return codReceta;
+    }
+
+    public void setCodReceta(String codReceta) {
+        this.codReceta = codReceta;
+    }
 }

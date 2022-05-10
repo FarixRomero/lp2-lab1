@@ -31,11 +31,10 @@ public class MedicamentoMySQL implements MedicamentoDAO{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_MEDICAMENTO(?,?,?)}");
             cs.registerOutParameter("_id_medicamento", java.sql.Types.INTEGER);
-            cs.setString("_codigo", (medicamento.getComentario()));
+            cs.setString("_codigo", (medicamento.getCodigo()));
             cs.setString("_nombre", (medicamento.getNombre()));
             cs.executeUpdate();
-            System.out.println("ID antes: " + cs.getInt("_id_medicamento"));
-            medicamento.setCodigo(cs.getInt("_id_medicamento"));
+            medicamento.setId_medicamento(cs.getInt("_id_medicamento"));
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -51,9 +50,9 @@ public class MedicamentoMySQL implements MedicamentoDAO{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_MEDICAMENTO(?,?,?)}");
-            cs.setInt("_id_medicamento",medicamento.getCodigo());
+            cs.setInt("_id_medicamento",medicamento.getId_medicamento());
             cs.setString("_nombre",medicamento.getNombre());
-            cs.setString("_codigo", medicamento.getComentario());
+            cs.setString("_codigo", medicamento.getCodigo());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -70,7 +69,7 @@ public class MedicamentoMySQL implements MedicamentoDAO{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call ELIMINAR_MEDICAMENTO(?)}");
-            cs.setInt("_id_medicamento", medicamento.getCodigo());
+            cs.setInt("_id_medicamento", medicamento.getId_medicamento());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -90,9 +89,9 @@ public class MedicamentoMySQL implements MedicamentoDAO{
             rs = cs.executeQuery();
             while(rs.next()){
                 Medicamento med = new Medicamento();
-                med.setCodigo(rs.getInt("id_medicamento"));
+                med.setId_medicamento(rs.getInt("id_medicamento"));
                 med.setNombre(rs.getString("nombre"));
-                med.setComentario(rs.getString("codigo"));
+                med.setCodigo(rs.getString("codigo"));
                 medicamentos.add(med);
             }
         }catch(Exception ex){

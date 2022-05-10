@@ -15,7 +15,7 @@ import pe.edu.pucp.clinica.organizacion.model.Horario;
  * @author ISAI
  */
 public class CitaMedica {
-    private int codigo;
+    private int id_cita;
     private EstadoCita estado;
     private Date fecha;
     private boolean ha_pagado;
@@ -26,8 +26,7 @@ public class CitaMedica {
 	
     //Constructor
     public CitaMedica(){}
-    public CitaMedica (int codigo, EstadoCita estado, Horario horario, Paciente paciente, Consultorio consultorio, boolean ha_pagado) {
-	this.codigo = codigo;
+    public CitaMedica (EstadoCita estado, Horario horario, Paciente paciente, Consultorio consultorio, boolean ha_pagado) {
 	this.estado = estado;
         this.horario = horario;
         this.paciente = paciente;
@@ -36,9 +35,7 @@ public class CitaMedica {
     }
 	
     //Setters
-    public void setCodigo(int codigo) {
-	this.codigo = codigo;
-    }
+   
     public void setEstado(EstadoCita estado) {
     	this.estado = estado;
     }
@@ -57,13 +54,17 @@ public class CitaMedica {
     public void setPago (boolean ha_pagado) {
         this.ha_pagado = ha_pagado;
     }
-	
+   
+    public int getId_cita() {
+	return id_cita;
+    }
+
     //Getters
-    public int getCodigo() {
-	return codigo;
+    public void setId_cita(int id_cita) {
+        this.id_cita = id_cita;
     }
     public EstadoCita getEstado() {
-	return estado;
+        return estado;
     }
     public Date getFecha() {
 	return fecha;

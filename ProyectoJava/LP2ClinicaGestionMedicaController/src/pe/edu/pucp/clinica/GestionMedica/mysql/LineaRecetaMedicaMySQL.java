@@ -13,6 +13,7 @@ import pe.edu.pucp.clinica.GestionMedica.dao.LineaRecetaMedicaDAO;
 import pe.edu.pucp.clinica.config.DBManager;
 import pe.edu.pucp.clinica.gestionreceta.model.LineaRecetaMedica;
 import pe.edu.pucp.clinica.gestionreceta.model.Medicamento;
+import pe.edu.pucp.clinica.gestionreceta.model.RecetaMedica;
 
 /**
  *
@@ -32,7 +33,7 @@ public class LineaRecetaMedicaMySQL implements LineaRecetaMedicaDAO{
             cs = con.prepareCall("{call INSERTAR_LINEA_RECETA_MEDICA(?,?,?,?)}");
             cs.registerOutParameter("_id_lineaRecetaMedica", java.sql.Types.INTEGER);
             cs.setInt("_fid_recetaMedica",lineaRecetaMedica.getRecetaMedica().getIdReceta());
-            cs.setInt("_fid_medicamento",lineaRecetaMedica.getMedicamento().getCodigo());
+            cs.setInt("_fid_medicamento",lineaRecetaMedica.getMedicamento().getId_medicamento());
             cs.setInt("_cantidad",lineaRecetaMedica.getCantidad());
             cs.executeUpdate();
             lineaRecetaMedica.setIdLinea(cs.getInt("_id_lineaRecetaMedica"));
@@ -53,7 +54,7 @@ public class LineaRecetaMedicaMySQL implements LineaRecetaMedicaDAO{
             cs = con.prepareCall("{call MODIFICAR_LINEA_RECETA_MEDICA(?,?,?,?)}");
             cs.setInt("_id_lineaRecetaMedica", lineaRecetaMedica.getIdLinea());
             cs.setInt("_fid_recetaMedica",lineaRecetaMedica.getRecetaMedica().getIdReceta());
-            cs.setInt("_fid_medicamento",lineaRecetaMedica.getMedicamento().getCodigo());
+            cs.setInt("_fid_medicamento",lineaRecetaMedica.getMedicamento().getId_medicamento());
             cs.setInt("_cantidad",lineaRecetaMedica.getCantidad());
             cs.executeUpdate();
             resultado = 1;
@@ -87,13 +88,15 @@ public class LineaRecetaMedicaMySQL implements LineaRecetaMedicaDAO{
         ArrayList<LineaRecetaMedica> lineaRecetaMedica= new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_LINEAS_RECETA_MEDICA()}");
+            cs = con.prepareCall("{call LISTAR_LINEAS_RECETA_MEDICA_TODOS()}");
             rs = cs.executeQuery();
             while(rs.next()){
                 LineaRecetaMedica lrm = new LineaRecetaMedica();
+                lrm.setMedicamento(new Medicamento());
+                lrm.setRecetaMedica(new RecetaMedica());
                 lrm.setIdLinea(rs.getInt("id_lineaRecetaMedica"));
                 lrm.getRecetaMedica().setIdReceta(rs.getInt("fid_recetaMedica"));
-                lrm.getMedicamento().setCodigo(rs.getInt("fid_medicamento"));
+                lrm.getMedicamento().setId_medicamento(rs.getInt("fid_medicamento"));
                 lrm.setCantidad(rs.getInt("cantidad"));
                 lineaRecetaMedica.add(lrm);
             }

@@ -31,11 +31,11 @@ public class RecetaMedicaMySQL implements RecetaMedicaDAO{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_RECETA_MEDICA(?,?,?)}");
-            cs.registerOutParameter("_id_receta_medica", java.sql.Types.INTEGER);
-            cs.setInt("_fid_diagnostico",(recetaMedica.getDiagnostico().getCodigo()));
+            cs.registerOutParameter("_id_recetaMedica", java.sql.Types.INTEGER);
+            cs.setInt("_fid_diagnostico",(recetaMedica.getDiagnostico().getId_diagnostico()));
             cs.setString("_cod_receta", (recetaMedica.getCodReceta()));
             cs.executeUpdate();
-            recetaMedica.setIdReceta(cs.getInt("_id_receta_medica"));
+            recetaMedica.setIdReceta(cs.getInt("_id_recetaMedica"));
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -52,7 +52,7 @@ public class RecetaMedicaMySQL implements RecetaMedicaDAO{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_RECETA_MEDICA(?,?,?)}");
             cs.setInt("_id_receta_medica", recetaMedica.getIdReceta());
-            cs.setInt("_fid_diagnostico",(recetaMedica.getDiagnostico().getCodigo()));
+            cs.setInt("_fid_diagnostico",(recetaMedica.getDiagnostico().getId_diagnostico()));
             cs.setString("_cod_receta", (recetaMedica.getCodReceta()));
             cs.executeUpdate();
             resultado = 1;
@@ -90,7 +90,7 @@ public class RecetaMedicaMySQL implements RecetaMedicaDAO{
             while(rs.next()){
                 RecetaMedica rMed = new RecetaMedica();
                 rMed.setIdReceta(rs.getInt("id_recetaMedica"));
-                rMed.getDiagnostico().setCodigo(rs.getInt("fid_diagnostico"));
+                rMed.getDiagnostico().setId_diagnostico(rs.getInt("fid_diagnostico"));
                 rMed.setCodReceta(rs.getString("cod_receta"));
                 recetaMedica.add(rMed);
             }

@@ -31,12 +31,12 @@ public class DiagnosticoMySQL implements DiagnosticoDAO {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_DIAGNOSTICO(?,?,?,?,?)}");
             cs.registerOutParameter("_id_diagnostico", java.sql.Types.INTEGER);
-            cs.setInt("_fid_cita", diagnostico.getCitaMedica().getCodigo());
+            cs.setInt("_fid_cita", diagnostico.getCitaMedica().getId_cita());
             cs.setInt("_fid_historia", diagnostico.getHistorialClinico().getNroHistoria());
             cs.setString("_resultado", diagnostico.getResultado());
             cs.setString("_observacion", diagnostico.getObservacion());
             cs.executeUpdate();
-            diagnostico.setCodigo(cs.getInt("_fid_cita"));
+            diagnostico.setId_diagnostico(cs.getInt("_fid_cita"));
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -52,8 +52,8 @@ public class DiagnosticoMySQL implements DiagnosticoDAO {
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_DIAGNOSTICO(?,?,?,?,?)}");
-            cs.setInt("_id_diagnostico", diagnostico.getCodigo());
-            cs.setInt("_fid_cita", diagnostico.getCitaMedica().getCodigo());
+            cs.setInt("_id_diagnostico", diagnostico.getId_diagnostico());
+            cs.setInt("_fid_cita", diagnostico.getCitaMedica().getId_cita());
             cs.setInt("_fid_historia", diagnostico.getHistorialClinico().getNroHistoria());
             cs.setString("_resultado", diagnostico.getResultado());
             cs.setString("_observacion", diagnostico.getObservacion());
@@ -73,7 +73,7 @@ public class DiagnosticoMySQL implements DiagnosticoDAO {
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call ELIMINAR_DIAGNOSTICO(?)}");
-            cs.setInt("_id_diagnostico", diagnostico.getCodigo());
+            cs.setInt("_id_diagnostico", diagnostico.getId_diagnostico());
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -92,8 +92,8 @@ public class DiagnosticoMySQL implements DiagnosticoDAO {
             rs = cs.executeQuery();
             while(rs.next()){
                 Diagnostico diag = new Diagnostico();
-                diag.setCodigo(rs.getInt("_id_diagnostico"));
-                diag.getCitaMedica().setCodigo(rs.getInt("_fid_cita"));
+                diag.setId_diagnostico(rs.getInt("_id_diagnostico"));
+                diag.getCitaMedica().setId_cita(rs.getInt("_fid_cita"));
                 diag.getHistorialClinico().setNroHistoria(rs.getInt("_fid_historia"));
                 diag.setResultado(rs.getString("_resultado"));
                 diag.setObservacion(rs.getString("_observacion"));
