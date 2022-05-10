@@ -19,11 +19,15 @@ import pe.edu.pucp.clinica.organizacion.model.Semestre;
 import pe.edu.pucp.clinica.personal.model.Administrador;
 import pe.edu.pucp.clinica.personal.model.Especialidad;
 import pe.edu.pucp.clinica.personal.model.Medico;
+import pe.edu.pucp.clinica.rrhh.dao.AdministradorDAO;
 import pe.edu.pucp.clinica.rrhh.dao.ConsultorioDAO;
+import pe.edu.pucp.clinica.rrhh.dao.EspecialidadDAO;
 import pe.edu.pucp.clinica.rrhh.dao.HorasHorarioDAO;
 import pe.edu.pucp.clinica.rrhh.dao.MedicoDAO;
 import pe.edu.pucp.clinica.rrhh.dao.SemestreDAO;
+import pe.edu.pucp.clinica.rrhh.mysql.AdministradorMySQL;
 import pe.edu.pucp.clinica.rrhh.mysql.ConsultorioMySQL;
+import pe.edu.pucp.clinica.rrhh.mysql.EspecialidadMySQL;
 import pe.edu.pucp.clinica.rrhh.mysql.HorasHorarioMySQL;
 import pe.edu.pucp.clinica.rrhh.mysql.MedicoMySQL;
 import pe.edu.pucp.clinica.rrhh.mysql.SemestreMySQL;
@@ -38,6 +42,7 @@ public class Main {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         SimpleDateFormat stf = new SimpleDateFormat("HH:mm:ss");
         int resultado;
+        /*
         // Prueba Semestre
         Semestre sem = new Semestre("NOM_SEM", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
         SemestreDAO semDAO = new SemestreMySQL();
@@ -101,17 +106,17 @@ public class Main {
         } else {
             System.out.println("Error al ingresar el consultorio");
         }
+        */
         //CODIGO FARIX DANIEL PRUEBA
-        Especialidad esp1 = new Especialidad("Gastroenterologo",1,2);
-        esp1.setId_especialidad(1);
+        Especialidad esp1 = new Especialidad("Neurocirujano",1,4);
         
-        Administrador adm = new Administrador(esp1,10,"72634611","Daniel","Rom",
+        Administrador adm = new Administrador(esp1,"72634611","Daniel","Rom",
                 sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
         adm.setId_administrador(3);
         
         Medico medico = new Medico(0,0,esp1,"72634611","Daniel","Rom",
                 sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
-        
+        /*
         medico.setAdministrador(adm);
         MedicoDAO medDAO = new MedicoMySQL();
         medico.setId_usuario(1);
@@ -121,8 +126,63 @@ public class Main {
         if (resultado==1){
             System.out.println("SE ha ingresado un medicamento de manera correcta");
         }
-        
+        */
         //CODIGO ISAI
+        
+        //-prueba de especialidad
+        EspecialidadDAO especiDAO = new EspecialidadMySQL();
+        resultado = especiDAO.insertar(esp1);
+        if(resultado == 1){
+            System.out.println("Se realizo el ingreso correcto de especialidad.");
+        }
+        else{
+            System.out.println("Fallo al ingresar el especialidad");
+        }
+        resultado = especiDAO.modificar(esp1);
+        if(resultado == 1){
+            System.out.println("Se realizo la modificacion correcta de especialidad.");
+        }
+        else{
+            System.out.println("Fallo al modificar el especialidad");
+        }
+        resultado = especiDAO.eliminar(esp1.getId_especialidad());
+        if(resultado == 1){
+            System.out.println("Se realizo la eliminacion correcta de especialidad.");
+        }
+        else{
+            System.out.println("Fallo al eliminar el especialidad");
+        }
+        //-prueba de administradores
+        AdministradorDAO administradorDAO = new AdministradorMySQL();
+        resultado = administradorDAO.insertar(adm);
+        if(resultado == 1){
+            System.out.println("Se realizo el ingreso correcto del administrador.");
+        }
+        else{
+            System.out.println("Fallo al ingresar el administrador");
+        }
+        resultado = administradorDAO.modificar(adm);
+        if(resultado == 1){
+            System.out.println("Se realizo la modificacion correcta del administrador.");
+        }
+        else{
+            System.out.println("Fallo al modificar el administrador");
+        }
+        resultado = administradorDAO.eliminar(adm.getId_administrador());
+        if(resultado == 1){
+            System.out.println("Se realizo la eliminacion correcta del administrador.");
+        }
+        else{
+            System.out.println("Fallo al eliminar el administrador");
+        }
+        
+         ArrayList<Administrador> arrAdministradores = administradorDAO.listarTodas();
+        for(Administrador admi:arrAdministradores){
+            System.out.println("ID: " + admi.getId_administrador() + " - " + admi.getNombre());
+        } 
+        
+        
+        
         
 //        //probamos el ingreso de medicamentos
 //        Medicamento medicamento1 = new Medicamento("original","copia de la copia");

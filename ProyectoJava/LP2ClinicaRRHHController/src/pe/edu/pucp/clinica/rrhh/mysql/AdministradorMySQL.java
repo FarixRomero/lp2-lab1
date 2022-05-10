@@ -32,14 +32,14 @@ public class AdministradorMySQL  implements AdministradorDAO{
          rs = cs.executeQuery();
          while(rs.next()){
                 Administrador admin = new Administrador();
-                
-                admin.setId_administrador(rs.getInt("_id_administrador"));
-                admin.setId_usuario(rs.getInt("_fid_usuario"));
-                admin.getEspecialidad().setId_especialidad(rs.getInt("_fid_especialidad"));//OJO PIOJO
+                admin.setId_administrador(rs.getInt("id_administrador"));
+                admin.setId_usuario(rs.getInt("fid_usuario"));
+                admin.getEspecialidad().setId_especialidad(rs.getInt("fid_especialidad"));
                 administradores.add(admin);
         }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
+            System.out.println("HOLA");
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
@@ -51,12 +51,29 @@ public class AdministradorMySQL  implements AdministradorDAO{
         int resultado=0;
         try{
             con = DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call INSERTAR_PERSONA(?,?,?,?)}");
+            cs.registerOutParameter("_id_persona", java.sql.Types.INTEGER);
+            cs.setString("_DNI", Admin.getDNI());
+            cs.setString("_nombre", Admin.getNombre());
+            cs.setString("_apellido", Admin.getApellido());
+            //*******
+            cs.executeUpdate();
+            Admin.setId_persona(cs.getInt("_id_persona"));
+
+            cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?,?,?)}");
+            //*******
+            cs.registerOutParameter("_id_usuario", java.sql.Types.INTEGER);
+            cs.setInt("_fid_persona",Admin.getId_persona());
+            cs.setString("_email",Admin.getEmail());
+            cs.setString("_username",Admin.getUsername());
+            cs.setString("_password",Admin.getPassword());
+            cs.setInt("_estado",Admin.getEstado());
+            //*******
+            cs.executeUpdate();
+            Admin.setId_usuario(cs.getInt("_id_usuario"));
+            
             cs = con.prepareCall("{call INSERTAR_ADMINISTRADOR(?,?,?)}");
-            /*
-                    `id_administrador` int NOT NULL AUTO_INCREMENT,
-                    `fid_usuario` int DEFAULT NULL,
-                    `fid_especialidad` int DEFAULT NULL, 
-                 */
             cs.registerOutParameter("_id_administrador", java.sql.Types.INTEGER);
             cs.setInt("_fid_usuario",Admin.getId_usuario() );
             cs.setInt("_fid_especialidad",Admin.getEspecialidad().getId_especialidad());
