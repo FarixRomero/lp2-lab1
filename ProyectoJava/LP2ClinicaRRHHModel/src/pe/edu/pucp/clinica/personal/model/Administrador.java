@@ -5,18 +5,17 @@ public class Administrador extends Usuario{
     private int id_administrador;
     private Especialidad especialidad;
     private ArrayList<Medico> medicos;
-    private int cant_pacientes;
     
     // CONSTRUCTORES
     public Administrador(){
         medicos=new ArrayList<>();
+        especialidad = new Especialidad();
     }
-    public Administrador( Especialidad especialidad, int cant_pacientes, 
-                        String DNI, String nombre, String apellido,  Date fecha_nacimiento, String email,
+    public Administrador( Especialidad especialidad, String DNI, String nombre,
+                        String apellido,  Date fecha_nacimiento, String email,
                         String username, String password, int estado) {
         super(DNI, nombre, apellido,  fecha_nacimiento, email, username, password, estado);
         this.especialidad = especialidad;
-        this.cant_pacientes = cant_pacientes;
     }    
     
     // GETTERS Y SETTERS

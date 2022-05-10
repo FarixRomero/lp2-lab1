@@ -10,7 +10,6 @@ import pe.edu.pucp.clinica.personal.model.Administrador;
     20180214
  */
 public interface AdministradorDAO {
-    // la dependedencia fue el problema de todo :(
     ArrayList<Administrador> listarTodas();
     int insertar(Administrador Admin);
     int modificar(Administrador Admin);
