@@ -41,7 +41,7 @@ public class HorarioMySQL implements HorarioDAO{
                elem.setId_semestre(new Semestre());
                elem.getId_semestre().setId_semestre(rs.getInt("_fid_semestre"));
                elem.setId_horasHorario(new HorasHorario());
-               elem.getId_horasHorario().setIdHorasHorario(rs.getInt("_fid_horasHorario"));
+               elem.getId_horasHorario().setId_horasHorario(rs.getInt("_fid_horasHorario"));
                horarios.add(elem);
        }  
        }catch(Exception ex){
@@ -67,7 +67,7 @@ public class HorarioMySQL implements HorarioDAO{
         */
         
         cs.registerOutParameter("_id_horario", java.sql.Types.INTEGER);
-        cs.setInt("_fid_horasHorario",Horario.getId_horasHorario().getIdHorasHorario());
+        cs.setInt("_fid_horasHorario",Horario.getId_horasHorario().getId_horasHorario());
         cs.setInt("_fid_semestre",Horario.getId_semestre().getId_semestre());
         cs.setInt("_fid_medico",Horario.getId_medico().getId_medico());
         cs.setString("_dia",Horario.getDia()); 
@@ -91,7 +91,7 @@ public class HorarioMySQL implements HorarioDAO{
         cs = con.prepareCall("{call MODIFICAR_HORARIO(?,?,?)}");
         //*******
         cs.setInt("_id_horario",Horario.getId_horario());
-        cs.setInt("_fid_horasHorario",Horario.getId_horasHorario().getIdHorasHorario()); 
+        cs.setInt("_fid_horasHorario",Horario.getId_horasHorario().getId_horasHorario()); 
         cs.setString("_dia",Horario.getDia()); 
         //*******
             cs.executeUpdate();

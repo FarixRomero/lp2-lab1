@@ -27,12 +27,14 @@ public class ConsultorioMySQL implements ConsultorioDAO{
          ArrayList<Consultorio> consultorios = new ArrayList<>();
         try{
          con = DBManager.getInstance().getConnection();
-         cs = con.prepareCall("{call LISTAR_CONSULTORIO_TODOS()}");
+         cs = con.prepareCall("{call LISTAR_CONSULTORIOS_TODOS()}");
          rs = cs.executeQuery();
          while(rs.next()){
                 Consultorio elem = new Consultorio();
-                elem.setId_consultorio(rs.getInt("_id_consultorio"));
-                elem.setDisponible(rs.getBoolean("_disponible"));
+                elem.setId_consultorio(rs.getInt("id_consultorio"));
+                elem.setNombre(rs.getString("nombre"));
+                elem.setDisponible(true);
+                
                 consultorios.add(elem);
         }
         }catch(Exception ex){
@@ -51,7 +53,7 @@ public class ConsultorioMySQL implements ConsultorioDAO{
           cs = con.prepareCall("{call INSERTAR_CONSULTORIO(?,?)}");
         ///********************** */
             cs.registerOutParameter("_id_consultorio", java.sql.Types.INTEGER);
-            cs.setBoolean("_disponible",Consult.isDisponible());
+            cs.setString("_nombre",Consult.getNombre());
         /** */
           cs.executeUpdate();
           Consult.setId_consultorio(cs.getInt("_id_consultorio"));
@@ -72,7 +74,7 @@ public class ConsultorioMySQL implements ConsultorioDAO{
             cs = con.prepareCall("{call MODIFICAR_CONSULTORIO(?,?)}");
             //*******
             cs.setInt("_id_consultorio",Consult.getId_consultorio());
-            cs.setBoolean("_disponible",Consult.isDisponible()); 
+            cs.setString("_nombre",Consult.getNombre()); 
         //*******
           cs.executeUpdate();
 

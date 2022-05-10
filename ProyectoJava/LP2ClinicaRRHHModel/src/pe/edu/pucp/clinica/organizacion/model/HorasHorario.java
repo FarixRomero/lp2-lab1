@@ -12,40 +12,38 @@ import java.sql.Time;
  * @author ISAI
  */
 public class HorasHorario {
-    private int idHorasHorario;
-    private Time hora_ini;
-    private Time hora_fini;
+    private int id_horasHorario;
+    private Time hora_inicio;
+    private Time hora_fin;
     
     public HorasHorario(){}
-    public HorasHorario(int idHorasHorario, Time hora_ini, Time hora_fini) {
-        this.idHorasHorario = idHorasHorario;
-        this.hora_ini = hora_ini;
-        this.hora_fini = hora_fini;
+    public HorasHorario(Time hora_inicio, Time hora_fin) {
+        this.hora_inicio = hora_inicio;
+        this.hora_fin = hora_fin;
     }
 
-    public int getIdHorasHorario() {
-        return idHorasHorario;
+    public int getId_horasHorario() {
+        return id_horasHorario;
     }
 
-    public void setIdHorasHorario(int idHorasHorario) {
-        this.idHorasHorario = idHorasHorario;
+    public void setId_horasHorario(int id_horasHorario) {
+        this.id_horasHorario = id_horasHorario;
     }
 
-    public Time getHora_ini() {
-        return hora_ini;
+    public Time getHora_inicio() {
+        return hora_inicio;
     }
 
-    public void setHora_ini(Time hora_ini) {
-        this.hora_ini = hora_ini;
+    public void setHora_inicio(Time hora_inicio) {
+        this.hora_inicio = hora_inicio;
     }
 
-    public Time getHora_fini() {
-        return hora_fini;
+    public Time getHora_fin() {
+        return hora_fin;
     }
 
-    public void setHora_fini(Time hora_fini) {
-        this.hora_fini = hora_fini;
+    public void setHora_fin(Time hora_fin) {
+        this.hora_fin = hora_fin;
     }
-    
     
 }
