@@ -33,11 +33,9 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.lblCambiarPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.pIniciarSesion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,12 +48,13 @@
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistro.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistro.ForeColor = System.Drawing.Color.White;
-            this.btnRegistro.Location = new System.Drawing.Point(249, 485);
+            this.btnRegistro.Location = new System.Drawing.Point(246, 485);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(158, 45);
             this.btnRegistro.TabIndex = 16;
             this.btnRegistro.Text = "Registrarse";
             this.btnRegistro.UseVisualStyleBackColor = false;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // pIniciarSesion
             // 
@@ -64,11 +63,9 @@
             this.pIniciarSesion.Controls.Add(this.btnLogin);
             this.pIniciarSesion.Controls.Add(this.lblPassword);
             this.pIniciarSesion.Controls.Add(this.lblUsername);
-            this.pIniciarSesion.Controls.Add(this.lblEmail);
             this.pIniciarSesion.Controls.Add(this.lblCambiarPassword);
             this.pIniciarSesion.Controls.Add(this.txtPassword);
             this.pIniciarSesion.Controls.Add(this.txtUsername);
-            this.pIniciarSesion.Controls.Add(this.txtEmail);
             this.pIniciarSesion.Location = new System.Drawing.Point(170, 262);
             this.pIniciarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.pIniciarSesion.Name = "pIniciarSesion";
@@ -88,6 +85,7 @@
             this.btnLogin.TabIndex = 23;
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblPassword
             // 
@@ -113,18 +111,6 @@
             this.lblUsername.TabIndex = 21;
             this.lblUsername.Text = "Username:";
             // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(31, 24);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(47, 17);
-            this.lblEmail.TabIndex = 20;
-            this.lblEmail.Text = "Email:";
-            // 
             // lblCambiarPassword
             // 
             this.lblCambiarPassword.AutoSize = true;
@@ -136,6 +122,7 @@
             this.lblCambiarPassword.Size = new System.Drawing.Size(134, 17);
             this.lblCambiarPassword.TabIndex = 19;
             this.lblCambiarPassword.Text = "Cambiar contraseña";
+            this.lblCambiarPassword.Click += new System.EventHandler(this.lblCambiarPassword_Click);
             // 
             // txtPassword
             // 
@@ -155,15 +142,6 @@
             this.txtUsername.Size = new System.Drawing.Size(189, 20);
             this.txtUsername.TabIndex = 17;
             // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.LightGray;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(88, 24);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(189, 20);
-            this.txtEmail.TabIndex = 16;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,7 +155,6 @@
             this.DoubleBuffered = true;
             this.Name = "frmLogin";
             this.Text = "Iniciar Sesión";
-            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pIniciarSesion.ResumeLayout(false);
             this.pIniciarSesion.PerformLayout();
             this.ResumeLayout(false);
@@ -190,10 +167,8 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblCambiarPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtEmail;
     }
 }

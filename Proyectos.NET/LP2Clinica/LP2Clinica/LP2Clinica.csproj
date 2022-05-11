@@ -47,11 +47,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCambiarContraseña.cs">
+    <Compile Include="frmGenerarDiagnostico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCambiarContraseña.Designer.cs">
-      <DependentUpon>frmCambiarContraseña.cs</DependentUpon>
+    <Compile Include="frmGenerarDiagnostico.Designer.cs">
+      <DependentUpon>frmGenerarDiagnostico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarEspecialidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarEspecialidad.Designer.cs">
+      <DependentUpon>frmGestionarEspecialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarMedicamentos.Designer.cs">
+      <DependentUpon>frmGestionarMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarDatos.Designer.cs">
+      <DependentUpon>frmModificarDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMostrarPerfilDoctores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMostrarPerfilDoctores.Designer.cs">
+      <DependentUpon>frmMostrarPerfilDoctores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrarRecetaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarRecetaMedica.Designer.cs">
+      <DependentUpon>frmRegistrarRecetaMedica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistroAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroAdministrador.Designer.cs">
+      <DependentUpon>frmRegistroAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionarListaPacientes.cs">
       <SubType>Form</SubType>
@@ -71,17 +107,29 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRecuperarPassword.cs">
+    <Compile Include="frmModificarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRecuperarPassword.Designer.cs">
-      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    <Compile Include="frmModificarContraseña.Designer.cs">
+      <DependentUpon>frmModificarContraseña.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRegistro.Designer.cs">
       <DependentUpon>frmRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistroMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroMedico.Designer.cs">
+      <DependentUpon>frmRegistroMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistroPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroPaciente.Designer.cs">
+      <DependentUpon>frmRegistroPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVisualizarDemanda.cs">
       <SubType>Form</SubType>
@@ -91,11 +139,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCambiarContraseña.resx">
-      <DependentUpon>frmCambiarContraseña.cs</DependentUpon>
+    <EmbeddedResource Include="frmGenerarDiagnostico.resx">
+      <DependentUpon>frmGenerarDiagnostico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarEspecialidad.resx">
+      <DependentUpon>frmGestionarEspecialidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarListaPacientes.resx">
       <DependentUpon>frmGestionarListaPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarMedicamentos.resx">
+      <DependentUpon>frmGestionarMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarDatos.resx">
+      <DependentUpon>frmModificarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMostrarPerfilDoctores.resx">
+      <DependentUpon>frmMostrarPerfilDoctores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
@@ -103,11 +163,26 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRecuperarPassword.resx">
-      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    <EmbeddedResource Include="frmModificarContraseña.resx">
+      <DependentUpon>frmModificarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarRecetaMedica.resx">
+      <DependentUpon>frmRegistrarRecetaMedica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistro.resx">
       <DependentUpon>frmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroAdministrador.resx">
+      <DependentUpon>frmRegistroAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroMedico.resx">
+      <DependentUpon>frmRegistroMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroPaciente.resx">
+      <DependentUpon>frmRegistroPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualizarDemanda.resx">
+      <DependentUpon>frmVisualizarDemanda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -194,6 +269,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\home2-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dibujo-paciente-en-cama-de-hospital-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3997b837ba0548ec1a5430ee31fb43aa-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hombre-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\username-icon-password-218665401-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-icon-password+privacy+protected+safe+security+icon-1320184220321538251_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1786559.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

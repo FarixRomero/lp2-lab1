@@ -16,5 +16,34 @@ namespace LP2Clinica
         {
             InitializeComponent();
         }
+
+        private void bnCancelar_Click(object sender, EventArgs e)
+        {
+            Inicio comienzo = new Inicio();
+            comienzo.Show();
+            this.Close();
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            if (rbAdministrador.Checked)
+            {
+                frmRegistroAdministrador registro = new frmRegistroAdministrador();
+                registro.Show();
+            }
+            else if (rbMedico.Checked)
+            {
+                frmRegistroMedico registro = new frmRegistroMedico();
+                //registro.retonardata(new medico);
+                registro.Show();
+            }
+            else if (rbPaciente.Checked)
+            {
+                frmRegistroPaciente registro = new frmRegistroPaciente();
+                registro.Show();
+
+            }
+            this.Close(); // OJO CON EL CLOSE PA QUE NO SE PIERDA LA DATA ANTERIOR
+        }
     }
 }

@@ -11,6 +11,14 @@ C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.pdb
 C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmLogin.resources
 C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.Inicio.resources
 C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmRegistro.resources
-C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmCambiarContraseña.resources
 C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmGestionarListaPacientes.resources
-C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmRecuperarPassword.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmModificarContraseña.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmRegistroMedico.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmRegistroPaciente.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmVisualizarDemanda.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmRegistroAdministrador.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmGestionarEspecialidad.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmMostrarPerfilDoctores.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmGenerarDiagnostico.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmGestionarMedicamentos.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmModificarDatos.resources

@@ -17,9 +17,22 @@ namespace LP2Clinica
             InitializeComponent();
         }
 
-        private void frmMenu_Load(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            //se verifica en la tabla que tipo de usuario es 
+            // se hace una variable "tipo de usuario" en el menú principal y se hace 
+            // una clase de "cambiar estado componentes"
+            //nos llevará al menu principal
+        }
 
+
+
+        private void lblCambiarPassword_Click(object sender, EventArgs e)
+        {
+            // Provisionalmente pondremos esta pantalla de "modificarContraseña" 
+            frmModificarContraseña modificarContraseña = new frmModificarContraseña();
+            modificarContraseña.Show();
+            this.Close();
         }
 
         private void btnRegistro_Click(object sender, EventArgs e)

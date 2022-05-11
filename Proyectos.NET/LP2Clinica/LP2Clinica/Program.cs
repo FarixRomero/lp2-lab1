@@ -8,15 +8,28 @@ namespace LP2Clinica
 {
     internal static class Program
     {
-        /// <summary>
-        /// Punto de entrada principal para la aplicación.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRecuperarPassword());
+            Inicio comienzo = new Inicio();
+            comienzo.FormClosed += INICIO_Closed;
+            comienzo.Show();
+            Application.Run();
+        }
+        private static void INICIO_Closed(object sender, FormClosedEventArgs e)
+        {
+            ((Form)sender).FormClosed -= INICIO_Closed;
+
+            if (Application.OpenForms.Count == 0)
+            {
+                Application.ExitThread();
+            }
+            else
+            {
+                Application.OpenForms[0].FormClosed += INICIO_Closed;
+            }
         }
     }
 }

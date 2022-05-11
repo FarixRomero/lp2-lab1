@@ -1,6 +1,6 @@
 ﻿namespace LP2Clinica
 {
-    partial class frmRecuperarPassword
+    partial class frmModificarContraseña
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,10 @@
         {
             this.pbCandado = new System.Windows.Forms.PictureBox();
             this.pContraseña = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtContraseñaActual = new System.Windows.Forms.TextBox();
+            this.lblContraseñaActual = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtContraseñaConfirmada = new System.Windows.Forms.TextBox();
             this.lblContraseñaConfirmada = new System.Windows.Forms.Label();
             this.txtContraseñaNueva = new System.Windows.Forms.TextBox();
@@ -37,10 +41,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.pbHome = new System.Windows.Forms.PictureBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblContraseñaActual = new System.Windows.Forms.Label();
-            this.txtContraseñaActual = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCandado)).BeginInit();
             this.pContraseña.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
@@ -72,6 +72,48 @@
             this.pContraseña.Name = "pContraseña";
             this.pContraseña.Size = new System.Drawing.Size(553, 213);
             this.pContraseña.TabIndex = 17;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.LightGray;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Location = new System.Drawing.Point(271, 42);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(252, 20);
+            this.txtEmail.TabIndex = 30;
+            // 
+            // txtContraseñaActual
+            // 
+            this.txtContraseñaActual.BackColor = System.Drawing.Color.LightGray;
+            this.txtContraseñaActual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContraseñaActual.Location = new System.Drawing.Point(271, 87);
+            this.txtContraseñaActual.Name = "txtContraseñaActual";
+            this.txtContraseñaActual.Size = new System.Drawing.Size(252, 20);
+            this.txtContraseñaActual.TabIndex = 29;
+            // 
+            // lblContraseñaActual
+            // 
+            this.lblContraseñaActual.AutoSize = true;
+            this.lblContraseñaActual.BackColor = System.Drawing.Color.Transparent;
+            this.lblContraseñaActual.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraseñaActual.ForeColor = System.Drawing.Color.White;
+            this.lblContraseñaActual.Location = new System.Drawing.Point(27, 83);
+            this.lblContraseñaActual.Name = "lblContraseñaActual";
+            this.lblContraseñaActual.Size = new System.Drawing.Size(160, 22);
+            this.lblContraseñaActual.TabIndex = 28;
+            this.lblContraseñaActual.Text = "Contraseña Actual:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(27, 38);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(59, 22);
+            this.lblEmail.TabIndex = 27;
+            this.lblEmail.Text = "Email:";
             // 
             // txtContraseñaConfirmada
             // 
@@ -128,6 +170,7 @@
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnConfirmar
             // 
@@ -154,49 +197,7 @@
             this.pbHome.TabIndex = 29;
             this.pbHome.TabStop = false;
             // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(27, 38);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(59, 22);
-            this.lblEmail.TabIndex = 27;
-            this.lblEmail.Text = "Email:";
-            // 
-            // lblContraseñaActual
-            // 
-            this.lblContraseñaActual.AutoSize = true;
-            this.lblContraseñaActual.BackColor = System.Drawing.Color.Transparent;
-            this.lblContraseñaActual.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseñaActual.ForeColor = System.Drawing.Color.White;
-            this.lblContraseñaActual.Location = new System.Drawing.Point(27, 83);
-            this.lblContraseñaActual.Name = "lblContraseñaActual";
-            this.lblContraseñaActual.Size = new System.Drawing.Size(160, 22);
-            this.lblContraseñaActual.TabIndex = 28;
-            this.lblContraseñaActual.Text = "Contraseña Actual:";
-            // 
-            // txtContraseñaActual
-            // 
-            this.txtContraseñaActual.BackColor = System.Drawing.Color.LightGray;
-            this.txtContraseñaActual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContraseñaActual.Location = new System.Drawing.Point(271, 87);
-            this.txtContraseñaActual.Name = "txtContraseñaActual";
-            this.txtContraseñaActual.Size = new System.Drawing.Size(252, 20);
-            this.txtContraseñaActual.TabIndex = 29;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.LightGray;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(271, 42);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(252, 20);
-            this.txtEmail.TabIndex = 30;
-            // 
-            // frmRecuperarPassword
+            // frmModificarContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -209,7 +210,8 @@
             this.Controls.Add(this.pContraseña);
             this.Controls.Add(this.pbCandado);
             this.DoubleBuffered = true;
-            this.Name = "frmRecuperarPassword";
+            this.Name = "frmModificarContraseña";
+            this.Text = "Modificar Contraseña";
             ((System.ComponentModel.ISupportInitialize)(this.pbCandado)).EndInit();
             this.pContraseña.ResumeLayout(false);
             this.pContraseña.PerformLayout();

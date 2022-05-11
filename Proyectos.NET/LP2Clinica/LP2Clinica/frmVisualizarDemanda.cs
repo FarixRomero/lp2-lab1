@@ -16,5 +16,10 @@ namespace LP2Clinica
         {
             InitializeComponent();
         }
+
+        private void frmVisualizarDemanda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

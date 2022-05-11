@@ -19,7 +19,17 @@ namespace LP2Clinica
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-
+            frmRegistro NuevoRegistro = new frmRegistro();
+            NuevoRegistro.Show();
+            this.Close();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            frmLogin logeo = new frmLogin();
+            logeo.Show();
+            this.Close();
+        }
+
     }
 }

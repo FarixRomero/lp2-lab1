@@ -38,8 +38,8 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblTipo = new System.Windows.Forms.Label();
+            this.rbPaciente = new System.Windows.Forms.RadioButton();
             this.rbMedico = new System.Windows.Forms.RadioButton();
-            this.rbDoctor = new System.Windows.Forms.RadioButton();
             this.rbAdministrador = new System.Windows.Forms.RadioButton();
             this.pRegistro = new System.Windows.Forms.Panel();
             this.btnSiguiente = new System.Windows.Forms.Button();
@@ -156,31 +156,31 @@
             this.lblTipo.TabIndex = 29;
             this.lblTipo.Text = "Tipo de Usuario:";
             // 
+            // rbPaciente
+            // 
+            this.rbPaciente.AutoSize = true;
+            this.rbPaciente.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPaciente.ForeColor = System.Drawing.Color.White;
+            this.rbPaciente.Location = new System.Drawing.Point(191, 180);
+            this.rbPaciente.Name = "rbPaciente";
+            this.rbPaciente.Size = new System.Drawing.Size(92, 26);
+            this.rbPaciente.TabIndex = 30;
+            this.rbPaciente.TabStop = true;
+            this.rbPaciente.Text = "Paciente";
+            this.rbPaciente.UseVisualStyleBackColor = true;
+            // 
             // rbMedico
             // 
             this.rbMedico.AutoSize = true;
             this.rbMedico.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbMedico.ForeColor = System.Drawing.Color.White;
-            this.rbMedico.Location = new System.Drawing.Point(191, 180);
+            this.rbMedico.Location = new System.Drawing.Point(289, 179);
             this.rbMedico.Name = "rbMedico";
-            this.rbMedico.Size = new System.Drawing.Size(92, 26);
-            this.rbMedico.TabIndex = 30;
+            this.rbMedico.Size = new System.Drawing.Size(84, 26);
+            this.rbMedico.TabIndex = 31;
             this.rbMedico.TabStop = true;
-            this.rbMedico.Text = "Paciente";
+            this.rbMedico.Text = "Medico";
             this.rbMedico.UseVisualStyleBackColor = true;
-            // 
-            // rbDoctor
-            // 
-            this.rbDoctor.AutoSize = true;
-            this.rbDoctor.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDoctor.ForeColor = System.Drawing.Color.White;
-            this.rbDoctor.Location = new System.Drawing.Point(289, 179);
-            this.rbDoctor.Name = "rbDoctor";
-            this.rbDoctor.Size = new System.Drawing.Size(84, 26);
-            this.rbDoctor.TabIndex = 31;
-            this.rbDoctor.TabStop = true;
-            this.rbDoctor.Text = "Medico";
-            this.rbDoctor.UseVisualStyleBackColor = true;
             // 
             // rbAdministrador
             // 
@@ -199,8 +199,8 @@
             // 
             this.pRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(114)))));
             this.pRegistro.Controls.Add(this.rbAdministrador);
-            this.pRegistro.Controls.Add(this.rbDoctor);
             this.pRegistro.Controls.Add(this.rbMedico);
+            this.pRegistro.Controls.Add(this.rbPaciente);
             this.pRegistro.Controls.Add(this.lblTipo);
             this.pRegistro.Controls.Add(this.dtpFecha);
             this.pRegistro.Controls.Add(this.lblFecha);
@@ -228,6 +228,7 @@
             this.btnSiguiente.TabIndex = 24;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // bnCancelar
             // 
@@ -290,8 +291,8 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.RadioButton rbPaciente;
         private System.Windows.Forms.RadioButton rbMedico;
-        private System.Windows.Forms.RadioButton rbDoctor;
         private System.Windows.Forms.RadioButton rbAdministrador;
         private System.Windows.Forms.Panel pRegistro;
         private System.Windows.Forms.Button btnSiguiente;

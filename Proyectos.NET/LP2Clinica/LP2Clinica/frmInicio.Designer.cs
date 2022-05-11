@@ -62,6 +62,7 @@
             this.btnLogin.TabIndex = 13;
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Inicio
             // 
@@ -75,7 +76,7 @@
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inicio";
-            this.Text = "frmInicio";
+            this.Text = "Inicio";
             this.ResumeLayout(false);
 
         }

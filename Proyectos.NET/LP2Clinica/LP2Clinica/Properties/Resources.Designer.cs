@@ -63,6 +63,26 @@ namespace LP2Clinica.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1786559 {
+            get {
+                object obj = ResourceManager.GetObject("1786559", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3997b837ba0548ec1a5430ee31fb43aa_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("3997b837ba0548ec1a5430ee31fb43aa-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Back {
             get {
                 object obj = ResourceManager.GetObject("Back", resourceCulture);
@@ -103,9 +123,30 @@ namespace LP2Clinica.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap descarga_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("descarga-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dibujo_paciente_en_cama_de_hospital_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("dibujo-paciente-en-cama-de-hospital-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_icon_password_privacy_protected_safe_security_icon_1320184220321538251_512 {
+            get {
+                object obj = ResourceManager.GetObject("download-icon-password+privacy+protected+safe+security+icon-1320184220321538251_5" +
+                        "12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +167,16 @@ namespace LP2Clinica.Properties {
         internal static System.Drawing.Bitmap flecha2 {
             get {
                 object obj = ResourceManager.GetObject("flecha2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hombre_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("hombre-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +237,16 @@ namespace LP2Clinica.Properties {
         internal static System.Drawing.Bitmap icono_del_usuario_mensaje_correo_sobre_electrónico_110413673_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("icono-del-usuario-mensaje-correo-sobre-electrónico-110413673-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lapiz {
+            get {
+                object obj = ResourceManager.GetObject("lapiz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -297,6 +358,16 @@ namespace LP2Clinica.Properties {
         internal static System.Drawing.Bitmap user3 {
             get {
                 object obj = ResourceManager.GetObject("user3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap username_icon_password_218665401_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("username-icon-password-218665401-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
