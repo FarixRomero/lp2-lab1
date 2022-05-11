@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCambiarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarContraseña.Designer.cs">
+      <DependentUpon>frmCambiarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarListaPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarListaPacientes.Designer.cs">
+      <DependentUpon>frmGestionarListaPacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,13 +71,43 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecuperarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarPassword.Designer.cs">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistro.Designer.cs">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisualizarDemanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualizarDemanda.Designer.cs">
+      <DependentUpon>frmVisualizarDemanda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCambiarContraseña.resx">
+      <DependentUpon>frmCambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarListaPacientes.resx">
+      <DependentUpon>frmGestionarListaPacientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarPassword.resx">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistro.resx">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +152,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PANTALLA 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANTALLA 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flecha.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANTALLA 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candado-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\persona_y_mensaje-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal-mail-linear-icon-letter-thin-line-illustration-sms-message-with-user-contour-symbol-isolated-outline-drawing-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-del-usuario-mensaje-correo-sobre-electrónico-110413673-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home2-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home2-removebg-preview1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

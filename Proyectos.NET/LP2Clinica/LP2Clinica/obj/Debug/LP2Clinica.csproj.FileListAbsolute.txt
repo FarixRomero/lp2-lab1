@@ -10,3 +10,7 @@ C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.exe
 C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.pdb
 C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmLogin.resources
 C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.Inicio.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmRegistro.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmCambiarContraseña.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmGestionarListaPacientes.resources
+C:\LP2\lp2-lab1\Proyectos.NET\LP2Clinica\LP2Clinica\obj\Debug\LP2Clinica.frmRecuperarPassword.resources
