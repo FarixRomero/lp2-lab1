@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5183C58F-B682-4217-949F-1BB45C54F2B7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LP2Clinica</RootNamespace>
+    <AssemblyName>LP2Clinica</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmGenerarDiagnostico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerarDiagnostico.Designer.cs">
+      <DependentUpon>frmGenerarDiagnostico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarEspecialidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarEspecialidad.Designer.cs">
+      <DependentUpon>frmGestionarEspecialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarMedicamentos.Designer.cs">
+      <DependentUpon>frmGestionarMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarDatos.Designer.cs">
+      <DependentUpon>frmModificarDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMostrarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMostrarPerfil.Designer.cs">
+      <DependentUpon>frmMostrarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMostrarPerfilDoctores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMostrarPerfilDoctores.Designer.cs">
+      <DependentUpon>frmMostrarPerfilDoctores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrarRecetaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarRecetaMedica.Designer.cs">
+      <DependentUpon>frmRegistrarRecetaMedica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistroAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroAdministrador.Designer.cs">
+      <DependentUpon>frmRegistroAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarListaPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarListaPacientes.Designer.cs">
+      <DependentUpon>frmGestionarListaPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarContraseña.Designer.cs">
+      <DependentUpon>frmModificarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistro.Designer.cs">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistroMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroMedico.Designer.cs">
+      <DependentUpon>frmRegistroMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistroPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroPaciente.Designer.cs">
+      <DependentUpon>frmRegistroPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisualizarDemanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualizarDemanda.Designer.cs">
+      <DependentUpon>frmVisualizarDemanda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipalCliente.Designer.cs">
+      <DependentUpon>PrincipalCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGenerarDiagnostico.resx">
+      <DependentUpon>frmGenerarDiagnostico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarEspecialidad.resx">
+      <DependentUpon>frmGestionarEspecialidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarListaPacientes.resx">
+      <DependentUpon>frmGestionarListaPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarMedicamentos.resx">
+      <DependentUpon>frmGestionarMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarDatos.resx">
+      <DependentUpon>frmModificarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMostrarPerfil.resx">
+      <DependentUpon>frmMostrarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMostrarPerfilDoctores.resx">
+      <DependentUpon>frmMostrarPerfilDoctores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarContraseña.resx">
+      <DependentUpon>frmModificarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarRecetaMedica.resx">
+      <DependentUpon>frmRegistrarRecetaMedica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistro.resx">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroAdministrador.resx">
+      <DependentUpon>frmRegistroAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroMedico.resx">
+      <DependentUpon>frmRegistroMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroPaciente.resx">
+      <DependentUpon>frmRegistroPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualizarDemanda.resx">
+      <DependentUpon>frmVisualizarDemanda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalCliente.resx">
+      <DependentUpon>PrincipalCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clinica1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USERT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RITMO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANTALLA 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANTALLA 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANTALLA 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flecha.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANTALLA 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candado-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\persona_y_mensaje-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal-mail-linear-icon-letter-thin-line-illustration-sms-message-with-user-contour-symbol-isolated-outline-drawing-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-del-usuario-mensaje-correo-sobre-electrónico-110413673-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home2-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home2-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dibujo-paciente-en-cama-de-hospital-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3997b837ba0548ec1a5430ee31fb43aa-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hombre-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\username-icon-password-218665401-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-icon-password+privacy+protected+safe+security+icon-1320184220321538251_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1786559.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bone 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QHALI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cbcc2738-271d-4327-903e-432a59135884.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profilepicture.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
