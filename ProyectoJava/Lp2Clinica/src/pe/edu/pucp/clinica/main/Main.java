@@ -19,18 +19,23 @@ import pe.edu.pucp.clinica.GestionMedica.dao.MedicamentoDAO;
 import pe.edu.pucp.clinica.GestionMedica.mysql.ChatMySQL;
 import pe.edu.pucp.clinica.GestionMedica.mysql.ComentarioMySQL;
 import javax.tools.Diagnostic;
+import pe.edu.pucp.clinica.GestionMedica.dao.CitaMedicaDAO;
 import pe.edu.pucp.clinica.GestionMedica.dao.DiagnosticoDAO;
+import pe.edu.pucp.clinica.GestionMedica.dao.HistorialClinicoDAO;
 import pe.edu.pucp.clinica.GestionMedica.dao.LineaRecetaMedicaDAO;
 import pe.edu.pucp.clinica.GestionMedica.dao.MedicamentoDAO;
 import pe.edu.pucp.clinica.GestionMedica.dao.PacienteDAO;
 import pe.edu.pucp.clinica.GestionMedica.dao.RecetaMedicaDAO;
+import pe.edu.pucp.clinica.GestionMedica.mysql.CitaMedicaMySQL;
 import pe.edu.pucp.clinica.GestionMedica.mysql.DiagnosticoMySQL;
+import pe.edu.pucp.clinica.GestionMedica.mysql.HistorialClinicoMySQL;
 import pe.edu.pucp.clinica.GestionMedica.mysql.LineaRecetaMedicaMySQL;
 import pe.edu.pucp.clinica.GestionMedica.mysql.MedicamentoMySQL;
 import pe.edu.pucp.clinica.GestionMedica.mysql.PacienteMySQL;
 import pe.edu.pucp.clinica.GestionMedica.mysql.RecetaMedicaMySQL;
 import pe.edu.pucp.clinica.gestioncita.model.CitaMedica;
 import pe.edu.pucp.clinica.gestioncita.model.Diagnostico;
+import pe.edu.pucp.clinica.gestioncita.model.EstadoCita;
 import pe.edu.pucp.clinica.gestioncita.model.HistorialClinico;
 import pe.edu.pucp.clinica.gestioncita.model.Paciente;
 import pe.edu.pucp.clinica.gestionreceta.model.LineaRecetaMedica;
@@ -73,159 +78,161 @@ public class Main {
         int resultado;
         
         
-        // Prueba Semestre
-//        Semestre sem = new Semestre("NOM_SEM", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
-//        SemestreDAO semDAO = new SemestreMySQL();
-//
-//        resultado = semDAO.insertar(sem);
-//        if (resultado == 1) {
-//            System.out.println("Ingreso correcto del semestre");
-//            
-//            sem.setNombre("NOM_SEMESTRE");
-//            resultado = semDAO.modificar(sem);
-//            if (resultado == 1) {
-//                System.out.println("Modificacion correcta del semestre");
-//
-//                ArrayList<Semestre> arrSemestres = semDAO.listarTodos();
-//                for (Semestre semi : arrSemestres) {
-//                    System.out.println("ID: " + semi.getId_semestre() + " - " + semi.getNombre());
-//                }
-//                
-//                resultado = semDAO.eliminar(sem.getId_semestre());
-//                if (resultado == 1) {
-//                    System.out.println("Eliminacion correcta del semestre");
-//                    
-//                } else {
-//                    System.out.println("Error al eliminar el semestre");
-//                }
-//            } else {
-//                System.out.println("Error al modificar el semestre");
-//            }
-//        } else {
-//            System.out.println("Error al ingresar el semestre");
-//        }
-//
-//        
-//        // Prueba Consultorio
-//        Consultorio cons1 = new Consultorio("NOM_CONSUL1");
-//        ConsultorioDAO consDAO = new ConsultorioMySQL();
-//
-//        resultado = consDAO.insertar(cons1);
-//        if (resultado == 1) {
-//            System.out.println("Ingreso correcto del consultorio");
-//
-//            cons1.setNombre("NOM_CONSULTORIO1");
-//            resultado = consDAO.modificar(cons1);
-//            if (resultado == 1) {
-//                System.out.println("Modificacion correcta del consultorio");
-//
-//                ArrayList<Consultorio> arrConsultorios = consDAO.listarTodas();
-//                for (Consultorio cons : arrConsultorios) {
-//                    System.out.println("ID: " + cons.getId_consultorio() + " - Nombre: " + cons.getNombre());
-//                }
-//
+        //Prueba Semestre
+        Semestre sem = new Semestre("NOM_SEM", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
+        SemestreDAO semDAO = new SemestreMySQL();
+
+        resultado = semDAO.insertar(sem);
+        if (resultado == 1) {
+            System.out.println("Ingreso correcto del semestre");
+            
+            sem.setNombre("NOM_SEMESTRE");
+            resultado = semDAO.modificar(sem);
+            if (resultado == 1) {
+                System.out.println("Modificacion correcta del semestre");
+
+                ArrayList<Semestre> arrSemestres = semDAO.listarTodos();
+                for (Semestre semi : arrSemestres) {
+                    System.out.println("ID: " + semi.getId_semestre() + " - " + semi.getNombre());
+                }
+                
+                resultado = semDAO.eliminar(sem.getId_semestre());
+                if (resultado == 1) {
+                    System.out.println("Eliminacion correcta del semestre");
+                    
+                } else {
+                    System.out.println("Error al eliminar el semestre");
+                }
+            } else {
+                System.out.println("Error al modificar el semestre");
+            }
+        } else {
+            System.out.println("Error al ingresar el semestre");
+        }
+
+        
+        // Prueba Consultorio
+        Consultorio cons1 = new Consultorio("NOM_CONSUL1");
+        ConsultorioDAO consDAO = new ConsultorioMySQL();
+
+        resultado = consDAO.insertar(cons1);
+        if (resultado == 1) {
+            System.out.println("Ingreso correcto del consultorio");
+
+            cons1.setNombre("NOM_CONSULTORIO1");
+            resultado = consDAO.modificar(cons1);
+            if (resultado == 1) {
+                System.out.println("Modificacion correcta del consultorio");
+
+                ArrayList<Consultorio> arrConsultorios = consDAO.listarTodas();
+                for (Consultorio cons : arrConsultorios) {
+                    System.out.println("ID: " + cons.getId_consultorio() + " - Nombre: " + cons.getNombre());
+                }
+
 //                resultado = consDAO.eliminar(cons1.getId_consultorio());
 //                if (resultado == 1) {
 //                    System.out.println("Eliminacion correcta del consultorio");
 //                } else {
 //                    System.out.println("Error al eliminar el consultorio");
 //                }
-//            } else {
-//                System.out.println("Error al modificar el consultorio");
-//            }
-//        } else {
-//            System.out.println("Error al ingresar el consultorio");
-//        }
-//        
-//        
-//        // Prueba HorasHorario
-//        HorasHorario hhorario1 = new HorasHorario(Time.valueOf("13:00:00"),Time.valueOf("18:00:00"));
-//        HorasHorarioDAO hhorarioDAO = new HorasHorarioMySQL();
-//        
-//        resultado = hhorarioDAO.insertar(hhorario1);
-//        if (resultado == 1) {
-//            System.out.println("Ingreso correcto del HorasHorario");
-//            
-//            hhorario1.setHora_inicio(Time.valueOf("15:00:00"));
-//            hhorario1.setHora_fin(Time.valueOf("16:00:00"));
-//            resultado = hhorarioDAO.modificar(hhorario1);
-//            if(resultado == 1) {
-//                System.out.println("Modificacion correcta del HorasHorario");
-//                
-//                ArrayList<HorasHorario> arrHorasHorario = hhorarioDAO.listarTodas();
-//                for (HorasHorario hhor : arrHorasHorario) {
-//                    System.out.println("ID: " + hhor.getId_horasHorario()+ " - H_INI: " + hhor.getHora_inicio() + "  H_FIN: " + hhor.getHora_fin());
-//                }
-//                
+            } else {
+                System.out.println("Error al modificar el consultorio");
+            }
+        } else {
+            System.out.println("Error al ingresar el consultorio");
+        }
+        
+       
+    
+        // Prueba HorasHorario
+        HorasHorario hhorario1 = new HorasHorario(Time.valueOf("13:00:00"),Time.valueOf("18:00:00"));
+        HorasHorarioDAO hhorarioDAO = new HorasHorarioMySQL();
+        
+        resultado = hhorarioDAO.insertar(hhorario1);
+        if (resultado == 1) {
+            System.out.println("Ingreso correcto del HorasHorario");
+            
+            hhorario1.setHora_inicio(Time.valueOf("15:00:00"));
+            hhorario1.setHora_fin(Time.valueOf("16:00:00"));
+            resultado = hhorarioDAO.modificar(hhorario1);
+            if(resultado == 1) {
+                System.out.println("Modificacion correcta del HorasHorario");
+                
+                ArrayList<HorasHorario> arrHorasHorario = hhorarioDAO.listarTodas();
+                for (HorasHorario hhor : arrHorasHorario) {
+                    System.out.println("ID: " + hhor.getId_horasHorario()+ " - H_INI: " + hhor.getHora_inicio() + "  H_FIN: " + hhor.getHora_fin());
+                }
+                
 //                resultado = hhorarioDAO.eliminar(hhorario1.getId_horasHorario());
 //                if (resultado == 1) {
 //                    System.out.println("Eliminacion correcta del HorasHorario");
 //                } else {
 //                    System.out.println("Error al eliminar el HorasHorario");
 //                }
-//            } else {
-//                System.out.println("Error al modificar el HorasHorario");
-//            }
-//        } else {
-//            System.out.println("Error al ingresar el HorasHorario");
-//        }
+            } else {
+                System.out.println("Error al modificar el HorasHorario");
+            }
+        } else {
+            System.out.println("Error al ingresar el HorasHorario");
+        }
+        
+        // Prueba Horario
+        HorasHorario hhorarioAux = new HorasHorario(Time.valueOf("20:00:00"),Time.valueOf("21:00:00"));
+        HorasHorario hhorarioAux2 = new HorasHorario(Time.valueOf("22:00:00"),Time.valueOf("23:00:00"));
+        hhorarioDAO.insertar(hhorarioAux); hhorarioDAO.insertar(hhorarioAux2);
+        
+        Semestre semestreAux = new Semestre("SEM_AUX", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
+        semDAO.insertar(semestreAux);
+        
 //        
-//        // Prueba Horario
-//        HorasHorario hhorarioAux = new HorasHorario(Time.valueOf("20:00:00"),Time.valueOf("21:00:00"));
-//        HorasHorario hhorarioAux2 = new HorasHorario(Time.valueOf("22:00:00"),Time.valueOf("23:00:00"));
-//        hhorarioDAO.insertar(hhorarioAux); hhorarioDAO.insertar(hhorarioAux2);
+        Especialidad esp1 = new Especialidad("Gastroenterologo",1,2);
+        esp1.setId_especialidad(1);
+        
+        Administrador adm = new Administrador(esp1,"72634611","Daniel","Rom",
+                sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
+        adm.setId_administrador(3);
+        
+        Medico medicoAux = new Medico(0,0,esp1,"72634611","Daniel","Rom",
+                sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
+        medicoAux.setAdministrador(adm);
+        
+        MedicoDAO medDAO = new MedicoMySQL();
+        medDAO.insertar(medicoAux);
 //        
-//        Semestre semestreAux = new Semestre("SEM_AUX", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
-//        semDAO.insertar(semestreAux);
-//        
-//        Especialidad esp1 = new Especialidad("Gastroenterologo",1,2);
-//        esp1.setId_especialidad(1);
-//        
-//        Administrador adm = new Administrador(esp1,"72634611","Daniel","Rom",
-//                sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
-//        adm.setId_administrador(3);
-//        
-//        Medico medicoAux = new Medico(0,0,esp1,"72634611","Daniel","Rom",
-//                sdf.parse("12-12-2000"),"fa@fa.com","UserName","password",1);
-//        medicoAux.setAdministrador(adm);
-//        
-//        MedicoDAO medDAO = new MedicoMySQL();
-//        medDAO.insertar(medicoAux);
-//        
-//        Horario horario1 = new Horario(hhorarioAux,semestreAux,"LUNES");
-//        horario1.setMedico(medicoAux);
-//        HorarioDAO horarioDAO = new HorarioMySQL();
-//        
-//        resultado = horarioDAO.insertar(horario1);
-//        if (resultado == 1) {
-//            System.out.println("Ingreso correcto del Horario");
-//            
-//            horario1.setHorasHorario(hhorarioAux2);
-//            resultado = horarioDAO.modificar(horario1);
-//            if(resultado == 1) {
-//                System.out.println("Modificacion correcta del Horario");
-//                
-//                ArrayList<Horario> arrHorario = horarioDAO.listarTodas();
-//                for (Horario hor : arrHorario) {
-//                    System.out.println("ID: " + hor.getId_horario() + 
-//                            " - FID_HH: " + hor.getHorasHorario().getId_horasHorario() + 
-//                            " - FID_SEM: " + hor.getSemestre().getId_semestre() + 
-//                            " - FID_MED: " + hor.getMedico().getId_medico() + 
-//                            " - DIA: " + hor.getDia());
-//                }
-//                
+        Horario horario1 = new Horario(hhorarioAux,semestreAux,"LUNES");
+        horario1.setMedico(medicoAux);
+        HorarioDAO horarioDAO = new HorarioMySQL();
+        
+        resultado = horarioDAO.insertar(horario1);
+        if (resultado == 1) {
+            System.out.println("Ingreso correcto del Horario");
+            
+            horario1.setHorasHorario(hhorarioAux2);
+            resultado = horarioDAO.modificar(horario1);
+            if(resultado == 1) {
+                System.out.println("Modificacion correcta del Horario");
+                
+                ArrayList<Horario> arrHorario = horarioDAO.listarTodas();
+                for (Horario hor : arrHorario) {
+                    System.out.println("ID: " + hor.getId_horario() + 
+                            " - FID_HH: " + hor.getHorasHorario().getId_horasHorario() + 
+                            " - FID_SEM: " + hor.getSemestre().getId_semestre() + 
+                            " - FID_MED: " + hor.getMedico().getId_medico() + 
+                            " - DIA: " + hor.getDia());
+                }
+                
 //                resultado = horarioDAO.eliminar(horario1.getId_horario());
 //                if (resultado == 1) {
 //                    System.out.println("Eliminacion correcta del Horario");
 //                } else {
 //                    System.out.println("Error al eliminar el Horario");
 //                }
-//            } else {
-//                System.out.println("Error al modificar el Horario");
-//            }
-//        } else {
-//            System.out.println("Error al ingresar el Horario");
-//        }
+            } else {
+                System.out.println("Error al modificar el Horario");
+            }
+        } else {
+            System.out.println("Error al ingresar el Horario");
+        }
 //        
 //        
 //        // Prueba Comentario
@@ -305,7 +312,7 @@ public class Main {
 //        } else {
 //            System.out.println("Error al ingresar el Chat");
 //        }
-        
+       
 
 
         // Prueba Paciente
@@ -332,12 +339,12 @@ public class Main {
                             " - EMAIL: " + pac.getEmail());
                 }
                 
-                resultado = pacienteDAO.eliminar(paciente1);
-                if (resultado == 1) {
-                    System.out.println("Eliminacion correcta del Paciente");
-                } else {
-                    System.out.println("Error al eliminar el Paciente");
-                }
+//                resultado = pacienteDAO.eliminar(paciente1);
+//                if (resultado == 1) {
+//                    System.out.println("Eliminacion correcta del Paciente");
+//                } else {
+//                    System.out.println("Error al eliminar el Paciente");
+//                }
             } else {
                 System.out.println("Error al modificar el Paciente");
             }
@@ -347,7 +354,7 @@ public class Main {
         
         
         /*
-        // Prueba Semestre
+        //Prueba Semestre
         Semestre sem = new Semestre("NOM_SEM", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
         SemestreDAO semDAO = new SemestreMySQL();
 
@@ -447,6 +454,7 @@ public class Main {
 //        if (resultado==1){
 //            System.out.println("SE ha ingresado un medicamento de manera correcta");
 //        }
+/*
         //PAQUETE GESTION RECETA FARIX
         CitaMedica cit = new CitaMedica();
         cit.setId_cita(5);
@@ -458,6 +466,7 @@ public class Main {
 
         DiagnosticoDAO diagDao = new DiagnosticoMySQL();
         resultado = diagDao.insertar(diag);
+        */
 //        ArrayList<Diagnostico> arrDiag = diagDao.listar();
 //        for (Diagnostico diags : arrDiag) {
 //            System.out.println("ID: " + diags.getId_diagnostico() + " - Nombre: " + diags.getResultado() + " - Fecha:" + diags.getCitaMedica().getFecha());
@@ -518,6 +527,74 @@ public class Main {
 //        } 
 //        
         //CODIGO ISAI
+        
+        //prueba de historialClinico
+            HistorialClinico hisCli1 = new HistorialClinico(2);
+            hisCli1.setPaciente(paciente1);
+            HistorialClinicoDAO hisCliDAO = new HistorialClinicoMySQL();
+
+            resultado = hisCliDAO.insertar(hisCli1);
+            if(resultado==1){
+                    System.out.println("Insercion correcta");
+            }
+            else{
+            System.out.println("Error en la insercion");
+            }
+
+            resultado = hisCliDAO.modificar(hisCli1);
+            if(resultado==1){
+                    System.out.println("Modificacion correcta");
+            }
+            else{
+            System.out.println("Error en la modificacion");
+            }
+
+            resultado = hisCliDAO.eliminar(hisCli1);
+            if(resultado==1){
+                    System.out.println("Eliminacion correcta");
+            }
+            else{
+            System.out.println("Error en la eliminacion");
+            }
+
+            ArrayList <HistorialClinico> historiales = hisCliDAO.listar(); 
+            for(HistorialClinico hist : historiales){
+                    System.out.println("Id historial= " + hist.getNroHistoria());
+            }
+
+
+            //Prueba de CitaMedica
+            CitaMedica ciMe1 = new CitaMedica (EstadoCita.ATENDIDA, horario1, paciente1, cons1, true);
+            CitaMedicaDAO ciMeDAO = new CitaMedicaMySQL();
+
+            resultado = ciMeDAO.insertar(ciMe1);
+            if(resultado==1){
+                    System.out.println("Insercion correcta");
+            }
+            else{
+                    System.out.println("Error en la insercion");
+            }
+
+            resultado = ciMeDAO.modificar(ciMe1);
+            if(resultado==1){
+                    System.out.println("Modificacion correcta");
+            }
+            else{
+                    System.out.println("Error en la modificacion");
+            }
+
+            resultado = ciMeDAO.eliminar(ciMe1);
+            if(resultado==1){
+                    System.out.println("Eliminacion correcta");
+            }
+            else{
+                    System.out.println("Error en la eliminacion");
+            }
+
+            ArrayList <CitaMedica> citas = ciMeDAO.listar(); 
+            for(CitaMedica cm : citas){
+                    System.out.println("Id Cita= " + cm.getId_cita());
+}
         
 //        //-prueba de especialidad
 //        EspecialidadDAO especiDAO = new EspecialidadMySQL();

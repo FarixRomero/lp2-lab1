@@ -17,6 +17,7 @@ public class HistorialClinico {
 	
 	//Constructores
 	public HistorialClinico(){
+            paciente = new Paciente();
 	}
 	public HistorialClinico(int nroHistoria){
 		this.nroHistoria = nroHistoria;
