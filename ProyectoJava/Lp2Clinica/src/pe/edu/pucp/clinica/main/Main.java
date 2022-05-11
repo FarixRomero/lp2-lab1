@@ -71,36 +71,36 @@ public class Main {
         
         
         // Prueba Semestre
-        Semestre sem = new Semestre("NOM_SEM", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
-        SemestreDAO semDAO = new SemestreMySQL();
-
-        resultado = semDAO.insertar(sem);
-        if (resultado == 1) {
-            System.out.println("Ingreso correcto del semestre");
-            
-            sem.setNombre("NOM_SEMESTRE");
-            resultado = semDAO.modificar(sem);
-            if (resultado == 1) {
-                System.out.println("Modificacion correcta del semestre");
-
-                ArrayList<Semestre> arrSemestres = semDAO.listarTodos();
-                for (Semestre semi : arrSemestres) {
-                    System.out.println("ID: " + semi.getId_semestre() + " - " + semi.getNombre());
-                }
-                
-                resultado = semDAO.eliminar(sem.getId_semestre());
-                if (resultado == 1) {
-                    System.out.println("Eliminacion correcta del semestre");
-                    
-                } else {
-                    System.out.println("Error al eliminar el semestre");
-                }
-            } else {
-                System.out.println("Error al modificar el semestre");
-            }
-        } else {
-            System.out.println("Error al ingresar el semestre");
-        }
+//        Semestre sem = new Semestre("NOM_SEM", sdf.parse("1-2-2022"), sdf.parse("1-12-2022"));
+//        SemestreDAO semDAO = new SemestreMySQL();
+//
+//        resultado = semDAO.insertar(sem);
+//        if (resultado == 1) {
+//            System.out.println("Ingreso correcto del semestre");
+//            
+//            sem.setNombre("NOM_SEMESTRE");
+//            resultado = semDAO.modificar(sem);
+//            if (resultado == 1) {
+//                System.out.println("Modificacion correcta del semestre");
+//
+//                ArrayList<Semestre> arrSemestres = semDAO.listarTodos();
+//                for (Semestre semi : arrSemestres) {
+//                    System.out.println("ID: " + semi.getId_semestre() + " - " + semi.getNombre());
+//                }
+//                
+//                resultado = semDAO.eliminar(sem.getId_semestre());
+//                if (resultado == 1) {
+//                    System.out.println("Eliminacion correcta del semestre");
+//                    
+//                } else {
+//                    System.out.println("Error al eliminar el semestre");
+//                }
+//            } else {
+//                System.out.println("Error al modificar el semestre");
+//            }
+//        } else {
+//            System.out.println("Error al ingresar el semestre");
+//        }
 //
 //        
 //        // Prueba Consultorio
@@ -304,7 +304,7 @@ public class Main {
 //        }
         
 
-        /*
+        
 
         // Prueba Paciente
         Paciente paciente1 = new Paciente(true,"32454533","NOM_PAC","APE_PAC",sdf.parse("9-5-2022"),"AA@xx.com","US","PAS",1);
@@ -343,7 +343,7 @@ public class Main {
             System.out.println("Error al ingresar el Paciente");
         }
         
-        */
+        
         
         /*
         // Prueba Semestre
