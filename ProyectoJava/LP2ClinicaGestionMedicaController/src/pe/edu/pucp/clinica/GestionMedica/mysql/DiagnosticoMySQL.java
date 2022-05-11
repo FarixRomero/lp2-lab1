@@ -11,7 +11,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.clinica.GestionMedica.dao.DiagnosticoDAO;
 import pe.edu.pucp.clinica.config.DBManager;
+import pe.edu.pucp.clinica.gestioncita.model.CitaMedica;
 import pe.edu.pucp.clinica.gestioncita.model.Diagnostico;
+import pe.edu.pucp.clinica.gestioncita.model.HistorialClinico;
 
 /**
  *
@@ -36,7 +38,7 @@ public class DiagnosticoMySQL implements DiagnosticoDAO {
             cs.setString("_resultado", diagnostico.getResultado());
             cs.setString("_observacion", diagnostico.getObservacion());
             cs.executeUpdate();
-            diagnostico.setId_diagnostico(cs.getInt("_fid_cita"));
+            diagnostico.setId_diagnostico(cs.getInt("_id_diagnostico"));
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -88,15 +90,18 @@ public class DiagnosticoMySQL implements DiagnosticoDAO {
         ArrayList<Diagnostico> diagnostico= new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_DIAGNOSTICO()}");
+            cs = con.prepareCall("{call LISTAR_DIAGNOSTICO_TODOS()}");
             rs = cs.executeQuery();
             while(rs.next()){
                 Diagnostico diag = new Diagnostico();
-                diag.setId_diagnostico(rs.getInt("_id_diagnostico"));
-                diag.getCitaMedica().setId_cita(rs.getInt("_fid_cita"));
-                diag.getHistorialClinico().setNroHistoria(rs.getInt("_fid_historia"));
-                diag.setResultado(rs.getString("_resultado"));
-                diag.setObservacion(rs.getString("_observacion"));
+                diag.setId_diagnostico(rs.getInt("id_diagnostico"));
+                diag.setCitaMedica(new CitaMedica());
+                diag.getCitaMedica().setId_cita(rs.getInt("fid_cita"));
+                diag.setHistorialClinico(new HistorialClinico());
+                diag.getHistorialClinico().setNroHistoria(rs.getInt("fid_historia"));
+                diag.setResultado(rs.getString("resultado"));
+                diag.setObservacion(rs.getString("observacion"));
+                diag.getCitaMedica().setFecha(rs.getDate("fecha"));
                 diagnostico.add(diag);
             }
         }catch(Exception ex){
