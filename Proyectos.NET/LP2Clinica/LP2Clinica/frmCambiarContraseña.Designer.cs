@@ -52,10 +52,10 @@
             this.pCambiarContraseña.Controls.Add(this.lblEmail);
             this.pCambiarContraseña.Controls.Add(this.lblPassword);
             this.pCambiarContraseña.Controls.Add(this.txtEmail);
-            this.pCambiarContraseña.Location = new System.Drawing.Point(91, 248);
-            this.pCambiarContraseña.Margin = new System.Windows.Forms.Padding(2);
+            this.pCambiarContraseña.Location = new System.Drawing.Point(121, 305);
+            this.pCambiarContraseña.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCambiarContraseña.Name = "pCambiarContraseña";
-            this.pCambiarContraseña.Size = new System.Drawing.Size(434, 192);
+            this.pCambiarContraseña.Size = new System.Drawing.Size(579, 236);
             this.pCambiarContraseña.TabIndex = 18;
             // 
             // btnLogin
@@ -65,9 +65,10 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(269, 59);
+            this.btnLogin.Location = new System.Drawing.Point(359, 73);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(153, 30);
+            this.btnLogin.Size = new System.Drawing.Size(204, 37);
             this.btnLogin.TabIndex = 24;
             this.btnLogin.Text = "Enviar Código";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -76,9 +77,10 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.LightGray;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsername.Location = new System.Drawing.Point(39, 67);
+            this.txtUsername.Location = new System.Drawing.Point(52, 82);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(224, 20);
+            this.txtUsername.Size = new System.Drawing.Size(298, 22);
             this.txtUsername.TabIndex = 17;
             // 
             // lblEmail
@@ -87,9 +89,10 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(35, 41);
+            this.lblEmail.Location = new System.Drawing.Point(47, 50);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(59, 22);
+            this.lblEmail.Size = new System.Drawing.Size(74, 28);
             this.lblEmail.TabIndex = 20;
             this.lblEmail.Text = "Email:";
             // 
@@ -99,9 +102,10 @@
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(35, 101);
+            this.lblPassword.Location = new System.Drawing.Point(47, 124);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(203, 22);
+            this.lblPassword.Size = new System.Drawing.Size(259, 28);
             this.lblPassword.TabIndex = 22;
             this.lblPassword.Text = "Codigo de confirmación:";
             // 
@@ -109,9 +113,10 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.LightGray;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(39, 135);
+            this.txtEmail.Location = new System.Drawing.Point(52, 166);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(224, 20);
+            this.txtEmail.Size = new System.Drawing.Size(298, 22);
             this.txtEmail.TabIndex = 16;
             // 
             // btnCambiar
@@ -121,9 +126,10 @@
             this.btnCambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiar.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiar.ForeColor = System.Drawing.Color.White;
-            this.btnCambiar.Location = new System.Drawing.Point(432, 487);
+            this.btnCambiar.Location = new System.Drawing.Point(576, 599);
+            this.btnCambiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCambiar.Name = "btnCambiar";
-            this.btnCambiar.Size = new System.Drawing.Size(158, 46);
+            this.btnCambiar.Size = new System.Drawing.Size(211, 57);
             this.btnCambiar.TabIndex = 23;
             this.btnCambiar.Text = "Cambiar";
             this.btnCambiar.UseVisualStyleBackColor = false;
@@ -132,9 +138,10 @@
             // 
             this.pbUserMensaje.BackColor = System.Drawing.Color.Transparent;
             this.pbUserMensaje.Image = global::LP2Clinica.Properties.Resources.icono_del_usuario_mensaje_correo_sobre_electrónico_110413673_removebg_preview;
-            this.pbUserMensaje.Location = new System.Drawing.Point(223, 36);
+            this.pbUserMensaje.Location = new System.Drawing.Point(297, 44);
+            this.pbUserMensaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbUserMensaje.Name = "pbUserMensaje";
-            this.pbUserMensaje.Size = new System.Drawing.Size(206, 224);
+            this.pbUserMensaje.Size = new System.Drawing.Size(256, 276);
             this.pbUserMensaje.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUserMensaje.TabIndex = 24;
             this.pbUserMensaje.TabStop = false;
@@ -146,9 +153,10 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(38, 487);
+            this.btnCancelar.Location = new System.Drawing.Point(51, 599);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(158, 46);
+            this.btnCancelar.Size = new System.Drawing.Size(211, 57);
             this.btnCancelar.TabIndex = 27;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -157,26 +165,28 @@
             // 
             this.pbHome.BackColor = System.Drawing.Color.Transparent;
             this.pbHome.Image = global::LP2Clinica.Properties.Resources.home2_removebg_preview1;
-            this.pbHome.Location = new System.Drawing.Point(12, -1);
+            this.pbHome.Location = new System.Drawing.Point(16, -1);
+            this.pbHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbHome.Name = "pbHome";
-            this.pbHome.Size = new System.Drawing.Size(90, 88);
+            this.pbHome.Size = new System.Drawing.Size(101, 94);
             this.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbHome.TabIndex = 28;
             this.pbHome.TabStop = false;
             // 
             // frmCambiarContraseña
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LP2Clinica.Properties.Resources.PANTALLA_3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(616, 580);
+            this.ClientSize = new System.Drawing.Size(821, 714);
             this.Controls.Add(this.pbHome);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.pCambiarContraseña);
             this.Controls.Add(this.pbUserMensaje);
             this.Controls.Add(this.btnCambiar);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCambiarContraseña";
             this.Text = "frmCambiarContraseña";
             this.pCambiarContraseña.ResumeLayout(false);

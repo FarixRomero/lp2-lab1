@@ -16,7 +16,7 @@ namespace LP2Clinica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRecuperarPassword());
+            Application.Run(new Inicio());
         }
     }
 }
