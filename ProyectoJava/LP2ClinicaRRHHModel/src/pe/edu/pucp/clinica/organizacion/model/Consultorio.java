@@ -1,5 +1,4 @@
 package pe.edu.pucp.clinica.organizacion.model;
-import java.util.ArrayList;
 
 public class Consultorio {
     private int id_consultorio;

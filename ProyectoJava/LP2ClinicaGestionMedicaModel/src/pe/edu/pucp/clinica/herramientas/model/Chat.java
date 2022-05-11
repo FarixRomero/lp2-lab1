@@ -10,7 +10,7 @@ public class Chat {
     private Date fecha;
     private String emisor;
     private Time hora;
-    private Medico medicos;
+    private Medico medico;
     private Paciente paciente;
     
     // CONSTRUCTORES
@@ -62,6 +62,22 @@ public class Chat {
 
     public void setHora(Time hora) {
         this.hora = hora;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
     
 }

@@ -3,15 +3,21 @@ import java.sql.Time;
 import pe.edu.pucp.clinica.personal.model.Medico;
 
 public class Horario {
+    
     private int id_horario;
+    private HorasHorario horasHorario;
+    private Semestre semestre;
+    private Medico medico;
     private String dia;
-    private HorasHorario id_horasHorario;
-    private Semestre id_semestre;
-    private Medico id_medico;
+    
     public Horario() {};
-    public Horario(String dia) {
+
+    public Horario(HorasHorario horasHorario, Semestre semestre, String dia) {
+        this.horasHorario = horasHorario;
+        this.semestre = semestre;
         this.dia = dia;
     }
+    
 
     public int getId_horario() {
         return id_horario;
@@ -29,28 +35,28 @@ public class Horario {
         this.dia = dia;
     }
 
-    public HorasHorario getId_horasHorario() {
-        return id_horasHorario;
+    public HorasHorario getHorasHorario() {
+        return horasHorario;
     }
 
-    public void setId_horasHorario(HorasHorario id_horasHorario) {
-        this.id_horasHorario = id_horasHorario;
+    public void setHorasHorario(HorasHorario horasHorario) {
+        this.horasHorario = horasHorario;
     }
 
-    public Semestre getId_semestre() {
-        return id_semestre;
+    public Semestre getSemestre() {
+        return semestre;
     }
 
-    public void setId_semestre(Semestre id_semestre) {
-        this.id_semestre = id_semestre;
+    public void setSemestre(Semestre semestre) {
+        this.semestre = semestre;
     }
 
-    public Medico getId_medico() {
-        return id_medico;
+    public Medico getMedico() {
+        return medico;
     }
 
-    public void setId_medico(Medico id_medico) {
-        this.id_medico = id_medico;
+    public void setMedico(Medico medico) {
+        this.medico = medico;
     }
 
     

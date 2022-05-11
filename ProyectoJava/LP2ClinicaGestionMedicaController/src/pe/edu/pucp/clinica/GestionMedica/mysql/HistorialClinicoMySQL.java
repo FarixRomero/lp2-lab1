@@ -32,7 +32,7 @@ public class HistorialClinicoMySQL implements HistorialClinicoDAO {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_HISTORIAL_CLINICO(?,?)}");
             cs.registerOutParameter("_id_historia", java.sql.Types.INTEGER);
-            cs.setInt("_fid_paciente",historialClinico.getPaciente().getIdPaciente());
+            cs.setInt("_fid_paciente",historialClinico.getPaciente().getId_paciente());
             cs.executeUpdate();
             historialClinico.setNroHistoria(cs.getInt("_id_historia"));
             resultado = 1;
@@ -51,7 +51,7 @@ public class HistorialClinicoMySQL implements HistorialClinicoDAO {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_HISTORIAL_CLINICO(?,?)}");
             cs.setInt("_id_historia", historialClinico.getNroHistoria());
-            cs.setInt("_fid_paciente",historialClinico.getPaciente().getIdPaciente());
+            cs.setInt("_fid_paciente",historialClinico.getPaciente().getId_paciente());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -89,7 +89,7 @@ public class HistorialClinicoMySQL implements HistorialClinicoDAO {
             while(rs.next()){
                 HistorialClinico hc = new HistorialClinico();
                 hc.setNroHistoria(rs.getInt("id_historia"));
-                hc.getPaciente().setIdPaciente(rs.getInt("fid_paciente"));
+                hc.getPaciente().setId_paciente(rs.getInt("fid_paciente"));
                 historialClinico.add(hc);
             }
         }catch(Exception ex){

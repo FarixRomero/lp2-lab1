@@ -28,8 +28,9 @@ public class HorasHorarioMySQL implements HorasHorarioDAO {
             rs = cs.executeQuery();
             while (rs.next()) {
                 HorasHorario elem = new HorasHorario();
-                elem.setId_horasHorario(rs.getInt("_id_horasHorario"));
-                // no sabemos time
+                elem.setId_horasHorario(rs.getInt("id_horasHorario"));
+                elem.setHora_inicio(rs.getTime("hora_inicio"));
+                elem.setHora_fin(rs.getTime("hora_fin"));
                 Hhorarios.add(elem);
             }
         } catch (Exception ex) {
@@ -50,15 +51,9 @@ public class HorasHorarioMySQL implements HorasHorarioDAO {
         try {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_HORASHORARIO(?,?,?)}");
-            /**
-             * *****
-             * id_horasHorario int AI PK hora_inicio time hora_fin time
-             */
             cs.registerOutParameter("_id_horasHorario", java.sql.Types.INTEGER);
-            /*
-            cs.setTime("_hora_inicio",new java.sql.Date(Sem.getFecha_inicio().getTime()));
-            cs.setTime("_hora_fin",new java.sql.Date(Sem.getFecha_fin().getTime()));
-             */
+            cs.setTime("_hora_inicio", Hhorario.getHora_inicio());
+            cs.setTime("_hora_fin", Hhorario.getHora_fin());
             cs.executeUpdate();
             Hhorario.setId_horasHorario(cs.getInt("_id_horasHorario"));
             resultado = 1;
@@ -103,7 +98,7 @@ public class HorasHorarioMySQL implements HorasHorarioDAO {
         try {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call ELIMINAR_HORASHORARIO(?)}");
-            cs.setInt("_id_horario", id_HorasHorario);
+            cs.setInt("_id_horasHorario", id_HorasHorario);
             cs.executeUpdate();
             resultado = 1;
         } catch (Exception ex) {

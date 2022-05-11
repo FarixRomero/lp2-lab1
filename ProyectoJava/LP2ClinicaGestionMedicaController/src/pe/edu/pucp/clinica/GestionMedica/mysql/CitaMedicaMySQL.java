@@ -33,7 +33,7 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_CITA_MEDICA(?,?,?,?,?)}");
             cs.registerOutParameter("_id_cita", java.sql.Types.INTEGER);
-            cs.setInt("_fid_paciente", (citaMedica.getPaciente()).getIdPaciente());
+            cs.setInt("_fid_paciente", (citaMedica.getPaciente()).getId_paciente());
             cs.setInt("_fid_horario", citaMedica.getHorario().getId_horario());
             cs.setInt("_fid_consultorio",citaMedica.getConsultorio().getId_consultorio());
             cs.setDate("_fecha", new java.sql.Date(citaMedica.getFecha().getTime()));
@@ -56,7 +56,7 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_CITA_MEDICA(?,?,?,?,?)}");
             cs.setInt("_id_cita", citaMedica.getId_cita());
-            cs.setInt("_fid_paciente", (citaMedica.getPaciente()).getIdPaciente());
+            cs.setInt("_fid_paciente", (citaMedica.getPaciente()).getId_paciente());
             cs.setInt("_fid_horario", citaMedica.getHorario().getId_horario());
             cs.setInt("_fid_consultorio",citaMedica.getConsultorio().getId_consultorio());
             cs.setDate("_fecha", new java.sql.Date(citaMedica.getFecha().getTime()));
@@ -97,7 +97,7 @@ public class CitaMedicaMySQL implements CitaMedicaDAO {
             while(rs.next()){
                 CitaMedica cm = new CitaMedica();
                 cm.setId_cita(rs.getInt("id_cita"));
-                cm.getPaciente().setIdPaciente(rs.getInt("fid_paciente"));
+                cm.getPaciente().setId_paciente(rs.getInt("fid_paciente"));
                 cm.getHorario().setId_horario(rs.getInt("fid_horario"));
                 cm.getConsultorio().setId_consultorio(rs.getInt("fid_consultorio"));
                 cm.setFecha(rs.getDate("fecha"));

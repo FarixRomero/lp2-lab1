@@ -16,19 +16,19 @@ import pe.edu.pucp.clinica.personal.model.Usuario;
  */
 public class Paciente extends Usuario{
     // Estado o características
-        private int idPaciente;
+        private int id_paciente;
 	private boolean seguro;
 	
     // Constructores
     public Paciente(){
     }
+
+    public Paciente(boolean seguro, String DNI, String nombre, String apellido, Date fecha_nacimiento, String email, String username, String password, int estado) {
+        super(DNI, nombre, apellido, fecha_nacimiento, email, username, password, estado);
+        this.seguro = seguro;
+    }
     
-//    public Paciente(String DNI, String nombre, String apellido, 
-//            int edad, Date fecha_nacimiento,String email, String username, 
-//            String password, int estado, boolean seguro){
-//        super(DNI, nombre, apellido, edad, fecha_nacimiento, email, username, password, estado);
-//        this.seguro = seguro;
-//    }
+    
     // Destructores
     public void finalize(){
         System.out.println("El objeto se esta destruyendo");
@@ -36,12 +36,12 @@ public class Paciente extends Usuario{
 	
     // Getters
 
-    public int getIdPaciente() {
-        return idPaciente;
+    public int getId_paciente() {
+        return id_paciente;
     }
 
-    public void setIdPaciente(int idPaciente) {
-        this.idPaciente = idPaciente;
+    public void setId_paciente(int id_paciente) {
+        this.id_paciente = id_paciente;
     }
     
     
@@ -70,7 +70,7 @@ public class Paciente extends Usuario{
 	
 	@Override
 	public String consultarDatosUsuario(){
-		return "Nro. Paciente: "+ this.idPaciente + "Nombre: "+ getNombre()+ getApellido() +" - "+getEmail();
+		return "Nro. Paciente: "+ this.id_paciente + "Nombre: "+ getNombre()+ getApellido() +" - "+getEmail();
 	}
 	@Override
 	public void Login(){}
