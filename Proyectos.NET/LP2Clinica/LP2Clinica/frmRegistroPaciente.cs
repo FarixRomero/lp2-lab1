@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LP2Clinica
 {
-    public partial class frmCambiarContraseña : Form
+    public partial class frmRegistroPaciente : Form
     {
-        public frmCambiarContraseña()
+        public frmRegistroPaciente()
         {
             InitializeComponent();
         }

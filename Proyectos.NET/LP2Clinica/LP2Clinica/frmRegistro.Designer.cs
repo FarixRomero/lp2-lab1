@@ -54,7 +54,7 @@
             // 
             this.pbUserRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(37)))), ((int)(((byte)(91)))));
             this.pbUserRegistro.Image = global::LP2Clinica.Properties.Resources.user3;
-            this.pbUserRegistro.Location = new System.Drawing.Point(230, 70);
+            this.pbUserRegistro.Location = new System.Drawing.Point(221, 40);
             this.pbUserRegistro.Name = "pbUserRegistro";
             this.pbUserRegistro.Size = new System.Drawing.Size(178, 173);
             this.pbUserRegistro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -210,9 +210,9 @@
             this.pRegistro.Controls.Add(this.lblNombre);
             this.pRegistro.Controls.Add(this.txtDNI);
             this.pRegistro.Controls.Add(this.lblDNI);
-            this.pRegistro.Location = new System.Drawing.Point(39, 263);
+            this.pRegistro.Location = new System.Drawing.Point(53, 258);
             this.pRegistro.Name = "pRegistro";
-            this.pRegistro.Size = new System.Drawing.Size(553, 253);
+            this.pRegistro.Size = new System.Drawing.Size(517, 239);
             this.pRegistro.TabIndex = 16;
             // 
             // btnSiguiente

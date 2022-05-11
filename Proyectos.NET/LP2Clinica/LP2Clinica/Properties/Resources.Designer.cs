@@ -103,6 +103,16 @@ namespace LP2Clinica.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dibujo_paciente_en_cama_de_hospital_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("dibujo-paciente-en-cama-de-hospital-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Flecha {
             get {
                 object obj = ResourceManager.GetObject("Flecha", resourceCulture);

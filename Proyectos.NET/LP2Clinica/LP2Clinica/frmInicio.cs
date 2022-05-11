@@ -26,7 +26,7 @@ namespace LP2Clinica
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // por la ptm porque no se pushea
+            // por la ptm porque no se pushea LA PTM 
             frmLogin logeo=new frmLogin();
             logeo.Show();
             
