@@ -26,12 +26,14 @@ public class CitaMedica {
 	
     //Constructor
     public CitaMedica(){}
-    public CitaMedica (EstadoCita estado, Horario horario, Paciente paciente, Consultorio consultorio, boolean ha_pagado) {
+    public CitaMedica (EstadoCita estado, Horario horario, Paciente paciente, 
+            Consultorio consultorio, boolean ha_pagado, Date fecha) {
 	this.estado = estado;
         this.horario = horario;
         this.paciente = paciente;
         this.consultorio = consultorio;
         this.ha_pagado = ha_pagado;
+        this.fecha = fecha;
     }
 	
     //Setters
