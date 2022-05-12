@@ -425,10 +425,6 @@ public class Main {
         else{
             System.out.println("Fallo al modificar el administrador");
         }
-         ArrayList<Administrador> arrAdministradores = administradorDAO.listarTodas();
-        for(Administrador admi:arrAdministradores){
-            System.out.println("ID: " + admi.getId_administrador() + " - " + admi.getNombre());
-        } 
         resultado = administradorDAO.eliminar(adm.getId_administrador());
         if(resultado == 1){
             System.out.println("Se realizo la eliminacion correcta del administrador.");
